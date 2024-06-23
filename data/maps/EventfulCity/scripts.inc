@@ -743,8 +743,12 @@ EventfulCity_Text_GymSign:
 	.string "“A man in pursuit of power!”$"
 
 EventfulCity_Text_CitySign:
-	.string "EVENTFUL CITY\n"
-	.string "“Where people mingle with nature.”$"
+	.string "Hello, this silly little city is\n"
+	.string "where people come to test their skills.\p"
+	.string "In these houses you will find warps to\n"
+	.string "new and custom events made by me.\p"
+	.string "This is all just a way to practice\n"
+	.string "decomp. Hope you enjoy.$"
 
 EventfulCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
