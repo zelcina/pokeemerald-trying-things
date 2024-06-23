@@ -6,7 +6,7 @@
 //
 
 // gMapGroup_TownsAndRoutes
-#define MAP_PETALBURG_CITY      (0 | (0 << 8))
+#define MAP_EVENTFUL_CITY      (0 | (0 << 8))
 #define MAP_SLATEPORT_CITY      (1 | (0 << 8))
 #define MAP_MAUVILLE_CITY       (2 | (0 << 8))
 #define MAP_RUSTBORO_CITY       (3 | (0 << 8))
@@ -125,14 +125,14 @@
 #define MAP_PACIFIDLOG_TOWN_HOUSE4            (5 | (7 << 8))
 #define MAP_PACIFIDLOG_TOWN_HOUSE5            (6 | (7 << 8))
 
-// gMapGroup_IndoorPetalburg
-#define MAP_PETALBURG_CITY_WALLYS_HOUSE      (0 | (8 << 8))
-#define MAP_PETALBURG_CITY_GYM               (1 | (8 << 8))
-#define MAP_PETALBURG_CITY_HOUSE1            (2 | (8 << 8))
-#define MAP_PETALBURG_CITY_HOUSE2            (3 | (8 << 8))
-#define MAP_PETALBURG_CITY_POKEMON_CENTER_1F (4 | (8 << 8))
-#define MAP_PETALBURG_CITY_POKEMON_CENTER_2F (5 | (8 << 8))
-#define MAP_PETALBURG_CITY_MART              (6 | (8 << 8))
+// gMapGroup_IndoorEventful
+#define MAP_EVENTFUL_CITY_WALLYS_HOUSE      (0 | (8 << 8))
+#define MAP_EVENTFUL_CITY_GYM               (1 | (8 << 8))
+#define MAP_EVENTFUL_CITY_HOUSE1            (2 | (8 << 8))
+#define MAP_EVENTFUL_CITY_HOUSE2            (3 | (8 << 8))
+#define MAP_EVENTFUL_CITY_POKEMON_CENTER_1F (4 | (8 << 8))
+#define MAP_EVENTFUL_CITY_POKEMON_CENTER_2F (5 | (8 << 8))
+#define MAP_EVENTFUL_CITY_MART              (6 | (8 << 8))
 
 // gMapGroup_IndoorSlateport
 #define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F      (0 | (9 << 8))
@@ -303,7 +303,7 @@
 #define MAP_GRANITE_CAVE_B1F                         (8 | (24 << 8))
 #define MAP_GRANITE_CAVE_B2F                         (9 | (24 << 8))
 #define MAP_GRANITE_CAVE_STEVENS_ROOM                (10 | (24 << 8))
-#define MAP_PETALBURG_WOODS                          (11 | (24 << 8))
+#define MAP_EVENTFUL_WOODS                          (11 | (24 << 8))
 #define MAP_MT_CHIMNEY                               (12 | (24 << 8))
 #define MAP_JAGGED_PASS                              (13 | (24 << 8))
 #define MAP_FIERY_PATH                               (14 | (24 << 8))

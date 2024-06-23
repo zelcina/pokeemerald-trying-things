@@ -52,7 +52,7 @@ LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
 LittlerootTown_MaysHouse_1F_OnFrame:
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_MaysHouse_1F_EventScript_EventfulGymReport
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1, LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 	.2byte 0
@@ -80,11 +80,11 @@ LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
 
-LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport::
+LittlerootTown_MaysHouse_1F_EventScript_EventfulGymReport::
 	lockall
 	setvar VAR_0x8004, FEMALE
 	setvar VAR_0x8005, LOCALID_MOM
-	goto PlayersHouse_1F_EventScript_PetalburgGymReportFemale
+	goto PlayersHouse_1F_EventScript_EventfulGymReportFemale
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::

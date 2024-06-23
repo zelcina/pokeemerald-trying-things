@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_PETALBURG_CITY",
+      "map": "MAP_EVENTFUL_CITY",
       "offset": -10,
       "direction": "left"
     },
@@ -152,7 +152,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route102_EventScript_RouteSignPetalburg"
+      "script": "Route102_EventScript_RouteSignEventful"
     },
     {
       "type": "sign",

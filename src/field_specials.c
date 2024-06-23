@@ -104,8 +104,8 @@ u16 GetNumFansOfPlayerInTrainerFanClub(void);
 
 static void RecordCyclingRoadResults(u32, u8);
 static void LoadLinkPartnerObjectEventSpritePalette(u8, u8, u8);
-static void Task_PetalburgGymSlideOpenRoomDoors(u8);
-static void PetalburgGymSetDoorMetatiles(u8, u16);
+static void Task_EventfulGymSlideOpenRoomDoors(u8);
+static void EventfulGymSetDoorMetatiles(u8, u16);
 static void Task_PCTurnOnEffect(u8);
 static void PCTurnOnEffect(struct Task *);
 static void PCTurnOnEffect_SetMetatile(s16, s8, s8);
@@ -791,29 +791,29 @@ void MauvilleGymDeactivatePuzzle(void)
 
 static const bool8 sSlidingDoorNextFrameDelay[] = {0, 1, 1, 1, 1};
 
-static const u16 sPetalburgGymSlidingDoorMetatiles[] = {
-    METATILE_PetalburgGym_SlidingDoor_Frame0,
-    METATILE_PetalburgGym_SlidingDoor_Frame1,
-    METATILE_PetalburgGym_SlidingDoor_Frame2,
-    METATILE_PetalburgGym_SlidingDoor_Frame3,
-    METATILE_PetalburgGym_SlidingDoor_Frame4,
+static const u16 sEventfulGymSlidingDoorMetatiles[] = {
+    METATILE_EventfulGym_SlidingDoor_Frame0,
+    METATILE_EventfulGym_SlidingDoor_Frame1,
+    METATILE_EventfulGym_SlidingDoor_Frame2,
+    METATILE_EventfulGym_SlidingDoor_Frame3,
+    METATILE_EventfulGym_SlidingDoor_Frame4,
 };
 
-void PetalburgGymSlideOpenRoomDoors(void)
+void EventfulGymSlideOpenRoomDoors(void)
 {
     sSlidingDoorNextFrameCounter = 0;
     sSlidingDoorFrame = 0;
     PlaySE(SE_UNLOCK);
-    CreateTask(Task_PetalburgGymSlideOpenRoomDoors, 8);
+    CreateTask(Task_EventfulGymSlideOpenRoomDoors, 8);
 }
 
-static void Task_PetalburgGymSlideOpenRoomDoors(u8 taskId)
+static void Task_EventfulGymSlideOpenRoomDoors(u8 taskId)
 {
     if (sSlidingDoorNextFrameDelay[sSlidingDoorFrame] == sSlidingDoorNextFrameCounter)
     {
-        PetalburgGymSetDoorMetatiles(gSpecialVar_0x8004, sPetalburgGymSlidingDoorMetatiles[sSlidingDoorFrame]);
+        EventfulGymSetDoorMetatiles(gSpecialVar_0x8004, sEventfulGymSlidingDoorMetatiles[sSlidingDoorFrame]);
         sSlidingDoorNextFrameCounter = 0;
-        if ((++sSlidingDoorFrame) == ARRAY_COUNT(sPetalburgGymSlidingDoorMetatiles))
+        if ((++sSlidingDoorFrame) == ARRAY_COUNT(sEventfulGymSlidingDoorMetatiles))
         {
             DestroyTask(taskId);
             ScriptContext_Enable();
@@ -825,7 +825,7 @@ static void Task_PetalburgGymSlideOpenRoomDoors(u8 taskId)
     }
 }
 
-static void PetalburgGymSetDoorMetatiles(u8 roomNumber, u16 metatileId)
+static void EventfulGymSetDoorMetatiles(u8 roomNumber, u16 metatileId)
 {
     u16 doorCoordsX[4];
     u16 doorCoordsY[4];
@@ -890,9 +890,9 @@ static void PetalburgGymSetDoorMetatiles(u8 roomNumber, u16 metatileId)
     DrawWholeMapView();
 }
 
-void PetalburgGymUnlockRoomDoors(void)
+void EventfulGymUnlockRoomDoors(void)
 {
-    PetalburgGymSetDoorMetatiles(gSpecialVar_0x8004, sPetalburgGymSlidingDoorMetatiles[4]);
+    EventfulGymSetDoorMetatiles(gSpecialVar_0x8004, sEventfulGymSlidingDoorMetatiles[4]);
 }
 
 void ShowFieldMessageStringVar4(void)
@@ -2028,7 +2028,7 @@ bool8 UsedPokemonCenterWarp(void)
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
         MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
         MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
-        MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
+        MAP_EVENTFUL_CITY_POKEMON_CENTER_1F,
         MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
         MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
         MAP_RUSTBORO_CITY_POKEMON_CENTER_1F,
@@ -3539,7 +3539,7 @@ u32 GetMartEmployeeObjectEventId(void)
         { MAP_GROUP(LAVARIDGE_TOWN_MART),  MAP_NUM(LAVARIDGE_TOWN_MART),  LOCALID_LAVARIDGE_MART_CLERK },
         { MAP_GROUP(FALLARBOR_TOWN_MART),  MAP_NUM(FALLARBOR_TOWN_MART),  LOCALID_FALLARBOR_MART_CLERK },
         { MAP_GROUP(VERDANTURF_TOWN_MART), MAP_NUM(VERDANTURF_TOWN_MART), LOCALID_VERDANTURF_MART_CLERK },
-        { MAP_GROUP(PETALBURG_CITY_MART),  MAP_NUM(PETALBURG_CITY_MART),  LOCALID_PETALBURG_MART_CLERK },
+        { MAP_GROUP(EVENTFUL_CITY_MART),  MAP_NUM(EVENTFUL_CITY_MART),  LOCALID_EVENTFUL_MART_CLERK },
         { MAP_GROUP(SLATEPORT_CITY_MART),  MAP_NUM(SLATEPORT_CITY_MART),  LOCALID_SLATEPORT_MART_CLERK },
         { MAP_GROUP(MAUVILLE_CITY_MART),   MAP_NUM(MAUVILLE_CITY_MART),   LOCALID_MAUVILLE_MART_CLERK },
         { MAP_GROUP(RUSTBORO_CITY_MART),   MAP_NUM(RUSTBORO_CITY_MART),   LOCALID_RUSTBORO_MART_CLERK },
@@ -3827,7 +3827,7 @@ void GetBattlePyramidHint(void)
 void ResetHealLocationFromDewford(void)
 {
     if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(DEWFORD_TOWN))
-        SetLastHealLocationWarp(HEAL_LOCATION_PETALBURG_CITY);
+        SetLastHealLocationWarp(HEAL_LOCATION_EVENTFUL_CITY);
 }
 
 bool8 InPokemonCenter(void)
@@ -3840,7 +3840,7 @@ bool8 InPokemonCenter(void)
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
         MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
         MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
-        MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
+        MAP_EVENTFUL_CITY_POKEMON_CENTER_1F,
         MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
         MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
         MAP_RUSTBORO_CITY_POKEMON_CENTER_1F,

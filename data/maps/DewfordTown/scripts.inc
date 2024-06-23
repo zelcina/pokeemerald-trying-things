@@ -21,21 +21,21 @@ DewfordTown_OnTransition:
 DewfordTown_EventScript_Briney::
 	lock
 	faceplayer
-	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, DewfordTown_EventScript_ReturnToPetalburgPrompt
+	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, DewfordTown_EventScript_ReturnToEventfulPrompt
 	message DewfordTown_Text_WhereAreWeBound
 	waitmessage
 	multichoicedefault 21, 6, MULTI_BRINEY_ON_DEWFORD, 2, FALSE
 	switch VAR_RESULT
-	case 0, DewfordTown_EventScript_ChoosePetalburg
+	case 0, DewfordTown_EventScript_ChooseEventful
 	case 1, DewfordTown_EventScript_ChooseSlateport
 	case 2, DewfordTown_EventScript_CancelSailSelect
 	case MULTI_B_PRESSED, DewfordTown_EventScript_CancelSailSelect
 	end
 
-DewfordTown_EventScript_ChoosePetalburg::
-	msgbox DewfordTown_Text_PetalburgWereSettingSail, MSGBOX_DEFAULT
+DewfordTown_EventScript_ChooseEventful::
+	msgbox DewfordTown_Text_EventfulWereSettingSail, MSGBOX_DEFAULT
 	closemessage
-	goto DewfordTown_EventScript_SailToPetalburg
+	goto DewfordTown_EventScript_SailToEventful
 	release
 	end
 
@@ -52,17 +52,17 @@ DewfordTown_EventScript_CancelSailSelect::
 	release
 	end
 
-DewfordTown_EventScript_ReturnToPetalburgPrompt::
-	msgbox DewfordTown_Text_SetSailBackToPetalburg, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, DewfordTown_EventScript_SailBackToPetalburg
+DewfordTown_EventScript_ReturnToEventfulPrompt::
+	msgbox DewfordTown_Text_SetSailBackToEventful, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, DewfordTown_EventScript_SailBackToEventful
 	msgbox DewfordTown_Text_GoDeliverIllBeWaiting, MSGBOX_DEFAULT
 	release
 	end
 
-DewfordTown_EventScript_SailBackToPetalburg::
-	msgbox DewfordTown_Text_PetalburgWereSettingSail2, MSGBOX_DEFAULT
+DewfordTown_EventScript_SailBackToEventful::
+	msgbox DewfordTown_Text_EventfulWereSettingSail2, MSGBOX_DEFAULT
 	closemessage
-	goto DewfordTown_EventScript_SailToPetalburg
+	goto DewfordTown_EventScript_SailToEventful
 	end
 
 DewfordTown_EventScript_Woman::
@@ -122,7 +122,7 @@ DewfordTown_EventScript_FishingNotSoGood::
 	release
 	end
 
-DewfordTown_EventScript_SailToPetalburg::
+DewfordTown_EventScript_SailToEventful::
 	call EventScript_BackupMrBrineyLocation
 	setobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
 	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN, 0
@@ -133,12 +133,12 @@ DewfordTown_EventScript_SailToPetalburg::
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	call Common_EventScript_PlayBrineysBoatMusic
-	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToPetalburg
-	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToPetalburg
+	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToEventful
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToEventful
 	waitmovement 0
 	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
 	call Common_EventScript_StopBrineysBoatMusic
-	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_ExitBoatPetalburg
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_ExitBoatEventful
 	waitmovement 0
 	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE104
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
@@ -200,7 +200,7 @@ DewfordTown_EventScript_LandedSlateport::
 	msgbox DewfordTown_Text_BrineyLandedInSlateport, MSGBOX_DEFAULT
 	return
 
-DewfordTown_Movement_SailToPetalburg:
+DewfordTown_Movement_SailToEventful:
 	walk_up
 	walk_up
 	walk_fast_up
@@ -576,7 +576,7 @@ DewfordTown_Movement_PlayerBoardBoat:
 	walk_up
 	step_end
 
-DewfordTown_Movement_ExitBoatPetalburg:
+DewfordTown_Movement_ExitBoatEventful:
 	walk_up
 	walk_up
 	walk_up
@@ -663,14 +663,14 @@ Route104_Text_LandedInDewfordDeliverLetter:
 	.string "I suppose you're off to deliver that\n"
 	.string "LETTER to, who was it now, STEVEN!$"
 
-DewfordTown_Text_SetSailBackToPetalburg:
+DewfordTown_Text_SetSailBackToEventful:
 	.string "MR. BRINEY: Have you delivered your\n"
 	.string "LETTER?\p"
 	.string "Or were you meaning to sail back to\n"
-	.string "PETALBURG?$"
+	.string "EVENTFUL?$"
 
-DewfordTown_Text_PetalburgWereSettingSail2:
-	.string "MR. BRINEY: PETALBURG it is, then!\p"
+DewfordTown_Text_EventfulWereSettingSail2:
+	.string "MR. BRINEY: EVENTFUL it is, then!\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
@@ -689,8 +689,8 @@ DewfordTown_Text_WhereAreWeBound:
 	.string "For you, I'll go out to sea anytime!\p"
 	.string "Now, my friend, where are we bound?$"
 
-DewfordTown_Text_PetalburgWereSettingSail:
-	.string "MR. BRINEY: PETALBURG, is it?\p"
+DewfordTown_Text_EventfulWereSettingSail:
+	.string "MR. BRINEY: EVENTFUL, is it?\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 

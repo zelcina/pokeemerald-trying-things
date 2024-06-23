@@ -85,7 +85,7 @@ static const struct TrainerMon sParty_Gabrielle1[] = {
     }
 };
 
-static const struct TrainerMon sParty_GruntPetalburgWoods[] = {
+static const struct TrainerMon sParty_GruntEventfulWoods[] = {
     {
     .lvl = 9,
     .species = SPECIES_POOCHYENA,

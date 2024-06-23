@@ -104,7 +104,7 @@ gStdScripts::
 	.4byte Std_MsgboxPokenav           @ MSGBOX_POKENAV
 gStdScripts_End::
 
-	.include "data/maps/PetalburgCity/scripts.inc"
+	.include "data/maps/EventfulCity/scripts.inc"
 	.include "data/maps/SlateportCity/scripts.inc"
 	.include "data/maps/MauvilleCity/scripts.inc"
 	.include "data/maps/RustboroCity/scripts.inc"
@@ -208,13 +208,13 @@ gStdScripts_End::
 	.include "data/maps/PacifidlogTown_House3/scripts.inc"
 	.include "data/maps/PacifidlogTown_House4/scripts.inc"
 	.include "data/maps/PacifidlogTown_House5/scripts.inc"
-	.include "data/maps/PetalburgCity_WallysHouse/scripts.inc"
-	.include "data/maps/PetalburgCity_Gym/scripts.inc"
-	.include "data/maps/PetalburgCity_House1/scripts.inc"
-	.include "data/maps/PetalburgCity_House2/scripts.inc"
-	.include "data/maps/PetalburgCity_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/PetalburgCity_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/PetalburgCity_Mart/scripts.inc"
+	.include "data/maps/EventfulCity_WallysHouse/scripts.inc"
+	.include "data/maps/EventfulCity_Gym/scripts.inc"
+	.include "data/maps/EventfulCity_House1/scripts.inc"
+	.include "data/maps/EventfulCity_House2/scripts.inc"
+	.include "data/maps/EventfulCity_PokemonCenter_1F/scripts.inc"
+	.include "data/maps/EventfulCity_PokemonCenter_2F/scripts.inc"
+	.include "data/maps/EventfulCity_Mart/scripts.inc"
 	.include "data/maps/SlateportCity_SternsShipyard_1F/scripts.inc"
 	.include "data/maps/SlateportCity_SternsShipyard_2F/scripts.inc"
 	.include "data/maps/SlateportCity_BattleTentLobby/scripts.inc"
@@ -353,7 +353,7 @@ gStdScripts_End::
 	.include "data/maps/GraniteCave_B1F/scripts.inc"
 	.include "data/maps/GraniteCave_B2F/scripts.inc"
 	.include "data/maps/GraniteCave_StevensRoom/scripts.inc"
-	.include "data/maps/PetalburgWoods/scripts.inc"
+	.include "data/maps/EventfulWoods/scripts.inc"
 	.include "data/maps/MtChimney/scripts.inc"
 	.include "data/maps/JaggedPass/scripts.inc"
 	.include "data/maps/FieryPath/scripts.inc"
@@ -635,7 +635,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 
 Common_EventScript_UpdateBrineyLocation::
 	goto_if_unset FLAG_RECEIVED_POKENAV, Common_EventScript_NopReturn
-	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Common_EventScript_NopReturn
+	goto_if_set FLAG_DEFEATED_EVENTFUL_GYM, Common_EventScript_NopReturn
 	goto_if_unset FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT, EventScript_SetBrineyLocation_House
 	goto_if_unset FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN, EventScript_SetBrineyLocation_Dewford
 	goto_if_unset FLAG_HIDE_ROUTE_109_MR_BRINEY, EventScript_SetBrineyLocation_Route109
@@ -673,9 +673,9 @@ Common_ShowEasyChatScreen::
 	fadescreen FADE_FROM_BLACK
 	return
 
-Common_EventScript_ReadyPetalburgGymForBattle::
-	clearflag FLAG_HIDE_PETALBURG_GYM_GREETER
-	setflag FLAG_PETALBURG_MART_EXPANDED_ITEMS
+Common_EventScript_ReadyEventfulGymForBattle::
+	clearflag FLAG_HIDE_EVENTFUL_GYM_GREETER
+	setflag FLAG_EVENTFUL_MART_EXPANDED_ITEMS
 	return
 
 Common_EventScript_BufferTrendyPhrase::

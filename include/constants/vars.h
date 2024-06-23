@@ -104,7 +104,7 @@
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_VERDANTURF_TOWN_STATE                        0x4055 // Unused Var
 #define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
-#define VAR_PETALBURG_CITY_STATE                         0x4057
+#define VAR_EVENTFUL_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
 #define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
@@ -150,7 +150,7 @@
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
 #define VAR_UNUSED_0x4083                                0x4083 // Unused Var
 #define VAR_BIRCH_LAB_STATE                              0x4084
-#define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
+#define VAR_EVENTFUL_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
 #define VAR_CONTEST_HALL_STATE                           0x4086
 #define VAR_CABLE_CLUB_STATE                             0x4087
 #define VAR_CONTEST_TYPE                                 0x4088
@@ -169,7 +169,7 @@
 #define VAR_LILYCOVE_FAN_CLUB_STATE                      0x4095
 #define VAR_BRINEY_LOCATION                              0x4096
 #define VAR_INIT_SECRET_BASE                             0x4097
-#define VAR_PETALBURG_WOODS_STATE                        0x4098
+#define VAR_EVENTFUL_WOODS_STATE                        0x4098
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099
 #define VAR_RUSTURF_TUNNEL_STATE                         0x409A
 #define VAR_UNUSED_0x409B                                0x409B // Unused Var
@@ -218,7 +218,7 @@
 #define VAR_STEVENS_HOUSE_STATE                          0x40C6
 #define VAR_OLDALE_RIVAL_STATE                           0x40C7
 #define VAR_JAGGED_PASS_STATE                            0x40C8
-#define VAR_SCOTT_PETALBURG_ENCOUNTER                    0x40C9
+#define VAR_SCOTT_EVENTFUL_ENCOUNTER                    0x40C9
 #define VAR_SKY_PILLAR_STATE                             0x40CA
 #define VAR_MIRAGE_TOWER_STATE                           0x40CB
 #define VAR_FOSSIL_MANIAC_STATE                          0x40CC

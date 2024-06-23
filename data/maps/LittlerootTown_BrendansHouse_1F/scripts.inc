@@ -53,7 +53,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
 LittlerootTown_BrendansHouse_1F_OnFrame:
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 3, LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 5, LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport
+	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 6, LittlerootTown_BrendansHouse_1F_EventScript_EventfulGymReport
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 1, LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor
 	map_script_2 VAR_LITTLEROOT_HOUSES_STATE_MAY, 3, PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV
 	.2byte 0
@@ -81,11 +81,11 @@ LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn::
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
 
-LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport::
+LittlerootTown_BrendansHouse_1F_EventScript_EventfulGymReport::
 	lockall
 	setvar VAR_0x8004, MALE
 	setvar VAR_0x8005, LOCALID_MOM
-	goto PlayersHouse_1F_EventScript_PetalburgGymReportMale
+	goto PlayersHouse_1F_EventScript_EventfulGymReportMale
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_YoureNewNeighbor::
@@ -315,7 +315,7 @@ PlayersHouse_1F_Text_OhComeQuickly:
 	.string "Quick! Come quickly!$"
 
 PlayersHouse_1F_Text_MaybeDadWillBeOn:
-	.string "MOM: Look! It's PETALBURG GYM!\n"
+	.string "MOM: Look! It's EVENTFUL GYM!\n"
 	.string "Maybe DAD will be on!$"
 
 PlayersHouse_1F_Text_ItsOverWeMissedHim:
@@ -371,9 +371,9 @@ PlayersHouse_1F_Text_Vigoroth1:
 PlayersHouse_1F_Text_Vigoroth2:
 	.string "Huggoh, uggo uggo…$"
 
-PlayersHouse_1F_Text_ReportFromPetalburgGym:
+PlayersHouse_1F_Text_ReportFromEventfulGym:
 	.string "INTERVIEWER: …We brought you this\n"
-	.string "report from in front of PETALBURG GYM.$"
+	.string "report from in front of EVENTFUL GYM.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
 	.string "There is a movie on TV.\p"
@@ -406,7 +406,7 @@ PlayersHouse_1F_Text_PortsInSlateportLilycove:
 	.string "SLATEPORT and LILYCOVE.$"
 
 PlayersHouse_1F_Text_BetterGetBackToGym:
-	.string "I'd better get back to PETALBURG GYM.\p"
+	.string "I'd better get back to EVENTFUL GYM.\p"
 	.string "MOM, thanks for looking after the house\n"
 	.string "while I'm away.$"
 

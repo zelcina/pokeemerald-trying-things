@@ -120,7 +120,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Gabrielle1),
     },
 
-    [TRAINER_GRUNT_PETALBURG_WOODS] =
+    [TRAINER_GRUNT_EVENTFUL_WOODS] =
     {
         .trainerClass = TRAINER_CLASS_TEAM_AQUA,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -129,7 +129,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntPetalburgWoods),
+        .party = TRAINER_PARTY(sParty_GruntEventfulWoods),
     },
 
     [TRAINER_MARCEL] =

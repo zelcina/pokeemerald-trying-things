@@ -8,7 +8,7 @@
     "gMapGroup_IndoorFallarbor",
     "gMapGroup_IndoorVerdanturf",
     "gMapGroup_IndoorPacifidlog",
-    "gMapGroup_IndoorPetalburg",
+    "gMapGroup_IndoorEventful",
     "gMapGroup_IndoorSlateport",
     "gMapGroup_IndoorMauville",
     "gMapGroup_IndoorRustboro",
@@ -36,7 +36,7 @@
     "gMapGroup_IndoorRoute124"
   ],
   "gMapGroup_TownsAndRoutes": [
-    "PetalburgCity",
+    "EventfulCity",
     "SlateportCity",
     "MauvilleCity",
     "RustboroCity",
@@ -155,14 +155,14 @@
     "PacifidlogTown_House4",
     "PacifidlogTown_House5"
   ],
-  "gMapGroup_IndoorPetalburg": [
-    "PetalburgCity_WallysHouse",
-    "PetalburgCity_Gym",
-    "PetalburgCity_House1",
-    "PetalburgCity_House2",
-    "PetalburgCity_PokemonCenter_1F",
-    "PetalburgCity_PokemonCenter_2F",
-    "PetalburgCity_Mart"
+  "gMapGroup_IndoorEventful": [
+    "EventfulCity_WallysHouse",
+    "EventfulCity_Gym",
+    "EventfulCity_House1",
+    "EventfulCity_House2",
+    "EventfulCity_PokemonCenter_1F",
+    "EventfulCity_PokemonCenter_2F",
+    "EventfulCity_Mart"
   ],
   "gMapGroup_IndoorSlateport": [
     "SlateportCity_SternsShipyard_1F",
@@ -333,7 +333,7 @@
     "GraniteCave_B1F",
     "GraniteCave_B2F",
     "GraniteCave_StevensRoom",
-    "PetalburgWoods",
+    "EventfulWoods",
     "MtChimney",
     "JaggedPass",
     "FieryPath",
@@ -629,7 +629,7 @@
     "FallarborTown",
     "VerdanturfTown",
     "PacifidlogTown",
-    "PetalburgCity",
+    "EventfulCity",
     "SlateportCity",
     "MauvilleCity",
     "RustboroCity",

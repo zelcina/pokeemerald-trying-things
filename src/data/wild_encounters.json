@@ -1782,8 +1782,8 @@
           }
         },
         {
-          "map": "MAP_PETALBURG_WOODS",
-          "base_label": "gPetalburgWoods",
+          "map": "MAP_EVENTFUL_WOODS",
+          "base_label": "gEventfulWoods",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -8986,8 +8986,8 @@
           }
         },
         {
-          "map": "MAP_PETALBURG_CITY",
-          "base_label": "gPetalburgCity",
+          "map": "MAP_EVENTFUL_CITY",
+          "base_label": "gEventfulCity",
           "water_mons": {
             "encounter_rate": 1,
             "mons": [

@@ -1,7 +1,7 @@
 // multichoice lists
 static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
 {
-    {gText_Petalburg},
+    {gText_Eventful},
     {gText_Slateport},
     {gText_Exit},
 };

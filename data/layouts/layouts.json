@@ -2,14 +2,14 @@
   "layouts_table_label": "gMapLayouts",
   "layouts": [
     {
-      "id": "LAYOUT_PETALBURG_CITY",
-      "name": "PetalburgCity_Layout",
+      "id": "LAYOUT_EVENTFUL_CITY",
+      "name": "EventfulCity_Layout",
       "width": 30,
       "height": 30,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/PetalburgCity/border.bin",
-      "blockdata_filepath": "data/layouts/PetalburgCity/map.bin"
+      "secondary_tileset": "gTileset_Eventful",
+      "border_filepath": "data/layouts/EventfulCity/border.bin",
+      "blockdata_filepath": "data/layouts/EventfulCity/map.bin"
     },
     {
       "id": "LAYOUT_SLATEPORT_CITY",
@@ -97,7 +97,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Eventful",
       "border_filepath": "data/layouts/LittlerootTown/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown/map.bin"
     },
@@ -107,7 +107,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Eventful",
       "border_filepath": "data/layouts/OldaleTown/border.bin",
       "blockdata_filepath": "data/layouts/OldaleTown/map.bin"
     },
@@ -167,7 +167,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Eventful",
       "border_filepath": "data/layouts/Route101/border.bin",
       "blockdata_filepath": "data/layouts/Route101/map.bin"
     },
@@ -177,7 +177,7 @@
       "width": 50,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Eventful",
       "border_filepath": "data/layouts/Route102/border.bin",
       "blockdata_filepath": "data/layouts/Route102/map.bin"
     },
@@ -187,7 +187,7 @@
       "width": 80,
       "height": 22,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Eventful",
       "border_filepath": "data/layouts/Route103/border.bin",
       "blockdata_filepath": "data/layouts/Route103/map.bin"
     },
@@ -782,14 +782,14 @@
       "blockdata_filepath": "data/layouts/PacifidlogTown_House2/map.bin"
     },
     {
-      "id": "LAYOUT_PETALBURG_CITY_GYM",
-      "name": "PetalburgCity_Gym_Layout",
+      "id": "LAYOUT_EVENTFUL_CITY_GYM",
+      "name": "EventfulCity_Gym_Layout",
       "width": 9,
       "height": 112,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PetalburgGym",
-      "border_filepath": "data/layouts/PetalburgCity_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/PetalburgCity_Gym/map.bin"
+      "secondary_tileset": "gTileset_EventfulGym",
+      "border_filepath": "data/layouts/EventfulCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/EventfulCity_Gym/map.bin"
     },
     {
       "id": "LAYOUT_HOUSE_WITH_BED",
@@ -1342,14 +1342,14 @@
       "blockdata_filepath": "data/layouts/GraniteCave_B2F/map.bin"
     },
     {
-      "id": "LAYOUT_PETALBURG_WOODS",
-      "name": "PetalburgWoods_Layout",
+      "id": "LAYOUT_EVENTFUL_WOODS",
+      "name": "EventfulWoods_Layout",
       "width": 48,
       "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/PetalburgWoods/border.bin",
-      "blockdata_filepath": "data/layouts/PetalburgWoods/map.bin"
+      "border_filepath": "data/layouts/EventfulWoods/border.bin",
+      "blockdata_filepath": "data/layouts/EventfulWoods/map.bin"
     },
     {
       "id": "LAYOUT_MT_CHIMNEY",

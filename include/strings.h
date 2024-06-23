@@ -1062,7 +1062,7 @@ extern const u8 gText_PokenavRibbons_RibbonListButtons[];
 extern const u8 gText_PokenavRibbons_RibbonCheckButtons[];
 extern const u8 gText_Number2[];
 
-extern const u8 gText_Petalburg[];
+extern const u8 gText_Eventful[];
 extern const u8 gText_Slateport[];
 extern const u8 gText_Enter2[];
 extern const u8 gText_Info2[];
