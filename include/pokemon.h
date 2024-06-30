@@ -196,7 +196,7 @@ struct PokemonSubstruct3
     u32 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
     u32 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
     u32 artistRibbon:1;   // Given at the Contest Hall by winning a Master Rank contest with at least 800 points, and agreeing to have the Pokémon's portrait placed in the museum after being offered.
-    u32 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
+    u32 effortRibbon:1;   // Given at Kanto's market to Pokémon with maximum EVs.
     u32 marineRibbon:1;   // Never distributed.
     u32 landRibbon:1;     // Never distributed.
     u32 skyRibbon:1;      // Never distributed.

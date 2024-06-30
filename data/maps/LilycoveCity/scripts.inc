@@ -693,7 +693,7 @@ LilycoveCity_Text_MuseumSignPlayersExhibit:
 LilycoveCity_Text_HarborSignUnderConstruction:
 	.string "LILYCOVE CITY HARBOR\p"
 	.string "“The ferry S.S. TIDAL is under\n"
-	.string "construction in SLATEPORT CITY.\p"
+	.string "construction in Kanto.\p"
 	.string "“Service is scheduled to begin\n"
 	.string "shortly.”$"
 

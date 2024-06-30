@@ -363,7 +363,7 @@
 #define MUS_AQUA_MAGMA_HIDEOUT      430 // MUS_AJITO
 #define MUS_SAILING                 431 // MUS_M_BOAT
 #define MUS_MT_PYRE                 432 // MUS_M_DUNGON         // Also used in New Mauville and Shoal Cave.
-#define MUS_SLATEPORT               433 // MUS_FINECITY         // Also used in Cycling Road's entrances.
+#define MUS_KANTO               433 // MUS_FINECITY         // Also used in Cycling Road's entrances.
 #define MUS_MT_PYRE_EXTERIOR        434 // MUS_MACHUPI
 #define MUS_SCHOOL                  435 // MUS_P_SCHOOL
 #define MUS_HALL_OF_FAME            436 // MUS_DENDOU

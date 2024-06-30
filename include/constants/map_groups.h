@@ -5,9 +5,9 @@
 // DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json
 //
 
-// gMapGroup_TownsAndRoutes
+// gMapGroup_MainAreas
 #define MAP_EVENTFUL_CITY       (0 | (0 << 8))
-#define MAP_SLATEPORT_CITY      (1 | (0 << 8))
+#define MAP_KANTO               (1 | (0 << 8))
 #define MAP_MAUVILLE_CITY       (2 | (0 << 8))
 #define MAP_RUSTBORO_CITY       (3 | (0 << 8))
 #define MAP_FORTREE_CITY        (4 | (0 << 8))
@@ -134,21 +134,21 @@
 #define MAP_EVENTFUL_CITY_POKEMON_CENTER_2F (5 | (8 << 8))
 #define MAP_EVENTFUL_CITY_MART              (6 | (8 << 8))
 
-// gMapGroup_IndoorSlateport
-#define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F      (0 | (9 << 8))
-#define MAP_SLATEPORT_CITY_STERNS_SHIPYARD_2F      (1 | (9 << 8))
-#define MAP_SLATEPORT_CITY_BATTLE_TENT_LOBBY       (2 | (9 << 8))
-#define MAP_SLATEPORT_CITY_BATTLE_TENT_CORRIDOR    (3 | (9 << 8))
-#define MAP_SLATEPORT_CITY_BATTLE_TENT_BATTLE_ROOM (4 | (9 << 8))
-#define MAP_SLATEPORT_CITY_NAME_RATERS_HOUSE       (5 | (9 << 8))
-#define MAP_SLATEPORT_CITY_POKEMON_FAN_CLUB        (6 | (9 << 8))
-#define MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_1F       (7 | (9 << 8))
-#define MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_2F       (8 | (9 << 8))
-#define MAP_SLATEPORT_CITY_HARBOR                  (9 | (9 << 8))
-#define MAP_SLATEPORT_CITY_HOUSE                   (10 | (9 << 8))
-#define MAP_SLATEPORT_CITY_POKEMON_CENTER_1F       (11 | (9 << 8))
-#define MAP_SLATEPORT_CITY_POKEMON_CENTER_2F       (12 | (9 << 8))
-#define MAP_SLATEPORT_CITY_MART                    (13 | (9 << 8))
+// gMapGroup_IndoorKanto
+#define MAP_KANTO_STERNS_SHIPYARD_1F      (0 | (9 << 8))
+#define MAP_KANTO_STERNS_SHIPYARD_2F      (1 | (9 << 8))
+#define MAP_KANTO_BATTLE_TENT_LOBBY       (2 | (9 << 8))
+#define MAP_KANTO_BATTLE_TENT_CORRIDOR    (3 | (9 << 8))
+#define MAP_KANTO_BATTLE_TENT_BATTLE_ROOM (4 | (9 << 8))
+#define MAP_KANTO_NAME_RATERS_HOUSE       (5 | (9 << 8))
+#define MAP_KANTO_POKEMON_FAN_CLUB        (6 | (9 << 8))
+#define MAP_KANTO_OCEANIC_MUSEUM_1F       (7 | (9 << 8))
+#define MAP_KANTO_OCEANIC_MUSEUM_2F       (8 | (9 << 8))
+#define MAP_KANTO_HARBOR                  (9 | (9 << 8))
+#define MAP_KANTO_HOUSE                   (10 | (9 << 8))
+#define MAP_KANTO_POKEMON_CENTER_1F       (11 | (9 << 8))
+#define MAP_KANTO_POKEMON_CENTER_2F       (12 | (9 << 8))
+#define MAP_KANTO_MART                    (13 | (9 << 8))
 
 // gMapGroup_IndoorMauville
 #define MAP_MAUVILLE_CITY_GYM               (0 | (10 << 8))

@@ -10,8 +10,8 @@ const u16 gMetatileAttributes_Rustboro[] = INCBIN_U16("data/tilesets/secondary/r
 const u16 gMetatiles_Dewford[] = INCBIN_U16("data/tilesets/secondary/dewford/metatiles.bin");
 const u16 gMetatileAttributes_Dewford[] = INCBIN_U16("data/tilesets/secondary/dewford/metatile_attributes.bin");
 
-const u16 gMetatiles_Slateport[] = INCBIN_U16("data/tilesets/secondary/slateport/metatiles.bin");
-const u16 gMetatileAttributes_Slateport[] = INCBIN_U16("data/tilesets/secondary/slateport/metatile_attributes.bin");
+const u16 gMetatiles_Kanto[] = INCBIN_U16("data/tilesets/secondary/slateport/metatiles.bin");
+const u16 gMetatileAttributes_Kanto[] = INCBIN_U16("data/tilesets/secondary/slateport/metatile_attributes.bin");
 
 const u16 gMetatiles_Mauville[] = INCBIN_U16("data/tilesets/secondary/mauville/metatiles.bin");
 const u16 gMetatileAttributes_Mauville[] = INCBIN_U16("data/tilesets/secondary/mauville/metatile_attributes.bin");

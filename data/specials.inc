@@ -255,7 +255,7 @@ gSpecials::
 	def_special StopMapMusic
 	def_special CallVerdanturfTentFunction
 	def_special CallFallarborTentFunction
-	def_special CallSlateportTentFunction
+	def_special CallKantoTentFunction
 	def_special ChoosePartyForBattleFrontier
 	def_special ValidateEReaderTrainer
 	def_special GetBattleTowerSinglesStreak

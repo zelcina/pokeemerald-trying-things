@@ -258,7 +258,7 @@ static const u16 sNumberOneVarsAndThresholds[][2] = {
 
 static const u8 *const sPokeNewsTextGroup_Upcoming[NUM_POKENEWS_TYPES + 1] = {
     [POKENEWS_NONE]        = NULL,
-    [POKENEWS_SLATEPORT]   = gPokeNewsTextSlateport_Upcoming,
+    [POKENEWS_KANTO]   = gPokeNewsTextKanto_Upcoming,
     [POKENEWS_GAME_CORNER] = gPokeNewsTextGameCorner_Upcoming,
     [POKENEWS_LILYCOVE]    = gPokeNewsTextLilycove_Upcoming,
     [POKENEWS_BLENDMASTER] = gPokeNewsTextBlendMaster_Upcoming
@@ -266,7 +266,7 @@ static const u8 *const sPokeNewsTextGroup_Upcoming[NUM_POKENEWS_TYPES + 1] = {
 
 static const u8 *const sPokeNewsTextGroup_Ongoing[NUM_POKENEWS_TYPES + 1] = {
     [POKENEWS_NONE]        = NULL,
-    [POKENEWS_SLATEPORT]   = gPokeNewsTextSlateport_Ongoing,
+    [POKENEWS_KANTO]   = gPokeNewsTextKanto_Ongoing,
     [POKENEWS_GAME_CORNER] = gPokeNewsTextGameCorner_Ongoing,
     [POKENEWS_LILYCOVE]    = gPokeNewsTextLilycove_Ongoing,
     [POKENEWS_BLENDMASTER] = gPokeNewsTextBlendMaster_Ongoing
@@ -274,7 +274,7 @@ static const u8 *const sPokeNewsTextGroup_Ongoing[NUM_POKENEWS_TYPES + 1] = {
 
 static const u8 *const sPokeNewsTextGroup_Ending[NUM_POKENEWS_TYPES + 1] = {
     [POKENEWS_NONE]        = NULL,
-    [POKENEWS_SLATEPORT]   = gPokeNewsTextSlateport_Ending,
+    [POKENEWS_KANTO]   = gPokeNewsTextKanto_Ending,
     [POKENEWS_GAME_CORNER] = gPokeNewsTextGameCorner_Ending,
     [POKENEWS_LILYCOVE]    = gPokeNewsTextLilycove_Ending,
     [POKENEWS_BLENDMASTER] = gPokeNewsTextBlendMaster_Ending
@@ -1509,7 +1509,7 @@ void TryPutSmartShopperOnAir(void)
                     show->smartshopperShow.itemIds[i] = gMartPurchaseHistory[i].itemId;
                     show->smartshopperShow.itemAmounts[i] = gMartPurchaseHistory[i].quantity;
                 }
-                show->smartshopperShow.priceReduced = IsPokeNewsActive(POKENEWS_SLATEPORT);
+                show->smartshopperShow.priceReduced = IsPokeNewsActive(POKENEWS_KANTO);
                 StringCopy(show->smartshopperShow.playerName, gSaveBlock2Ptr->playerName);
                 StorePlayerIdInRecordMixShow(show);
                 show->smartshopperShow.language = gGameLanguage;
@@ -2642,17 +2642,17 @@ bool8 IsPokeNewsActive(u8 newsKind)
 }
 
 // Returns TRUE if the effects of the given PokeNews should be applied.
-// For POKENEWS_SLATEPORT / POKENEWS_LILYCOVE, only apply the effect if
+// For POKENEWS_KANTO / POKENEWS_LILYCOVE, only apply the effect if
 // the player is talking to the Energy Guru / at the Dept Store Rooftop.
 // For any other type of PokeNews this is always TRUE.
 static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
 {
     switch (newsKind)
     {
-    case POKENEWS_SLATEPORT:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SLATEPORT_CITY)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SLATEPORT_CITY)
-         && gSpecialVar_LastTalked == LOCALID_SLATEPORT_ENERGY_GURU)
+    case POKENEWS_KANTO:
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(KANTO)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(KANTO)
+         && gSpecialVar_LastTalked == LOCALID_KANTO_ENERGY_GURU)
             return TRUE;
         return FALSE;
     case POKENEWS_LILYCOVE:

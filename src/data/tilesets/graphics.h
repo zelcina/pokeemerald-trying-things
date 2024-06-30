@@ -64,9 +64,9 @@ const u16 gTilesetPalettes_Dewford[][16] =
 	INCBIN_U16("data/tilesets/secondary/dewford/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_Slateport[] = INCBIN_U32("data/tilesets/secondary/slateport/tiles.4bpp.lz");
+const u32 gTilesetTiles_Kanto[] = INCBIN_U32("data/tilesets/secondary/slateport/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_Slateport[][16] =
+const u16 gTilesetPalettes_Kanto[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/slateport/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/slateport/palettes/01.gbapal"),

@@ -78,7 +78,7 @@ void Task_HandlePorthole(u8 taskId)
             return;
         if (CountSSTidalStep(1) == TRUE)
         {
-            if (*cruiseState == SS_TIDAL_DEPART_SLATEPORT)
+            if (*cruiseState == SS_TIDAL_DEPART_KANTO)
                 *cruiseState = SS_TIDAL_EXIT_CURRENTS_RIGHT;
             else
                 *cruiseState = SS_TIDAL_EXIT_CURRENTS_LEFT;
@@ -94,7 +94,7 @@ void Task_HandlePorthole(u8 taskId)
             return;
         }
 
-        if (*cruiseState == SS_TIDAL_DEPART_SLATEPORT)
+        if (*cruiseState == SS_TIDAL_DEPART_KANTO)
         {
             ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_PLAYER, location->mapNum, location->mapGroup, sSSTidalSailEastMovementScript);
             data[0] = IDLE_CHECK;
@@ -121,7 +121,7 @@ static void ShowSSTidalWhileSailing(void)
 
     gSprites[spriteId].coordOffsetEnabled = FALSE;
 
-    if (VarGet(VAR_SS_TIDAL_STATE) == SS_TIDAL_DEPART_SLATEPORT)
+    if (VarGet(VAR_SS_TIDAL_STATE) == SS_TIDAL_DEPART_KANTO)
         StartSpriteAnim(&gSprites[spriteId], GetFaceDirectionAnimNum(DIR_EAST));
     else
         StartSpriteAnim(&gSprites[spriteId], GetFaceDirectionAnimNum(DIR_WEST));

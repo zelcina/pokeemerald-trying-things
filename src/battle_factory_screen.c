@@ -188,7 +188,7 @@ static void Select_Task_OpenChosenMonPics(u8);
 static void Select_Task_HandleChooseMons(u8);
 static void Select_Task_HandleMenu(u8);
 static void CreateFrontierFactorySelectableMons(u8);
-static void CreateSlateportTentSelectableMons(u8);
+static void CreateKantoTentSelectableMons(u8);
 static void Select_SetBallSpritePaletteNum(u8);
 static void Select_ErasePopupMenu(u8);
 static u8 Select_RunMenuOptionFunc(void);
@@ -1303,7 +1303,7 @@ static void Select_InitMonsData(void)
     if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_TENT)
         CreateFrontierFactorySelectableMons(0);
     else
-        CreateSlateportTentSelectableMons(0);
+        CreateKantoTentSelectableMons(0);
 }
 
 static void Select_InitAllSprites(void)
@@ -1777,7 +1777,7 @@ static void CreateFrontierFactorySelectableMons(u8 firstMonId)
     }
 }
 
-static void CreateSlateportTentSelectableMons(u8 firstMonId)
+static void CreateKantoTentSelectableMons(u8 firstMonId)
 {
     u8 i, j;
     u8 ivs = 0;
@@ -1785,7 +1785,7 @@ static void CreateSlateportTentSelectableMons(u8 firstMonId)
     u8 friendship = 0;
     u32 otId = 0;
 
-    gFacilityTrainerMons = gSlateportBattleTentMons;
+    gFacilityTrainerMons = gKantoBattleTentMons;
     otId = T1_READ_32(gSaveBlock2Ptr->playerTrainerId);
 
     for (i = 0; i < SELECTABLE_MONS_COUNT; i++)

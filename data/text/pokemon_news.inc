@@ -1,8 +1,8 @@
 
-gPokeNewsTextSlateport_Upcoming::
+gPokeNewsTextKanto_Upcoming::
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
-	.string "SLATEPORT's most popular kind of guy,\n"
+	.string "Kanto's most popular kind of guy,\n"
 	.string "the ENERGY GURU, is in the news again!\p"
 	.string "He promises to, “Stupendously go for\n"
 	.string "it in just this many days: {STR_VAR_1}!”\p"
@@ -10,36 +10,36 @@ gPokeNewsTextSlateport_Upcoming::
 	.string "he will stupendously go for, the\l"
 	.string "ENERGY GURU advised, “Save up your\l"
 	.string "money. That'll be good…”\p"
-	.string "It sounds like a trip to SLATEPORT\n"
+	.string "It sounds like a trip to Kanto\n"
 	.string "would be well worth your while that day.\p"
 	.string "That's the news on POKéMON NEWS.$"
 
-gPokeNewsTextSlateport_Ongoing::
+gPokeNewsTextKanto_Ongoing::
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "This is the news you've all been\n"
 	.string "waiting for!\p"
-	.string "SLATEPORT'S ENERGY GURU is going\n"
+	.string "Kanto'S ENERGY GURU is going\n"
 	.string "for it stupendously in the MARKET!\p"
 	.string "He promises unbeatable bargain\n"
 	.string "prices on CALCIUM and PROTEIN!\p"
-	.string "A trip to SLATEPORT CITY sounds\n"
+	.string "A trip to Kanto sounds\n"
 	.string "worthwhile. Why not visit and shop\l"
 	.string "to your heart's content?\p"
 	.string "That's the news on POKéMON NEWS.$"
 
-gPokeNewsTextSlateport_Ending::
+gPokeNewsTextKanto_Ending::
 	.string "Greetings!\n"
 	.string "It's time for POKéMON NEWS.\p"
 	.string "This is the news you've all been\n"
 	.string "waiting for!\p"
-	.string "SLATEPORT'S ENERGY GURU is going\n"
+	.string "Kanto'S ENERGY GURU is going\n"
 	.string "for it stupendously in the MARKET!\p"
 	.string "He promises unbeatable bargain\n"
 	.string "prices on CALCIUM and PROTEIN!\p"
 	.string "According to the ENERGY GURU, he\n"
 	.string "still has ample merchandise left.\p"
-	.string "Why not visit SLATEPORT CITY for\n"
+	.string "Why not visit Kanto for\n"
 	.string "a most enjoyable shopping trip?\p"
 	.string "That's the news on POKéMON NEWS.$"
 

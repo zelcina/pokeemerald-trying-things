@@ -10,7 +10,7 @@ void InitTilesetAnim_General(void);
 void InitTilesetAnim_Eventful(void);
 void InitTilesetAnim_Rustboro(void);
 void InitTilesetAnim_Dewford(void);
-void InitTilesetAnim_Slateport(void);
+void InitTilesetAnim_Kanto(void);
 void InitTilesetAnim_Mauville(void);
 void InitTilesetAnim_Lavaridge(void);
 void InitTilesetAnim_Fallarbor(void);

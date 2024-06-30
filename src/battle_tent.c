@@ -35,12 +35,12 @@ static void SaveFallarborTentChallenge(void);
 static void SetRandomFallarborTentPrize(void);
 static void GiveFallarborTentPrize(void);
 static void BufferFallarborTentTrainerName(void);
-static void InitSlateportTentChallenge(void);
-static void GetSlateportTentPrize(void);
-static void SetSlateportTentPrize(void);
-static void SaveSlateportTentChallenge(void);
-static void SetRandomSlateportTentPrize(void);
-static void GiveSlateportTentPrize(void);
+static void InitKantoTentChallenge(void);
+static void GetKantoTentPrize(void);
+static void SetKantoTentPrize(void);
+static void SaveKantoTentChallenge(void);
+static void SetRandomKantoTentPrize(void);
+static void GiveKantoTentPrize(void);
 static void SelectInitialRentalMons(void);
 static void SwapRentalMons(void);
 static void GenerateOpponentMons(void);
@@ -52,7 +52,7 @@ static void GenerateInitialRentalMons(void);
  *
  * Verdanturf Battle Tent: Battle Palace
  * Fallarbor Battle Tent:  Battle Arena
- * Slateport Battle Tent:  Battle Factory
+ * Kanto Battle Tent:  Battle Factory
  *
  */
 
@@ -85,21 +85,21 @@ void static (*const sFallarborTentFuncs[])(void) =
 
 static const u16 sFallarborTentRewards[] = {ITEM_HYPER_POTION};
 
-void static (*const sSlateportTentFuncs[])(void) =
+void static (*const sKantoTentFuncs[])(void) =
 {
-    [SLATEPORT_TENT_FUNC_INIT]                   = InitSlateportTentChallenge,
-    [SLATEPORT_TENT_FUNC_GET_PRIZE]              = GetSlateportTentPrize,
-    [SLATEPORT_TENT_FUNC_SET_PRIZE]              = SetSlateportTentPrize,
-    [SLATEPORT_TENT_FUNC_SAVE]                   = SaveSlateportTentChallenge,
-    [SLATEPORT_TENT_FUNC_SET_RANDOM_PRIZE]       = SetRandomSlateportTentPrize,
-    [SLATEPORT_TENT_FUNC_GIVE_PRIZE]             = GiveSlateportTentPrize,
-    [SLATEPORT_TENT_FUNC_SELECT_RENT_MONS]       = SelectInitialRentalMons,
-    [SLATEPORT_TENT_FUNC_SWAP_RENT_MONS]         = SwapRentalMons,
-    [SLATEPORT_TENT_FUNC_GENERATE_OPPONENT_MONS] = GenerateOpponentMons,
-    [SLATEPORT_TENT_FUNC_GENERATE_RENTAL_MONS]   = GenerateInitialRentalMons
+    [KANTO_TENT_FUNC_INIT]                   = InitKantoTentChallenge,
+    [KANTO_TENT_FUNC_GET_PRIZE]              = GetKantoTentPrize,
+    [KANTO_TENT_FUNC_SET_PRIZE]              = SetKantoTentPrize,
+    [KANTO_TENT_FUNC_SAVE]                   = SaveKantoTentChallenge,
+    [KANTO_TENT_FUNC_SET_RANDOM_PRIZE]       = SetRandomKantoTentPrize,
+    [KANTO_TENT_FUNC_GIVE_PRIZE]             = GiveKantoTentPrize,
+    [KANTO_TENT_FUNC_SELECT_RENT_MONS]       = SelectInitialRentalMons,
+    [KANTO_TENT_FUNC_SWAP_RENT_MONS]         = SwapRentalMons,
+    [KANTO_TENT_FUNC_GENERATE_OPPONENT_MONS] = GenerateOpponentMons,
+    [KANTO_TENT_FUNC_GENERATE_RENTAL_MONS]   = GenerateInitialRentalMons
 };
 
-static const u16 sSlateportTentRewards[] = {ITEM_FULL_HEAL};
+static const u16 sKantoTentRewards[] = {ITEM_FULL_HEAL};
 
 // code
 void CallVerdanturfTentFunction(void)
@@ -219,12 +219,12 @@ static void BufferFallarborTentTrainerName(void)
     GetFrontierTrainerName(gStringVar1, gTrainerBattleOpponent_A);
 }
 
-void CallSlateportTentFunction(void)
+void CallKantoTentFunction(void)
 {
-    sSlateportTentFuncs[gSpecialVar_0x8004]();
+    sKantoTentFuncs[gSpecialVar_0x8004]();
 }
 
-static void InitSlateportTentChallenge(void)
+static void InitKantoTentChallenge(void)
 {
     gSaveBlock2Ptr->frontier.challengeStatus = 0;
     gSaveBlock2Ptr->frontier.curChallengeBattleNum = 0;
@@ -232,17 +232,17 @@ static void InitSlateportTentChallenge(void)
     SetDynamicWarp(0, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, WARP_ID_NONE);
 }
 
-static void GetSlateportTentPrize(void)
+static void GetKantoTentPrize(void)
 {
     gSpecialVar_Result = gSaveBlock2Ptr->frontier.slateportTentPrize;
 }
 
-static void SetSlateportTentPrize(void)
+static void SetKantoTentPrize(void)
 {
     gSaveBlock2Ptr->frontier.slateportTentPrize = gSpecialVar_0x8006;
 }
 
-static void SaveSlateportTentChallenge(void)
+static void SaveKantoTentChallenge(void)
 {
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
     VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
@@ -250,12 +250,12 @@ static void SaveSlateportTentChallenge(void)
     SaveGameFrontier();
 }
 
-static void SetRandomSlateportTentPrize(void)
+static void SetRandomKantoTentPrize(void)
 {
-    gSaveBlock2Ptr->frontier.slateportTentPrize = sSlateportTentRewards[Random() % ARRAY_COUNT(sSlateportTentRewards)];
+    gSaveBlock2Ptr->frontier.slateportTentPrize = sKantoTentRewards[Random() % ARRAY_COUNT(sKantoTentRewards)];
 }
 
-static void GiveSlateportTentPrize(void)
+static void GiveKantoTentPrize(void)
 {
     if (AddBagItem(gSaveBlock2Ptr->frontier.slateportTentPrize, 1) == TRUE)
     {
@@ -280,9 +280,9 @@ static void SwapRentalMons(void)
     DoBattleFactorySwapScreen();
 }
 
-bool8 InSlateportBattleTent(void)
+bool8 InKantoBattleTent(void)
 {
-    return gMapHeader.regionMapSectionId == MAPSEC_SLATEPORT_CITY
+    return gMapHeader.regionMapSectionId == MAPSEC_KANTO
            && (gMapHeader.mapLayoutId == LAYOUT_BATTLE_TENT_CORRIDOR || gMapHeader.mapLayoutId == LAYOUT_BATTLE_TENT_BATTLE_ROOM);
 }
 
@@ -297,20 +297,20 @@ static void GenerateInitialRentalMons(void)
     u16 heldItems[PARTY_SIZE];
 
     firstMonId = 0;
-    gFacilityTrainers = gSlateportBattleTentTrainers;
+    gFacilityTrainers = gKantoBattleTentTrainers;
     for (i = 0; i < PARTY_SIZE; i++)
     {
         species[i] = 0;
         monIds[i] = 0;
         heldItems[i] = 0;
     }
-    gFacilityTrainerMons = gSlateportBattleTentMons;
+    gFacilityTrainerMons = gKantoBattleTentMons;
     currSpecies = SPECIES_NONE;
     i = 0;
     while (i != PARTY_SIZE)
     {
         // Cannot have two Pokémon of the same species.
-        monSetId = Random() % NUM_SLATEPORT_TENT_MONS;
+        monSetId = Random() % NUM_KANTO_TENT_MONS;
         for (j = firstMonId; j < firstMonId + i; j++)
         {
             if (monIds[j] == monSetId)
@@ -356,8 +356,8 @@ static void GenerateOpponentMons(void)
     u16 heldItems[FRONTIER_PARTY_SIZE];
     s32 numMons = 0;
 
-    gFacilityTrainers = gSlateportBattleTentTrainers;
-    gFacilityTrainerMons = gSlateportBattleTentMons;
+    gFacilityTrainers = gKantoBattleTentTrainers;
+    gFacilityTrainerMons = gKantoBattleTentMons;
 
     while (1)
     {

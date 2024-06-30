@@ -96,8 +96,8 @@ Route110_EventScript_Boy2::
 	msgbox Route110_Text_WhichShouldIChoose, MSGBOX_NPC
 	end
 
-Route110_EventScript_SlateportCitySign::
-	msgbox Route110_Text_SlateportCitySign, MSGBOX_SIGN
+Route110_EventScript_KantoSign::
+	msgbox Route110_Text_KantoSign, MSGBOX_SIGN
 	end
 
 Route110_EventScript_CyclingRoadSign::
@@ -748,7 +748,7 @@ Route110_Text_WeCantTalkAboutAquaActivities:
 	.string "We can't talk about them yet.$"
 
 Route110_Text_KickUpARuckus:
-	.string "I want to get going to SLATEPORT and\n"
+	.string "I want to get going to Kanto and\n"
 	.string "kick up a ruckus!$"
 
 Route110_Text_MyFirstJobInAqua:
@@ -897,7 +897,7 @@ Route110_Text_ChallengeReactionWorst:
 Route110_Text_RatedForNumberOfCollisions:
 	.string "This is CYCLING ROAD.\p"
 	.string "If you were to ride from MAUVILLE to\n"
-	.string "SLATEPORT on a MACH BIKE, you would\l"
+	.string "Kanto on a MACH BIKE, you would\l"
 	.string "be rated for the number of collisions\l"
 	.string "and your total time.$"
 
@@ -913,9 +913,9 @@ Route110_Text_AcroBikesDoNotQualify:
 	.string "ACRO BIKES do not qualify for rating.\n"
 	.string "They are easy to turn, so it's not fair.$"
 
-Route110_Text_SlateportCitySign:
+Route110_Text_KantoSign:
 	.string "ROUTE 110\n"
-	.string "{DOWN_ARROW} SLATEPORT CITY$"
+	.string "{DOWN_ARROW} Kanto$"
 
 Route110_Text_CyclingRoadSign:
 	.string "SEASIDE CYCLING ROAD$"

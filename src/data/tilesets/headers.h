@@ -42,15 +42,15 @@ const struct Tileset gTileset_Dewford =
     .callback = InitTilesetAnim_Dewford,
 };
 
-const struct Tileset gTileset_Slateport =
+const struct Tileset gTileset_Kanto =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Slateport,
-    .palettes = gTilesetPalettes_Slateport,
-    .metatiles = gMetatiles_Slateport,
-    .metatileAttributes = gMetatileAttributes_Slateport,
-    .callback = InitTilesetAnim_Slateport,
+    .tiles = gTilesetTiles_Kanto,
+    .palettes = gTilesetPalettes_Kanto,
+    .metatiles = gMetatiles_Kanto,
+    .metatileAttributes = gMetatileAttributes_Kanto,
+    .callback = InitTilesetAnim_Kanto,
 };
 
 const struct Tileset gTileset_Mauville =

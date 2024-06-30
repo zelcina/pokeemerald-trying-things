@@ -27,7 +27,7 @@ DewfordTown_EventScript_Briney::
 	multichoicedefault 21, 6, MULTI_BRINEY_ON_DEWFORD, 2, FALSE
 	switch VAR_RESULT
 	case 0, DewfordTown_EventScript_ChooseEventful
-	case 1, DewfordTown_EventScript_ChooseSlateport
+	case 1, DewfordTown_EventScript_ChooseKanto
 	case 2, DewfordTown_EventScript_CancelSailSelect
 	case MULTI_B_PRESSED, DewfordTown_EventScript_CancelSailSelect
 	end
@@ -39,10 +39,10 @@ DewfordTown_EventScript_ChooseEventful::
 	release
 	end
 
-DewfordTown_EventScript_ChooseSlateport::
-	msgbox DewfordTown_Text_SlateportWereSettingSail, MSGBOX_DEFAULT
+DewfordTown_EventScript_ChooseKanto::
+	msgbox DewfordTown_Text_KantoWereSettingSail, MSGBOX_DEFAULT
 	closemessage
-	goto DewfordTown_EventScript_SailToSlateport
+	goto DewfordTown_EventScript_SailToKanto
 	release
 	end
 
@@ -154,7 +154,7 @@ DewfordTown_EventScript_SailToEventful::
 	release
 	end
 
-DewfordTown_EventScript_SailToSlateport::
+DewfordTown_EventScript_SailToKanto::
 	call EventScript_BackupMrBrineyLocation
 	setobjectsubpriority LOCALID_BRINEY_DEWFORD, MAP_DEWFORD_TOWN, 0
 	setobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN, 1
@@ -165,12 +165,12 @@ DewfordTown_EventScript_SailToSlateport::
 	waitmovement 0
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
 	call Common_EventScript_PlayBrineysBoatMusic
-	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToSlateport
-	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToSlateport
+	applymovement LOCALID_BOAT_DEWFORD, DewfordTown_Movement_SailToKanto
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_SailToKanto
 	waitmovement 0
 	call Common_EventScript_StopBrineysBoatMusic
 	showobjectat OBJ_EVENT_ID_PLAYER, MAP_ROUTE109
-	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_ExitBoatSlateport
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Movement_ExitBoatKanto
 	waitmovement 0
 	setobjectxyperm LOCALID_BRINEY_R109, 21, 26
 	addobject LOCALID_BRINEY_R109
@@ -182,8 +182,8 @@ DewfordTown_EventScript_SailToSlateport::
 	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
 	hideobjectat LOCALID_BOAT_DEWFORD, MAP_DEWFORD_TOWN
-	call_if_unset FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateportDeliverGoods
-	call_if_set FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedSlateport
+	call_if_unset FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedKantoDeliverGoods
+	call_if_set FLAG_DELIVERED_DEVON_GOODS, DewfordTown_EventScript_LandedKanto
 	closemessage
 	copyvar VAR_BRINEY_LOCATION, VAR_0x8008
 	resetobjectsubpriority OBJ_EVENT_ID_PLAYER, MAP_DEWFORD_TOWN
@@ -192,12 +192,12 @@ DewfordTown_EventScript_SailToSlateport::
 	release
 	end
 
-DewfordTown_EventScript_LandedSlateportDeliverGoods::
-	msgbox DewfordTown_Text_BrineyLandedInSlateportDeliverGoods, MSGBOX_DEFAULT
+DewfordTown_EventScript_LandedKantoDeliverGoods::
+	msgbox DewfordTown_Text_BrineyLandedInKantoDeliverGoods, MSGBOX_DEFAULT
 	return
 
-DewfordTown_EventScript_LandedSlateport::
-	msgbox DewfordTown_Text_BrineyLandedInSlateport, MSGBOX_DEFAULT
+DewfordTown_EventScript_LandedKanto::
+	msgbox DewfordTown_Text_BrineyLandedInKanto, MSGBOX_DEFAULT
 	return
 
 DewfordTown_Movement_SailToEventful:
@@ -397,7 +397,7 @@ DewfordTown_Movement_SailToEventful:
 	walk_up
 	step_end
 
-DewfordTown_Movement_SailToSlateport:
+DewfordTown_Movement_SailToKanto:
 	walk_right
 	walk_fast_right
 	walk_fast_right
@@ -582,7 +582,7 @@ DewfordTown_Movement_ExitBoatEventful:
 	walk_up
 	step_end
 
-DewfordTown_Movement_ExitBoatSlateport:
+DewfordTown_Movement_ExitBoatKanto:
 	walk_up
 	walk_up
 	walk_up
@@ -694,8 +694,8 @@ DewfordTown_Text_EventfulWereSettingSail:
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 
-DewfordTown_Text_SlateportWereSettingSail:
-	.string "MR. BRINEY: SLATEPORT, is it?\p"
+DewfordTown_Text_KantoWereSettingSail:
+	.string "MR. BRINEY: Kanto, is it?\p"
 	.string "Anchors aweigh!\n"
 	.string "PEEKO, we're setting sail, my darling!$"
 

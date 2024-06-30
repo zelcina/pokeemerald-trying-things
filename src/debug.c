@@ -1276,7 +1276,7 @@ static u8 Debug_CheckToggleFlags(u8 id)
                 FlagGet(FLAG_VISITED_VERDANTURF_TOWN) &&
                 FlagGet(FLAG_VISITED_PACIFIDLOG_TOWN) &&
                 FlagGet(FLAG_VISITED_EVENTFUL_CITY) &&
-                FlagGet(FLAG_VISITED_SLATEPORT_CITY) &&
+                FlagGet(FLAG_VISITED_KANTO) &&
                 FlagGet(FLAG_VISITED_MAUVILLE_CITY) &&
                 FlagGet(FLAG_VISITED_RUSTBORO_CITY) &&
                 FlagGet(FLAG_VISITED_FORTREE_CITY) &&
@@ -2777,7 +2777,7 @@ static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
         FlagClear(FLAG_VISITED_VERDANTURF_TOWN);
         FlagClear(FLAG_VISITED_PACIFIDLOG_TOWN);
         FlagClear(FLAG_VISITED_EVENTFUL_CITY);
-        FlagClear(FLAG_VISITED_SLATEPORT_CITY);
+        FlagClear(FLAG_VISITED_KANTO);
         FlagClear(FLAG_VISITED_MAUVILLE_CITY);
         FlagClear(FLAG_VISITED_RUSTBORO_CITY);
         FlagClear(FLAG_VISITED_FORTREE_CITY);
@@ -2799,7 +2799,7 @@ static void DebugAction_FlagsVars_ToggleFlyFlags(u8 taskId)
         FlagSet(FLAG_VISITED_VERDANTURF_TOWN);
         FlagSet(FLAG_VISITED_PACIFIDLOG_TOWN);
         FlagSet(FLAG_VISITED_EVENTFUL_CITY);
-        FlagSet(FLAG_VISITED_SLATEPORT_CITY);
+        FlagSet(FLAG_VISITED_KANTO);
         FlagSet(FLAG_VISITED_MAUVILLE_CITY);
         FlagSet(FLAG_VISITED_RUSTBORO_CITY);
         FlagSet(FLAG_VISITED_FORTREE_CITY);
@@ -4486,7 +4486,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_AQUA_MAGMA_HIDEOUT) \
     X(MUS_SAILING) \
     X(MUS_MT_PYRE) \
-    X(MUS_SLATEPORT) \
+    X(MUS_KANTO) \
     X(MUS_MT_PYRE_EXTERIOR) \
     X(MUS_SCHOOL) \
     X(MUS_HALL_OF_FAME) \

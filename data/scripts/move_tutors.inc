@@ -1,4 +1,4 @@
-SlateportCity_PokemonFanClub_EventScript_SwaggerTutor::
+Kanto_PokemonFanClub_EventScript_SwaggerTutor::
 	lock
 	faceplayer
 	goto_if_set FLAG_MOVE_TUTOR_TAUGHT_SWAGGER, MoveTutor_EventScript_SwaggerTaught

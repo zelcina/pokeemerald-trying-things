@@ -60,11 +60,11 @@
 #define MULTI_GAME_CORNER_COINS            49
 #define MULTI_HOWS_FISHING                 50
 #define MULTI_UNUSED_51                    51
-#define MULTI_SSTIDAL_SLATEPORT_WITH_BF    52
+#define MULTI_SSTIDAL_KANTO_WITH_BF    52
 #define MULTI_SSTIDAL_BATTLE_FRONTIER      53
 #define MULTI_RIGHTLEFT                    54
 #define MULTI_GAME_CORNER_TMS              55
-#define MULTI_SSTIDAL_SLATEPORT_NO_BF      56
+#define MULTI_SSTIDAL_KANTO_NO_BF      56
 #define MULTI_FLOORS                       57
 #define MULTI_SHARDS_R                     58
 #define MULTI_SHARDS_Y                     59
@@ -119,13 +119,13 @@
 #define MULTI_TV_LATI                      108
 #define MULTI_BATTLE_TOWER_FEELINGS        109
 #define MULTI_WHERES_RAYQUAZA              110
-#define MULTI_SLATEPORT_TENT_RULES         111
+#define MULTI_KANTO_TENT_RULES         111
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
 #define MULTI_BERRY_PLOT                   114
 
 // Lilycove SS Tidal Multichoice Selections
-#define SSTIDAL_SELECTION_SLATEPORT        0
+#define SSTIDAL_SELECTION_KANTO        0
 #define SSTIDAL_SELECTION_BATTLE_FRONTIER  1
 #define SSTIDAL_SELECTION_SOUTHERN_ISLAND  2
 #define SSTIDAL_SELECTION_NAVEL_ROCK       3

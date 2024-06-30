@@ -105,7 +105,7 @@
 #define VAR_VERDANTURF_TOWN_STATE                        0x4055 // Unused Var
 #define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
 #define VAR_EVENTFUL_CITY_STATE                         0x4057
-#define VAR_SLATEPORT_CITY_STATE                         0x4058
+#define VAR_KANTO_STATE                         0x4058
 #define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
 #define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
@@ -177,7 +177,7 @@
 #define VAR_UNUSED_0x409D                                0x409D // Unused Var
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
-#define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
+#define VAR_KANTO_HARBOR_STATE                       0x40A0
 #define VAR_UNUSED_0x40A1                                0x40A1 // Unused var
 #define VAR_SEAFLOOR_CAVERN_STATE                        0x40A2
 #define VAR_CABLE_CAR_STATION_STATE                      0x40A3
@@ -187,7 +187,7 @@
 #define VAR_TRICK_HOUSE_ENTRANCE_STATE                   0x40A7
 #define VAR_UNUSED_0x40A8                                0x40A8 // Unused Var
 #define VAR_CYCLING_CHALLENGE_STATE                      0x40A9
-#define VAR_SLATEPORT_MUSEUM_1F_STATE                    0x40AA
+#define VAR_KANTO_MUSEUM_1F_STATE                    0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE                   0x40AB
 #define VAR_TRICK_HOUSE_PUZZLE_2_STATE                   0x40AC
 #define VAR_TRICK_HOUSE_PUZZLE_3_STATE                   0x40AD
@@ -200,7 +200,7 @@
 #define VAR_SS_TIDAL_STATE                               0x40B4
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40B5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40B6 // Leftover from RS, never set
-#define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40B7
+#define VAR_KANTO_FAN_CLUB_STATE                     0x40B7
 #define VAR_UNUSED_0x40B8                                0x40B8 // Unused Var
 #define VAR_MT_PYRE_STATE                                0x40B9
 #define VAR_NEW_MAUVILLE_STATE                           0x40BA
@@ -227,7 +227,7 @@
 #define VAR_FRONTIER_FACILITY                            0x40CF
 #define VAR_HAS_ENTERED_BATTLE_FRONTIER                  0x40D0 // Var is used like a flag.
 #define VAR_SCOTT_STATE                                  0x40D1
-#define VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE               0x40D2
+#define VAR_KANTO_OUTSIDE_MUSEUM_STATE               0x40D2
 #define VAR_DEX_UPGRADE_JOHTO_STARTER_STATE              0x40D3
 #define VAR_SS_TIDAL_SCOTT_STATE                         0x40D4 // Always equal to FLAG_MET_SCOTT_ON_SS_TIDAL
 #define VAR_ROAMER_POKEMON                               0x40D5 // 0 = Latias, 1 = Latios

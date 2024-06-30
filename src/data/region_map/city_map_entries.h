@@ -41,14 +41,14 @@ static const struct CityMapEntry sPokenavCityMaps[NUM_CITY_MAPS] =
         .tilemap = gPokenavCityMap_Eventful_0,
     },
     {
-        .mapSecId = MAPSEC_SLATEPORT_CITY,
+        .mapSecId = MAPSEC_KANTO,
         .index = 0,
-        .tilemap = gPokenavCityMap_Slateport_0,
+        .tilemap = gPokenavCityMap_Kanto_0,
     },
     {
-        .mapSecId = MAPSEC_SLATEPORT_CITY,
+        .mapSecId = MAPSEC_KANTO,
         .index = 1,
-        .tilemap = gPokenavCityMap_Slateport_1,
+        .tilemap = gPokenavCityMap_Kanto_1,
     },
     {
         .mapSecId = MAPSEC_MAUVILLE_CITY,

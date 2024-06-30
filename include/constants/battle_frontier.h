@@ -10,7 +10,7 @@
 #define FRONTIER_FACILITY_DOME     1
 #define FRONTIER_FACILITY_PALACE   2  // also Verdanturf Tent
 #define FRONTIER_FACILITY_ARENA    3  // also Fallarbor Tent
-#define FRONTIER_FACILITY_FACTORY  4  // also Slateport Tent
+#define FRONTIER_FACILITY_FACTORY  4  // also Kanto Tent
 #define FRONTIER_FACILITY_PIKE     5
 #define FRONTIER_FACILITY_PYRAMID  6
 #define NUM_FRONTIER_FACILITIES    7

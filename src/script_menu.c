@@ -800,7 +800,7 @@ static void CreateLilycoveSSTidalMultichoice(void)
 
     if (gSpecialVar_0x8004 == 0)
     {
-        sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_SLATEPORT;
+        sLilycoveSSTidalSelections[selectionCount] = SSTIDAL_SELECTION_KANTO;
         selectionCount++;
 
         if (FlagGet(FLAG_MET_SCOTT_ON_SS_TIDAL) == TRUE)

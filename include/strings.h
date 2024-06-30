@@ -752,7 +752,7 @@ extern const u8 gText_IcePunch48BP[];
 extern const u8 gText_ThunderPunch48BP[];
 extern const u8 gText_FirePunch48BP[];
 
-extern const u8 gText_SlateportCity[];
+extern const u8 gText_Kanto[];
 extern const u8 gText_BattleFrontier[];
 extern const u8 gText_SouthernIsland[];
 extern const u8 gText_NavelRock[];
@@ -1063,7 +1063,7 @@ extern const u8 gText_PokenavRibbons_RibbonCheckButtons[];
 extern const u8 gText_Number2[];
 
 extern const u8 gText_Eventful[];
-extern const u8 gText_Slateport[];
+extern const u8 gText_Kanto[];
 extern const u8 gText_Enter2[];
 extern const u8 gText_Info2[];
 extern const u8 gText_WhatsAContest[];

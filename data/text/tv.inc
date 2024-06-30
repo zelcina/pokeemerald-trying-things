@@ -269,7 +269,7 @@ BravoTrainerBattleTower_Text_Outro::
 	.string "That's all the time we have!\n"
 	.string "Until next time, see you!$"
 
-SlateportCity_PokemonFanClub_Text_InterviewRequestHasName:
+Kanto_PokemonFanClub_Text_InterviewRequestHasName:
 	.string "Wow!\p"
 	.string "It's plain to see that you lavish your\n"
 	.string "love on your {STR_VAR_1}.\p"
@@ -280,36 +280,36 @@ SlateportCity_PokemonFanClub_Text_InterviewRequestHasName:
 	.string "Would you be willing to answer a few\n"
 	.string "simple questions for me?$"
 
-SlateportCity_PokemonFanClub_Text_HereGoesQuickAnswers:
+Kanto_PokemonFanClub_Text_HereGoesQuickAnswers:
 	.string "Great! Thank you!\p"
 	.string "Okay, here goes.\n"
 	.string "I just need quick answers, okay?$"
 
-SlateportCity_PokemonFanClub_Text_DescribeFeelingsFirstMetMon:
+Kanto_PokemonFanClub_Text_DescribeFeelingsFirstMetMon:
 	.string "When you first met {STR_VAR_1},\n"
 	.string "what did you feel?\p"
 	.string "How would you describe your feelings\n"
 	.string "at the time?$"
 
-SlateportCity_PokemonFanClub_Text_LikenMonToSomethingYouLike:
+Kanto_PokemonFanClub_Text_LikenMonToSomethingYouLike:
 	.string "Your {STR_VAR_1} is cared for lovingly.\p"
 	.string "If you were to liken it to something\n"
 	.string "that you like, what would it be?$"
 
-SlateportCity_PokemonFanClub_Text_WhatAttractedYouAboutMon:
+Kanto_PokemonFanClub_Text_WhatAttractedYouAboutMon:
 	.string "This question also relates to your\n"
 	.string "beloved {STR_VAR_1}.\p"
 	.string "What was it about {STR_VAR_1} that\n"
 	.string "attracted you?$"
 
-SlateportCity_PokemonFanClub_Text_WhatDoPokemonMeanToYou:
+Kanto_PokemonFanClub_Text_WhatDoPokemonMeanToYou:
 	.string "Okay, that makes sense.\p"
 	.string "The next question might be a little\n"
 	.string "on the tough side.\p"
 	.string "Here goes…\p"
 	.string "What do POKéMON mean to you?$"
 
-SlateportCity_PokemonFanClub_Text_ThatsAllForInterview:
+Kanto_PokemonFanClub_Text_ThatsAllForInterview:
 	.string "I see!\p"
 	.string "Hmhm…\p"
 	.string "Okay!\n"
@@ -321,16 +321,16 @@ SlateportCity_PokemonFanClub_Text_ThatsAllForInterview:
 	.string "Okay, that's all.\n"
 	.string "Bye-bye!$"
 
-SlateportCity_PokemonFanClub_Text_HereIfYouGetUrgeToTellMe:
+Kanto_PokemonFanClub_Text_HereIfYouGetUrgeToTellMe:
 	.string "Oh, okay…\p"
 	.string "Well, if you get the urge to tell me\n"
 	.string "about POKéMON, I'll be here!$"
 
-SlateportCity_PokemonFanClub_Text_EnjoyDoingInterviews:
+Kanto_PokemonFanClub_Text_EnjoyDoingInterviews:
 	.string "I enjoy this job--you get to learn\n"
 	.string "about POKéMON by doing interviews.$"
 
-SlateportCity_PokemonFanClub_Text_InterviewRequest:
+Kanto_PokemonFanClub_Text_InterviewRequest:
 	.string "Hi, you seem to be very close to your\n"
 	.string "{STR_VAR_1}.\p"
 	.string "Do you know what?\n"
@@ -340,12 +340,12 @@ SlateportCity_PokemonFanClub_Text_InterviewRequest:
 	.string "I'm wondering if you'd be willing to tell\n"
 	.string "me a little about your {STR_VAR_1}?$"
 
-SlateportCity_PokemonFanClub_Text_TellMeAnythingAboutYourMon:
+Kanto_PokemonFanClub_Text_TellMeAnythingAboutYourMon:
 	.string "Wow, thank you!\p"
 	.string "Okay, then, please tell me anything\n"
 	.string "you'd like about your {STR_VAR_1}.$"
 
-SlateportCity_PokemonFanClub_Text_ThatsAllForInterview2:
+Kanto_PokemonFanClub_Text_ThatsAllForInterview2:
 	.string "Wow…\n"
 	.string "That's an interesting account.\p"
 	.string "You really are tight with {STR_VAR_1},\n"
@@ -479,7 +479,7 @@ gTVFanClubText07::
 	.string "A-whoops, will you look at the time?\n"
 	.string "Time to say good-bye until next time!$"
 
-SlateportCity_OceanicMuseum_1F_Text_InterviewRequest:
+Kanto_OceanicMuseum_1F_Text_InterviewRequest:
 	.string "Oh?\n"
 	.string "Do you perhaps like POKéMON?\p"
 	.string "I'm on assignment with the TV network.\p"
@@ -488,32 +488,32 @@ SlateportCity_OceanicMuseum_1F_Text_InterviewRequest:
 	.string "If you don't mind, could you tell me\n"
 	.string "something about yourself?$"
 
-SlateportCity_OceanicMuseum_1F_Text_InterviewRequestShort:
+Kanto_OceanicMuseum_1F_Text_InterviewRequestShort:
 	.string "I'm gathering stories on POKéMON and\n"
 	.string "TRAINERS that occurred recently.\p"
 	.string "If you don't mind, could you tell me\n"
 	.string "something about yourself?$"
 
-SlateportCity_OceanicMuseum_1F_Text_TellMeExperienceInvolvingPokemon:
+Kanto_OceanicMuseum_1F_Text_TellMeExperienceInvolvingPokemon:
 	.string "Oh, you will?\n"
 	.string "Thank you!\p"
 	.string "Then, please, tell me anything of\n"
 	.string "interest that you experienced recently\l"
 	.string "involving POKéMON.$"
 
-SlateportCity_OceanicMuseum_1F_Text_LetMeKnowIfYouHaveStory:
+Kanto_OceanicMuseum_1F_Text_LetMeKnowIfYouHaveStory:
 	.string "Oh, I see…\p"
 	.string "Well, if you do have an interesting\n"
 	.string "story to tell, please let me know.$"
 
-SlateportCity_OceanicMuseum_1F_Text_ThatsAllForInterview:
+Kanto_OceanicMuseum_1F_Text_ThatsAllForInterview:
 	.string "Oh, what an uplifting story!\p"
 	.string "I'll be sure to get your story told\n"
 	.string "on television.\p"
 	.string "It should be aired sometime, I think,\n"
 	.string "so please look forward to it.$"
 
-SlateportCity_OceanicMuseum_1F_Text_BetterWriteUpStory:
+Kanto_OceanicMuseum_1F_Text_BetterWriteUpStory:
 	.string "Hmmm…\n"
 	.string "I've got a good story for a TV program.\p"
 	.string "I'd better write it up in a hurry!$"

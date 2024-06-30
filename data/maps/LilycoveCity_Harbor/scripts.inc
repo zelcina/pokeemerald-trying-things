@@ -45,7 +45,7 @@ LilycoveCity_Harbor_EventScript_FerryRegularLocationSelect::
 	waitstate
 	special GetLilycoveSSTidalSelection
 	switch VAR_RESULT
-	case 0, LilycoveCity_Harbor_EventScript_GoToSlateport
+	case 0, LilycoveCity_Harbor_EventScript_GoToKanto
 	case 1, LilycoveCity_Harbor_EventScript_GoToBattleFrontier
 	case 2, LilycoveCity_Harbor_EventScript_GoToSouthernIsland
 	case 3, LilycoveCity_Harbor_EventScript_GoToNavelRock
@@ -83,8 +83,8 @@ LilycoveCity_Harbor_EventScript_GoToFarawayIsland::
 	release
 	end
 
-LilycoveCity_Harbor_EventScript_GoToSlateport::
-	msgbox LilycoveCity_Harbor_Text_SlateportItIs, MSGBOX_YESNO
+LilycoveCity_Harbor_EventScript_GoToKanto::
+	msgbox LilycoveCity_Harbor_Text_KantoItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
 	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_LILYCOVE
 	call LilycoveCity_Harbor_EventScript_BoardFerry
@@ -362,8 +362,8 @@ LilycoveCity_Harbor_EventScript_NoTicket::
 	end
 
 @ Unused
-LilycoveCity_Harbor_EventScript_GoToSlateportUnused::
-	msgbox LilycoveCity_Harbor_Text_SlateportItIs, MSGBOX_YESNO
+LilycoveCity_Harbor_EventScript_GoToKantoUnused::
+	msgbox LilycoveCity_Harbor_Text_KantoItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
 	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_LILYCOVE
 	call LilycoveCity_Harbor_EventScript_BoardFerry
@@ -565,8 +565,8 @@ LilycoveCity_Harbor_Text_FlashTicketWhereTo:
 LilycoveCity_Harbor_Text_SailAnotherTime:
 	.string "Please sail with us another time!$"
 
-LilycoveCity_Harbor_Text_SlateportItIs:
-	.string "SLATEPORT CITY it is, then!$"
+LilycoveCity_Harbor_Text_KantoItIs:
+	.string "Kanto it is, then!$"
 
 LilycoveCity_Harbor_Text_BattleFrontierItIs:
 	.string "BATTLE FRONTIER it is, then!$"
@@ -582,11 +582,11 @@ LilycoveCity_Harbor_Text_SailorFerryUnavailable:
 	.string "Until they finish making the ferry,\n"
 	.string "we sailors have nothing to do…\p"
 	.string "I wish they'd get a move on, the folks\n"
-	.string "at the SHIPYARD in SLATEPORT.$"
+	.string "at the SHIPYARD in Kanto.$"
 
 LilycoveCity_Harbor_Text_SailorFerryAvailable:
 	.string "The ferry S.S. TIDAL is finally in\n"
 	.string "operation.\p"
-	.string "The folks at the SHIPYARD in SLATEPORT\n"
+	.string "The folks at the SHIPYARD in Kanto\n"
 	.string "must've worked extra hard.\p"
 	.string "Well, it's my turn to get busy now!$"

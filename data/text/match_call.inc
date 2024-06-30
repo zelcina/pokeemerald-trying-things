@@ -2347,7 +2347,7 @@ MatchCall_Text_May2::
 	.string "You know how little towns like\n"
 	.string "EVENTFUL and DEWFORD have GYMS?\p"
 	.string "For some reason, the big port of\n"
-	.string "SLATEPORT doesn't have a GYM.\p"
+	.string "Kanto doesn't have a GYM.\p"
 	.string "When they finally build a GYM there,\n"
 	.string "I should apply to be the LEADER.$"
 
@@ -2473,7 +2473,7 @@ MatchCall_Text_Brendan2::
 	.string "I don't get how little towns like\n"
 	.string "EVENTFUL and DEWFORD have GYMS.\p"
 	.string "I mean, not when the big port of\n"
-	.string "SLATEPORT doesn't have a GYM.\p"
+	.string "Kanto doesn't have a GYM.\p"
 	.string "When they finally build a GYM there,\n"
 	.string "I should apply to be the LEADER.$"
 
@@ -2873,7 +2873,7 @@ MatchCall_Text_MrStone2::
 	.string "I need you to deliver my letter\n"
 	.string "to STEVEN in DEWFORD.\p"
 	.string "After that, deliver our parcel to\n"
-	.string "CAPT. STERN in SLATEPORT.\p"
+	.string "CAPT. STERN in Kanto.\p"
 	.string "You remember, don't you?\p"
 	.string "Now, since I am a busy PRESIDENT,\n"
 	.string "I have to go! Bye-bye!$"

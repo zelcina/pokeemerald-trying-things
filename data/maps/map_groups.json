@@ -1,6 +1,6 @@
 {
   "group_order": [
-    "gMapGroup_TownsAndRoutes",
+    "gMapGroup_MainAreas",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
     "gMapGroup_IndoorDewford",
@@ -9,7 +9,7 @@
     "gMapGroup_IndoorVerdanturf",
     "gMapGroup_IndoorPacifidlog",
     "gMapGroup_IndoorEventful",
-    "gMapGroup_IndoorSlateport",
+    "gMapGroup_IndoorKanto",
     "gMapGroup_IndoorMauville",
     "gMapGroup_IndoorRustboro",
     "gMapGroup_IndoorFortree",
@@ -35,9 +35,9 @@
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124"
   ],
-  "gMapGroup_TownsAndRoutes": [
+  "gMapGroup_MainAreas": [
     "EventfulCity",
-    "SlateportCity",
+    "Kanto",
     "MauvilleCity",
     "RustboroCity",
     "FortreeCity",
@@ -164,21 +164,21 @@
     "EventfulCity_PokemonCenter_2F",
     "EventfulCity_Mart"
   ],
-  "gMapGroup_IndoorSlateport": [
-    "SlateportCity_SternsShipyard_1F",
-    "SlateportCity_SternsShipyard_2F",
-    "SlateportCity_BattleTentLobby",
-    "SlateportCity_BattleTentCorridor",
-    "SlateportCity_BattleTentBattleRoom",
-    "SlateportCity_NameRatersHouse",
-    "SlateportCity_PokemonFanClub",
-    "SlateportCity_OceanicMuseum_1F",
-    "SlateportCity_OceanicMuseum_2F",
-    "SlateportCity_Harbor",
-    "SlateportCity_House",
-    "SlateportCity_PokemonCenter_1F",
-    "SlateportCity_PokemonCenter_2F",
-    "SlateportCity_Mart"
+  "gMapGroup_IndoorKanto": [
+    "Kanto_SternsShipyard_1F",
+    "Kanto_SternsShipyard_2F",
+    "Kanto_BattleTentLobby",
+    "Kanto_BattleTentCorridor",
+    "Kanto_BattleTentBattleRoom",
+    "Kanto_NameRatersHouse",
+    "Kanto_PokemonFanClub",
+    "Kanto_OceanicMuseum_1F",
+    "Kanto_OceanicMuseum_2F",
+    "Kanto_Harbor",
+    "Kanto_House",
+    "Kanto_PokemonCenter_1F",
+    "Kanto_PokemonCenter_2F",
+    "Kanto_Mart"
   ],
   "gMapGroup_IndoorMauville": [
     "MauvilleCity_Gym",

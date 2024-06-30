@@ -30,7 +30,7 @@ BattleFrontier_OutsideWest_EventScript_FerryAttendant::
 BattleFrontier_OutsideWest_EventScript_ChooseFerryDestination::
 	multichoicedefault 18, 6, MULTI_SSTIDAL_BATTLE_FRONTIER, 2, FALSE
 	switch VAR_RESULT
-	case 0, BattleFrontier_OutsideWest_EventScript_FerryToSlateport
+	case 0, BattleFrontier_OutsideWest_EventScript_FerryToKanto
 	case 1, BattleFrontier_OutsideWest_EventScript_FerryToLilycove
 	case 2, BattleFrontier_OutsideWest_EventScript_CancelFerrySelect
 	case MULTI_B_PRESSED, BattleFrontier_OutsideWest_EventScript_CancelFerrySelect
@@ -41,12 +41,12 @@ BattleFrontier_OutsideWest_EventScript_NoSSTicket::
 	release
 	end
 
-BattleFrontier_OutsideWest_EventScript_FerryToSlateport::
-	msgbox BattleFrontier_OutsideWest_Text_SlateportItIs, MSGBOX_YESNO
+BattleFrontier_OutsideWest_EventScript_FerryToKanto::
+	msgbox BattleFrontier_OutsideWest_Text_KantoItIs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_ChooseNewFerryDestination
 	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
 	call BattleFrontier_OutsideWest_EventScript_BoardFerry
-	warp MAP_SLATEPORT_CITY_HARBOR, 8, 11
+	warp MAP_KANTO_HARBOR, 8, 11
 	waitstate
 	release
 	end
@@ -339,8 +339,8 @@ BattleFrontier_OutsideWest_Text_WhereWouldYouLikeToGo:
 	.string "Perfect! That's all you need!\p"
 	.string "And where would you like to go?$"
 
-BattleFrontier_OutsideWest_Text_SlateportItIs:
-	.string "SLATEPORT CITY it is, then!$"
+BattleFrontier_OutsideWest_Text_KantoItIs:
+	.string "Kanto it is, then!$"
 
 BattleFrontier_OutsideWest_Text_LilycoveItIs:
 	.string "LILYCOVE CITY it is, then!$"

@@ -212,18 +212,18 @@ VerdanturfTown_BattleTentLobby_Text_PresentYouWithPrize:
 	.string "For the feat of your 3-win streak,\n"
 	.string "we present you with this prize.$"
 
-SlateportCity_BattleTentLobby_Text_WelcomeToBattleTent:
+Kanto_BattleTentLobby_Text_WelcomeToBattleTent:
 	.string "Welcome to the BATTLE TENT\n"
-	.string "SLATEPORT SITE!\p"
+	.string "Kanto SITE!\p"
 	.string "I am your guide to the Battle Swap\n"
 	.string "Tournament.$"
 
-SlateportCity_BattleTentLobby_Text_TakeChallenge:
+Kanto_BattleTentLobby_Text_TakeChallenge:
 	.string "Would you like to take the Battle\n"
 	.string "Swap challenge?$"
 
-SlateportCity_BattleTentLobby_Text_ExplainSlateportTent:
-	.string "Here at the SLATEPORT BATTLE TENT,\n"
+Kanto_BattleTentLobby_Text_ExplainKantoTent:
+	.string "Here at the Kanto BATTLE TENT,\n"
 	.string "we hold Battle Swap events\l"
 	.string "using rental POKéMON.\p"
 	.string "First, you will be loaned three\n"
@@ -240,27 +240,27 @@ SlateportCity_BattleTentLobby_Text_ExplainSlateportTent:
 	.string "If you don't save before interrupting,\n"
 	.string "you will be disqualified.$"
 
-SlateportCity_BattleTentLobby_Text_LookForwardToNextVisit:
+Kanto_BattleTentLobby_Text_LookForwardToNextVisit:
 	.string "We look forward to your next visit.$"
 
 @ Unused
-SlateportCity_BattleTentLobby_Text_WhichLevelMode:
+Kanto_BattleTentLobby_Text_WhichLevelMode:
 	.string "Which level do you wish to challenge?\n"
 	.string "Level 50 or Level 100?$"
 
-SlateportCity_BattleTentLobby_Text_SaveBeforeChallenge:
+Kanto_BattleTentLobby_Text_SaveBeforeChallenge:
 	.string "Before you begin your challenge,\n"
 	.string "I need to save data. Is that okay?$"
 
 @ Unused
-SlateportCity_BattleTentLobby_Text_HoldMonsForSafekeeping:
+Kanto_BattleTentLobby_Text_HoldMonsForSafekeeping:
 	.string "Okay, I will hold your POKéMON for\n"
 	.string "safekeeping while you compete.$"
 
-SlateportCity_BattleTentLobby_Text_StepThisWay:
+Kanto_BattleTentLobby_Text_StepThisWay:
 	.string "Please step this way.$"
 
-SlateportCity_BattleTentLobby_Text_ReturnRentalMonsSaveResults:
+Kanto_BattleTentLobby_Text_ReturnRentalMonsSaveResults:
 	.string "Thank you for participating!\p"
 	.string "I will return your POKéMON in exchange\n"
 	.string "for our rental POKéMON.\p"
@@ -268,11 +268,11 @@ SlateportCity_BattleTentLobby_Text_ReturnRentalMonsSaveResults:
 	.string "Please wait.$"
 
 @ Unused
-SlateportCity_BattleTentLobby_Text_ReturnMonsExchangeRentals:
+Kanto_BattleTentLobby_Text_ReturnMonsExchangeRentals:
 	.string "I will return your POKéMON in exchange\n"
 	.string "for our rental POKéMON.$"
 
-SlateportCity_BattleTentLobby_Text_WonThreeMatchesReturnMons:
+Kanto_BattleTentLobby_Text_WonThreeMatchesReturnMons:
 	.string "Congratulations!\n"
 	.string "You've won three straight matches!\p"
 	.string "I will return your POKéMON in exchange\n"
@@ -280,65 +280,65 @@ SlateportCity_BattleTentLobby_Text_WonThreeMatchesReturnMons:
 	.string "I must also save your event results.\n"
 	.string "Please wait.$"
 
-SlateportCity_BattleTentLobby_Text_AwardYouThisPrize:
+Kanto_BattleTentLobby_Text_AwardYouThisPrize:
 	.string "In recognition of your 3-win streak,\n"
 	.string "we award you this prize.$"
 
-SlateportCity_BattleTentLobby_Text_NoRoomInBagMakeRoom:
+Kanto_BattleTentLobby_Text_NoRoomInBagMakeRoom:
 	.string "Oh?\n"
 	.string "You seem to have no room for this.\p"
 	.string "Please make room in your BAG and\n"
 	.string "let me know.$"
 
-SlateportCity_BattleTentLobby_Text_BeenWaitingForYou:
+Kanto_BattleTentLobby_Text_BeenWaitingForYou:
 	.string "We've been waiting for you!\p"
 	.string "Before we resume your challenge,\n"
 	.string "I must save the game.$"
 
-SlateportCity_BattleTentLobby_Text_DidntSaveBeforeQuitting:
+Kanto_BattleTentLobby_Text_DidntSaveBeforeQuitting:
 	.string "I'm sorry to say this, but you didn't\n"
 	.string "save before you quit playing last time.\p"
 	.string "As a result, you have been disqualified\n"
 	.string "from your challenge.$"
 
 @ Unused
-SlateportCity_BattleTentLobby_Text_ReturnPersonalMons:
+Kanto_BattleTentLobby_Text_ReturnPersonalMons:
 	.string "We'll return your personal POKéMON.$"
 
 @ Unused
-SlateportCity_BattleTentLobby_Text_ReceivedPrize:
+Kanto_BattleTentLobby_Text_ReceivedPrize:
 	.string "{PLAYER} received the prize\n"
 	.string "{STR_VAR_1}.$"
 
 @ Unused
-SlateportCity_BattleTentLobby_Text_RulesAreListed:
+Kanto_BattleTentLobby_Text_RulesAreListed:
 	.string "The Battle Swap rules are listed.$"
 
 @ Unused
-SlateportCity_BattleTentLobby_Text_ReadWhichHeading:
+Kanto_BattleTentLobby_Text_ReadWhichHeading:
 	.string "Which heading do you want to read?$"
 
-SlateportCity_BattleTentLobby_Text_ExplainBasicRules:
+Kanto_BattleTentLobby_Text_ExplainBasicRules:
 	.string "In a Battle Swap event, you may use\n"
 	.string "only three POKéMON.\p"
 	.string "Whether you are renting or swapping,\n"
 	.string "your team may not have two or more\l"
 	.string "of the same POKéMON.$"
 
-SlateportCity_BattleTentLobby_Text_ExplainSwapPartnerRules:
+Kanto_BattleTentLobby_Text_ExplainSwapPartnerRules:
 	.string "You may swap POKéMON only with\n"
 	.string "the TRAINER you have just defeated.\p"
 	.string "You may swap for only those POKéMON\n"
 	.string "used by the beaten TRAINER.$"
 
-SlateportCity_BattleTentLobby_Text_ExplainSwapNumberRules:
+Kanto_BattleTentLobby_Text_ExplainSwapNumberRules:
 	.string "After every battle you win, you may\n"
 	.string "swap for one of your defeated\l"
 	.string "opponent's POKéMON.\p"
 	.string "You will not be able to swap POKéMON\n"
 	.string "with the third TRAINER in the event.$"
 
-SlateportCity_BattleTentLobby_Text_ExplainSwapNotes:
+Kanto_BattleTentLobby_Text_ExplainSwapNotes:
 	.string "There are two key points to be aware\n"
 	.string "of when swapping POKéMON.\p"
 	.string "First, when swapping, you can't check\n"
@@ -350,8 +350,8 @@ SlateportCity_BattleTentLobby_Text_ExplainSwapNotes:
 	.string "This sequence remains unchanged\n"
 	.string "even when swaps are made.$"
 
-SlateportCity_BattleTentLobby_Text_ExplainMonRules:
-	.string "The POKéMON of the SLATEPORT\n"
+Kanto_BattleTentLobby_Text_ExplainMonRules:
+	.string "The POKéMON of the Kanto\n"
 	.string "BATTLE TENT are all rentals.\p"
 	.string "All rental POKéMON are kept at\n"
 	.string "Level 30.$"

@@ -400,10 +400,10 @@ PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
 	.string "This came to you from someone named\l"
 	.string "MR. BRINEY.$"
 
-PlayersHouse_1F_Text_PortsInSlateportLilycove:
+PlayersHouse_1F_Text_PortsInKantoLilycove:
 	.string "DAD: Hm, a TICKET for a ferry?\p"
 	.string "If I recall, there are ferry ports in\n"
-	.string "SLATEPORT and LILYCOVE.$"
+	.string "Kanto and LILYCOVE.$"
 
 PlayersHouse_1F_Text_BetterGetBackToGym:
 	.string "I'd better get back to EVENTFUL GYM.\p"
