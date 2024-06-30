@@ -1,18 +1,6 @@
-.set LOCALID_WALLYS_DAD, 1
-
 EventfulCity_WallysHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, EventfulCity_WallysHouse_OnFrame
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EventfulCity_WallysHouse_OnWarp
 	.byte 0
-
-EventfulCity_WallysHouse_OnWarp:
-	map_script_2 VAR_EVENTFUL_CITY_STATE, 4, EventfulCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther
-	.2byte 0
-
-EventfulCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther::
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
-	turnobject LOCALID_WALLYS_DAD, DIR_WEST
-	end
 
 EventfulCity_WallysHouse_OnFrame:
 	map_script_2 VAR_EVENTFUL_CITY_STATE, 4, EventfulCity_WallysHouse_EventScript_GiveHMSurf
@@ -54,18 +42,74 @@ EventfulCity_WallysHouse_EventScript_PlayedWithWally::
 	release
 	end
 
-EventfulCity_WallysHouse_EventScript_WallysMom::
+EventfulCity_WallysHouse_EventScript_StarterEvent::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_HM_SURF, EventfulCity_WallysHouse_EventScript_ReceivedHMSurf
-	msgbox EventfulCity_WallysHouse_Text_WallyWasReallyHappy, MSGBOX_DEFAULT
-	release
+	msgbox EventfulCity_WallysHouse_Text_PickStarter, MSGBOX_DEFAULT
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RESCUED_BIRCH
+	special ChooseStarter
+	waitstate
+	setvar VAR_SPAWN_HOUSE_STATE, 1
+	bufferleadmonspeciesname STR_VAR_1
+	message EventfulCity_WallysHouse_Text_LikeYouToHavePokemon
+	waitmessage
+	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
+	msgbox EventfulCity_WallysHouse_Text_WhyNotGiveNicknameToMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, EventfulCity_WallysHouse_EventScript_NicknameStarter
+	goto_if_eq VAR_RESULT, NO, EventfulCity_WallysHouse_EventScript_GoSeeRival
 	end
 
-EventfulCity_WallysHouse_EventScript_ReceivedHMSurf::
-	msgbox EventfulCity_WallysHouse_Text_WallyLeftWithoutTelling, MSGBOX_DEFAULT
-	release
+EventfulCity_WallysHouse_EventScript_NicknameStarter::
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMon
+	goto EventfulCity_WallysHouse_EventScript_GoSeeRival
 	end
+
+EventfulCity_WallysHouse_EventScript_GoSeeRival::
+	msgbox EventfulCity_WallysHouse_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventfulCity_WallysHouse_Text_PickStarter:
+	.string "PROF. BIRCH: Whew…\p"
+	.string "I was in the tall grass studying wild\n"
+	.string "POKéMON when I was jumped.\p"
+	.string "You saved me.\n"
+	.string "Thanks a lot!\p"
+	.string "Oh?\p"
+	.string "Hi, you're {PLAYER}{KUN}!\p"
+	.string "This is not the place to chat, so come\n"
+	.string "by my POKéMON LAB later, okay?$"
+
+EventfulCity_WallysHouse_Text_LikeYouToHavePokemon:
+	.string "PROF. BIRCH: So, {PLAYER}{KUN}.\p"
+	.string "I've heard so much about you from\n"
+	.string "your father.\p"
+	.string "I've heard that you don't have your\n"
+	.string "own POKéMON yet.\p"
+	.string "But the way you battled earlier,\n"
+	.string "you pulled it off with aplomb!\p"
+	.string "I guess you have your father's blood\n"
+	.string "in your veins after all!\p"
+	.string "Oh, yes. As thanks for rescuing me,\n"
+	.string "I'd like you to have the POKéMON you\l"
+	.string "used earlier.\p"
+	.string "{PLAYER} received the {STR_VAR_1}!$"
+
+EventfulCity_WallysHouse_Text_WhyNotGiveNicknameToMon:
+	.string "PROF. BIRCH: While you're at it, why not\n"
+	.string "give a nickname to that {STR_VAR_1}?$"
+
+EventfulCity_WallysHouse_Text_MightBeGoodIdeaToGoSeeRival:
+	.string "PROF. BIRCH: If you work at POKéMON\n"
+	.string "and gain experience, I think you'll make\l"
+	.string "an extremely good TRAINER.\p"
+	.string "My kid, {RIVAL}, is also studying\n"
+	.string "POKéMON while helping me out.\p"
+	.string "{PLAYER}{KUN}, don't you think it might be\n"
+	.string "a good idea to go see {RIVAL}?$"
 
 EventfulCity_WallysHouse_Text_ThanksForPlayingWithWally:
 	.string "You're…\n"

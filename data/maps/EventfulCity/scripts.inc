@@ -1,90 +1,97 @@
-.set LOCALID_WALLY, 2
-.set LOCALID_BOY, 3
-.set LOCALID_WALLYS_DAD, 5
-.set LOCALID_GYM_BOY, 8
-.set LOCALID_SCOTT, 9
+.set LOCALID_GAMEBOY, 5
 
 EventfulCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EventfulCity_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, EventfulCity_OnFrame
 	.byte 0
 
 EventfulCity_OnTransition:
 	setflag FLAG_VISITED_EVENTFUL_CITY
-	call_if_eq VAR_EVENTFUL_CITY_STATE, 0, EventfulCity_EventScript_MoveGymBoyToWestEntrance
-	call_if_eq VAR_EVENTFUL_CITY_STATE, 2, EventfulCity_EventScript_DisableMapNameAndMusic
-	call_if_eq VAR_EVENTFUL_CITY_STATE, 4, EventfulCity_EventScript_DisableMapNameAndMusic
-	call_if_eq VAR_EVENTFUL_GYM_STATE, 8, EventfulCity_EventScript_SetGymDoorsUnlocked
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 1, EventfulCity_EventScript_UnlockKanto
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 2, EventfulCity_EventScript_UnlockJohto
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 3, EventfulCity_EventScript_UnlockHoenn
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 4, EventfulCity_EventScript_UnlockSinnoh
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 5, EventfulCity_EventScript_UnlockUnova
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 6, EventfulCity_EventScript_UnlockKalos
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 7, EventfulCity_EventScript_UnlockAlola
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 8, EventfulCity_EventScript_UnlockGalar
+	call_if_eq VAR_EVENTFUL_CITY_STATE, 9, EventfulCity_EventScript_UnlockPaldea
 	end
 
-EventfulCity_EventScript_MoveGymBoyToWestEntrance::
-	setobjectxyperm LOCALID_GYM_BOY, 5, 11
+EventfulCity_EventScript_UnlockKanto::
+	setobjectxyperm LOCALID_GAMEBOY, 7, 6
 	return
 
-EventfulCity_EventScript_DisableMapNameAndMusic::
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	savebgm MUS_FOLLOW_ME
+EventfulCity_EventScript_UnlockJohto::
 	return
 
-EventfulCity_EventScript_SetGymDoorsUnlocked::
-	setvar VAR_EVENTFUL_GYM_STATE, 7
+EventfulCity_EventScript_UnlockHoenn::
 	return
 
-EventfulCity_OnFrame:
-	map_script_2 VAR_EVENTFUL_CITY_STATE, 2, EventfulCity_EventScript_WallyTutorial
-	map_script_2 VAR_EVENTFUL_CITY_STATE, 4, EventfulCity_EventScript_WalkToWallyHouse
-	.2byte 0
+EventfulCity_EventScript_UnlockSinnoh::
+	return
 
-EventfulCity_EventScript_WallyTutorial::
+EventfulCity_EventScript_UnlockUnova::
+	return
+
+EventfulCity_EventScript_UnlockKalos::
+	return
+
+EventfulCity_EventScript_UnlockAlola::
+	return
+
+EventfulCity_EventScript_UnlockGalar::
+	return
+
+EventfulCity_EventScript_UnlockPaldea::
+	return
+
+EventfulCity_EventScript_GivePokedex::
 	lockall
-	special SavePlayerParty
-	special LoadWallyZigzagoon
-	applymovement LOCALID_WALLY, EventfulCity_Movement_WallyTutorialWally
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_WallyTutorialPlayer
-	waitmovement 0
-	msgbox Route102_Text_WatchMeCatchPokemon, MSGBOX_DEFAULT
-	special StartWallyTutorialBattle
-	waitstate
-	msgbox Route102_Text_WallyIDidIt, MSGBOX_DEFAULT
-	applymovement LOCALID_WALLY, Common_Movement_WalkInPlaceFasterLeft, MAP_EVENTFUL_CITY
-	waitmovement LOCALID_WALLY, MAP_EVENTFUL_CITY
-	msgbox Route102_Text_LetsGoBack, MSGBOX_DEFAULT
+	msgbox EventfulCity_Text_GetPokedex, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message EventfulCity_Text_ReceivedPokedex
+	waitfanfare
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	msgbox EventfulCity_Text_ExplainPokedex, MSGBOX_DEFAULT
 	closemessage
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_EVENTFUL_CITY_STATE, 3
-	fadedefaultbgm
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-	special LoadPlayerParty
-	setvar VAR_EVENTFUL_GYM_STATE, 1
-	warp MAP_EVENTFUL_CITY_GYM, 4, 108
-	waitstate
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, EventfulCity_EventScript_MalePokedexMessage
+	call_if_eq VAR_RESULT, FEMALE, EventfulCity_EventScript_FemalePokedexMessage
+	setflag FLAG_ADVENTURE_STARTED
+	delay 30
+	msgbox EventfulCity_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message EventfulCity_Text_SwitchShoesWithRunningShoes
+	waitfanfare
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	msgbox EventfulCity_Text_ExplainRunningShoes, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_EVENTFUL_CITY_STATE, 1
 	releaseall
 	end
 
-EventfulCity_EventScript_WalkToWallyHouse::
-	lockall
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-	applymovement LOCALID_WALLYS_DAD, EventfulCity_Movement_WalkToWallyHouseWallysDad
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_WalkToWallyHousePlayer
-	waitmovement 0
-	setvar VAR_0x8004, 7
-	setvar VAR_0x8005, 5
-	opendoor VAR_0x8004, VAR_0x8005
-	waitdooranim
-	applymovement LOCALID_WALLYS_DAD, EventfulCity_Movement_WalkInsideHouseWallysDad
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_WalkInsideHousePlayer
-	waitmovement 0
-	setflag FLAG_HIDE_EVENTFUL_CITY_WALLYS_DAD
-	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_EVENTFUL_CITY
-	closedoor VAR_0x8004, VAR_0x8005
-	waitdooranim
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	fadedefaultbgm
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-	warp MAP_EVENTFUL_CITY_WALLYS_HOUSE, 2, 4
-	waitstate
-	releaseall
-	end
+EventfulCity_EventScript_MalePokedexMessage::
+	msgbox EventfulCity_Text_MalePokeballs, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_BALL, 5
+	call_if_eq VAR_RESULT, FALSE, EventfulCity_EventScript_NoRoomForPokeBalls
+	msgbox EventfulCity_Text_MaleEnd, MSGBOX_DEFAULT
+	setvar VAR_RESULT, 0
+	return
+
+EventfulCity_EventScript_FemalePokedexMessage::
+	msgbox EventfulCity_Text_FemalePokeballs, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_BALL, 5
+	call_if_eq VAR_RESULT, FALSE, EventfulCity_EventScript_NoRoomForPokeBalls
+	msgbox EventfulCity_Text_FemaleEnd, MSGBOX_DEFAULT
+	setvar VAR_RESULT, 1
+	return
+
+EventfulCity_EventScript_NoRoomForPokeBalls::
+	msgbox EventfulCity_Text_OhYourBagsFull, MSGBOX_DEFAULT
+	return
 
 EventfulCity_EventScript_Boy::
 	lock
@@ -99,130 +106,6 @@ EventfulCity_EventScript_Boy::
 EventfulCity_EventScript_WallysMom::
 	msgbox EventfulCity_Text_WhereIsWally, MSGBOX_NPC
 	end
-
-EventfulCity_Movement_WalkToWallyHousePlayer:
-	delay_8
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-EventfulCity_Movement_WalkInsideHousePlayer:
-	walk_up
-	walk_up
-	step_end
-
-EventfulCity_Movement_WalkToWallyHouseWallysDad:
-	delay_8
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	step_end
-
-EventfulCity_Movement_WalkInsideHouseWallysDad:
-	walk_up
-	set_invisible
-	step_end
-
-EventfulCity_Movement_WallyTutorialPlayer:
-	delay_8
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_in_place_faster_right
-	step_end
-
-EventfulCity_Movement_WallyTutorialWally:
-	delay_8
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_right
-	delay_16
-	walk_in_place_faster_up
-	delay_16
-	delay_16
-	walk_in_place_faster_right
-	step_end
 
 EventfulCity_EventScript_GymSign::
 	msgbox EventfulCity_Text_GymSign, MSGBOX_SIGN
@@ -240,469 +123,89 @@ EventfulCity_EventScript_WallyHouseSign::
 	msgbox EventfulCity_Text_WallyHouseSign, MSGBOX_SIGN
 	end
 
-EventfulCity_EventScript_ShowGymToPlayer0::
-	lockall
-	setvar VAR_0x8008, 0
-	goto EventfulCity_EventScript_ShowGymToPlayer
-	end
-
-EventfulCity_EventScript_ShowGymToPlayer1::
-	lockall
-	setvar VAR_0x8008, 1
-	goto EventfulCity_EventScript_ShowGymToPlayer
-	end
-
-EventfulCity_EventScript_ShowGymToPlayer2::
-	lockall
-	setvar VAR_0x8008, 2
-	goto EventfulCity_EventScript_ShowGymToPlayer
-	end
-
-EventfulCity_EventScript_ShowGymToPlayer3::
-	lockall
-	setvar VAR_0x8008, 3
-	goto EventfulCity_EventScript_ShowGymToPlayer
-	end
-
-EventfulCity_EventScript_ShowGymToPlayer::
-	applymovement LOCALID_GYM_BOY, Common_Movement_FacePlayer
-	waitmovement 0
-	playbgm MUS_FOLLOW_ME, FALSE
-	playse SE_PIN
-	applymovement LOCALID_GYM_BOY, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_GYM_BOY, Common_Movement_Delay48
-	waitmovement 0
-	call_if_eq VAR_0x8008, 0, EventfulCity_EventScript_BoyApproachPlayer0
-	call_if_eq VAR_0x8008, 1, EventfulCity_EventScript_BoyApproachPlayer1
-	call_if_eq VAR_0x8008, 2, EventfulCity_EventScript_BoyApproachPlayer2
-	call_if_eq VAR_0x8008, 3, EventfulCity_EventScript_BoyApproachPlayer3
-	msgbox EventfulCity_Text_AreYouRookieTrainer, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_0x8008, 0, EventfulCity_EventScript_LeadPlayerToGym0
-	call_if_eq VAR_0x8008, 1, EventfulCity_EventScript_LeadPlayerToGym1
-	call_if_eq VAR_0x8008, 2, EventfulCity_EventScript_LeadPlayerToGym2
-	call_if_eq VAR_0x8008, 3, EventfulCity_EventScript_LeadPlayerToGym3
-	msgbox EventfulCity_Text_ThisIsEventfulGym, MSGBOX_DEFAULT
-	applymovement LOCALID_GYM_BOY, Common_Movement_WalkInPlaceFasterRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox EventfulCity_Text_ThisIsGymSign, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyWalkAway
-	waitmovement 0
-	fadedefaultbgm
-	releaseall
-	end
-
-EventfulCity_EventScript_BoyApproachPlayer0::
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyApproachPlayer0
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_BoyApproachPlayer1::
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyApproachPlayer1
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_BoyApproachPlayer2::
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyApproachPlayer2
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_BoyApproachPlayer3::
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyApproachPlayer3
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_LeadPlayerToGym0::
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyWalkToGym0
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_PlayerWalkToGym0
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_LeadPlayerToGym1::
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyWalkToGym1
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_PlayerWalkToGym1
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_LeadPlayerToGym2::
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyWalkToGym2
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_PlayerWalkToGym2
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_LeadPlayerToGym3::
-	applymovement LOCALID_GYM_BOY, EventfulCity_Movement_BoyWalkToGym3
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_PlayerWalkToGym3
-	waitmovement 0
-	return
-
-@ Unused
-EventfulCity_Movement_Delay48::
-	delay_16
-	delay_16
-	delay_16
-	step_end
-
-EventfulCity_Movement_BoyApproachPlayer0:
-	walk_right
-	walk_right
-	walk_right
-	walk_in_place_faster_up
-	step_end
-
-EventfulCity_Movement_BoyApproachPlayer1:
-	walk_right
-	walk_right
-	step_end
-
-EventfulCity_Movement_BoyApproachPlayer2:
-	walk_right
-	walk_right
-	walk_right
-	walk_in_place_faster_down
-	step_end
-
-EventfulCity_Movement_BoyApproachPlayer3:
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_in_place_faster_down
-	step_end
-
-EventfulCity_Movement_BoyWalkToGym0:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_right
-	walk_in_place_faster_up
-	step_end
-
-EventfulCity_Movement_BoyWalkToGym1:
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_right
-	walk_in_place_faster_up
-	step_end
-
-EventfulCity_Movement_BoyWalkToGym2:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_right
-	walk_in_place_faster_up
-	step_end
-
-EventfulCity_Movement_BoyWalkToGym3:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	walk_right
-	walk_in_place_faster_up
-	step_end
-
-EventfulCity_Movement_BoyWalkAway:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-EventfulCity_Movement_PlayerWalkToGym0:
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	step_end
-
-EventfulCity_Movement_PlayerWalkToGym1:
-	delay_16
-	delay_16
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	step_end
-
-EventfulCity_Movement_PlayerWalkToGym2:
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	step_end
-
-EventfulCity_Movement_PlayerWalkToGym3:
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	walk_up
-	step_end
-
-EventfulCity_EventScript_Scott0::
-	lockall
-	addobject LOCALID_SCOTT
-	setvar VAR_0x8008, 0
-	setobjectxy LOCALID_SCOTT, 13, 10
-	goto EventfulCity_EventScript_Scott
-	end
-
-EventfulCity_EventScript_Scott1::
-	lockall
-	addobject LOCALID_SCOTT
-	setvar VAR_0x8008, 1
-	setobjectxy LOCALID_SCOTT, 13, 11
-	goto EventfulCity_EventScript_Scott
-	end
-
-EventfulCity_EventScript_Scott2::
-	lockall
-	addobject LOCALID_SCOTT
-	setvar VAR_0x8008, 2
-	setobjectxy LOCALID_SCOTT, 13, 12
-	goto EventfulCity_EventScript_Scott
-	end
-
-EventfulCity_EventScript_Scott3::
-	lockall
-	addobject LOCALID_SCOTT
-	setvar VAR_0x8008, 3
-	setobjectxy LOCALID_SCOTT, 13, 13
-	goto EventfulCity_EventScript_Scott
-	end
-
-EventfulCity_EventScript_Scott::
-	applymovement LOCALID_SCOTT, EventfulCity_Movement_ScottStartWalkLeft
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_SCOTT, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_SCOTT, Common_Movement_Delay48
-	waitmovement 0
-	applymovement LOCALID_SCOTT, EventfulCity_Movement_ScottApproachPlayer
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	setvar VAR_SCOTT_STATE, 1
-	msgbox EventfulCity_Text_AreYouATrainer, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	delay 30
-	msgbox EventfulCity_Text_WellMaybeNot, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
-	delay 30
-	msgbox EventfulCity_Text_ImLookingForTalentedTrainers, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_0x8008, 0, EventfulCity_EventScript_ScottExit0
-	call_if_eq VAR_0x8008, 1, EventfulCity_EventScript_ScottExit1
-	call_if_eq VAR_0x8008, 2, EventfulCity_EventScript_ScottExit2
-	call_if_eq VAR_0x8008, 3, EventfulCity_EventScript_ScottExit3
-	setvar VAR_SCOTT_EVENTFUL_ENCOUNTER, 1
-	removeobject LOCALID_SCOTT
-	releaseall
-	end
-
-EventfulCity_EventScript_ScottExit0::
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_PlayerWatchScottExit0
-	applymovement LOCALID_SCOTT, EventfulCity_Movement_ScottExit0
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_ScottExit1::
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_PlayerWatchScottExit1
-	applymovement LOCALID_SCOTT, EventfulCity_Movement_ScottExit1
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_ScottExit2::
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_PlayerWatchScottExit2
-	applymovement LOCALID_SCOTT, EventfulCity_Movement_ScottExit2
-	waitmovement 0
-	return
-
-EventfulCity_EventScript_ScottExit3::
-	applymovement OBJ_EVENT_ID_PLAYER, EventfulCity_Movement_PlayerWatchScottExit3
-	applymovement LOCALID_SCOTT, EventfulCity_Movement_ScottExit3
-	waitmovement 0
-	return
-
-EventfulCity_Movement_ScottStartWalkLeft:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-EventfulCity_Movement_ScottApproachPlayer:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-EventfulCity_Movement_ScottExit0:
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-EventfulCity_Movement_PlayerWatchScottExit0:
-	delay_16
-	walk_in_place_faster_down
-	delay_16
-	delay_16
-	delay_8
-	walk_in_place_faster_left
-	step_end
-
-EventfulCity_Movement_ScottExit1:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-EventfulCity_Movement_PlayerWatchScottExit1:
-	delay_16
-	walk_in_place_faster_down
-	delay_16
-	delay_8
-	walk_in_place_faster_left
-	step_end
-
-EventfulCity_Movement_ScottExit2:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-EventfulCity_Movement_PlayerWatchScottExit2:
-	delay_16
-	walk_in_place_faster_down
-	delay_16
-	delay_8
-	walk_in_place_faster_left
-	step_end
-
-EventfulCity_Movement_ScottExit3:
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-EventfulCity_Movement_PlayerWatchScottExit3:
-	delay_16
-	walk_in_place_faster_up
-	delay_16
-	delay_8
-	walk_in_place_faster_left
-	step_end
-
 EventfulCity_EventScript_GymBoy::
 	msgbox EventfulCity_Text_AreYouRookieTrainer, MSGBOX_NPC
 	end
+
+EventfulCity_Text_GetPokedex:
+	.string "PROF. BIRCH: Oh, hi, {PLAYER}{KUN}!\p"
+	.string "I heard you beat {RIVAL} on\n"
+	.string "your first try. That's excellent!\p"
+	.string "{RIVAL}'s been helping with my research\n"
+	.string "for a long time.\p"
+	.string "{RIVAL} has an extensive history as\n"
+	.string "a TRAINER already.\p"
+	.string "Here, {PLAYER}{KUN}, I ordered this for my\n"
+	.string "research, but I think you should have\l"
+	.string "this Pokédex.$"
+
+EventfulCity_Text_ReceivedPokedex:
+	.string "I received the Pokédex!$"
+
+EventfulCity_Text_ExplainPokedex:
+	.string "PROF. BIRCH: The Pokédex is a high-tech\n"
+	.string "tool that automatically makes a record\l"
+	.string "of any POKéMON you meet or catch.\p"
+	.string "My kid, {RIVAL}, goes everywhere\n"
+	.string "with it.\p"
+	.string "Whenever my kid catches a rare POKéMON\n"
+	.string "and records its data in the Pokédex,\l"
+	.string "why, {RIVAL} looks for me while I'm out\l"
+	.string "doing fieldwork, and shows me.$"
+
+EventfulCity_Text_WearTheseRunningShoes:
+	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
+	.string "introduce yourself to PROF. BIRCH?\p"
+	.string "Oh! What an adorable POKéMON!\n"
+	.string "You got it from PROF. BIRCH. How nice!\p"
+	.string "You're your father's child, all right.\n"
+	.string "You look good together with POKéMON!\p"
+	.string "Here, honey! If you're going out on an\n"
+	.string "adventure, wear these RUNNING SHOES.\p"
+	.string "They'll put a zip in your step!$"
+
+EventfulCity_Text_SwitchShoesWithRunningShoes:
+	.string "{PLAYER} switched shoes with the\n"
+	.string "RUNNING SHOES.$"
+
+EventfulCity_Text_ExplainRunningShoes:
+	.string "MOM: {PLAYER}, those shoes came with\n"
+	.string "instructions.\p"
+	.string "“Press the B Button while wearing these\n"
+	.string "RUNNING SHOES to run extra-fast!\p"
+	.string "“Slip on these RUNNING SHOES and race\n"
+	.string "in the great outdoors!”$"
+	
+	EventfulCity_Text_MalePokeballs:
+	.string "MAY: Oh, wow, {PLAYER}{KUN}!\n"
+	.string "You got a Pokédex, too!\p"
+	.string "That's great! Just like me!\n"
+	.string "I've got something for you, too!$"
+
+EventfulCity_Text_MaleEnd:
+	.string "MAY: It's fun if you can get a lot of\n"
+	.string "POKéMON!\p"
+	.string "I'm going to look all over the place\n"
+	.string "because I want different POKéMON.\p"
+	.string "If I find any cute POKéMON, I'll catch\n"
+	.string "them with POKé BALLS!$"
+
+EventfulCity_Text_FemalePokeballs:
+	.string "BRENDAN: Huh…\n"
+	.string "So you got a Pokédex, too.\p"
+	.string "Well then, here.\n"
+	.string "I'll give you these.$"
+
+EventfulCity_Text_FemaleEnd:
+	.string "BRENDAN: You know it's more fun to\n"
+	.string "have a whole bunch of POKéMON.\p"
+	.string "I'm going to explore all over the place\n"
+	.string "to find different POKéMON.\p"
+	.string "If I find any cool POKéMON, you bet\n"
+	.string "I'll try to get them with POKé BALLS.$"
+
+EventfulCity_Text_OhYourBagsFull:
+	.string "Oh? Your bag's full.$"
 
 EventfulCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
@@ -716,13 +219,6 @@ EventfulCity_Text_AreYouRookieTrainer:
 	.string "do when they reach a new town?\p"
 	.string "They first check what kind of GYM\n"
 	.string "is in the town.$"
-
-EventfulCity_Text_ThisIsEventfulGym:
-	.string "See? This is EVENTFUL CITY's GYM.$"
-
-EventfulCity_Text_ThisIsGymSign:
-	.string "This is the GYM's sign. Look for it\n"
-	.string "whenever you're looking for a GYM.$"
 
 EventfulCity_Text_WaterReflection:
 	.string "My face is reflected in the water.\p"
@@ -753,19 +249,3 @@ EventfulCity_Text_CitySign:
 EventfulCity_Text_WallyHouseSign:
 	.string "WALLY'S HOUSE$"
 
-EventfulCity_Text_AreYouATrainer:
-	.string "Excuse me!\p"
-	.string "Let me guess, from the way you're\n"
-	.string "dressed, are you a POKéMON TRAINER?$"
-
-EventfulCity_Text_WellMaybeNot:
-	.string "… … … … … …\p"
-	.string "Well, maybe not.\n"
-	.string "Your clothes aren't all that dirty.\p"
-	.string "You're either a rookie TRAINER,\n"
-	.string "or maybe you're just an ordinary kid.$"
-
-EventfulCity_Text_ImLookingForTalentedTrainers:
-	.string "I'm roaming the land in search of\n"
-	.string "talented TRAINERS.\p"
-	.string "I'm sorry to have taken your time.$"
