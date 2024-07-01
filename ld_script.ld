@@ -361,6 +361,7 @@ SECTIONS {
         src/expansion_intro.o(.text);
         src/ui_main_menu.o(.text);
         src/ui_startmenu_full.o(.text);
+        src/mugshot.o(.text);
     } > ROM =0
 
     script_data :
@@ -1318,6 +1319,7 @@ SECTIONS {
         *libc.a:lseekr.o(.rodata);
         *libc.a:readr.o(.rodata);
         src/libisagbprn.o(.rodata);
+        src/mugshot.o(.rodata);
     } > ROM =0
 
     multiboot_data :

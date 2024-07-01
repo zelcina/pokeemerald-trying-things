@@ -104,7 +104,10 @@ EventfulCity_EventScript_Boy::
 	end
 
 EventfulCity_EventScript_WallysMom::
+	setvar VAR_0x8000, MUGSHOT_TEST
+	callnative DrawMugshot
 	msgbox EventfulCity_Text_WhereIsWally, MSGBOX_NPC
+	callnative ClearMugshot
 	end
 
 EventfulCity_EventScript_GymSign::
