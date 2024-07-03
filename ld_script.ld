@@ -362,6 +362,7 @@ SECTIONS {
         src/ui_main_menu.o(.text);
         src/ui_startmenu_full.o(.text);
         src/mugshot.o(.text);
+        src/outfit_menu.o(.text);
     } > ROM =0
 
     script_data :
@@ -731,6 +732,8 @@ SECTIONS {
         src/expansion_intro.o(.rodata);
         src/ui_main_menu.o(.rodata);
         src/ui_startmenu_full.o(.rodata);
+        src/mugshot.o(.rodata);
+        src/outfit_menu.o(.rodata);
     } > ROM =0
 
     song_data :
@@ -1319,7 +1322,6 @@ SECTIONS {
         *libc.a:lseekr.o(.rodata);
         *libc.a:readr.o(.rodata);
         src/libisagbprn.o(.rodata);
-        src/mugshot.o(.rodata);
     } > ROM =0
 
     multiboot_data :
