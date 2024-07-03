@@ -1,7 +1,7 @@
 {
   "group_order": [
     "gMapGroup_MainAreas",
-    "gMapGroup_IndoorLittleroot",
+    "gMapGroup_Kanto",
     "gMapGroup_IndoorOldale",
     "gMapGroup_IndoorDewford",
     "gMapGroup_IndoorLavaridge",
@@ -9,7 +9,6 @@
     "gMapGroup_IndoorVerdanturf",
     "gMapGroup_IndoorPacifidlog",
     "gMapGroup_IndoorEventful",
-    "gMapGroup_IndoorKanto",
     "gMapGroup_IndoorMauville",
     "gMapGroup_IndoorRustboro",
     "gMapGroup_IndoorFortree",
@@ -94,12 +93,29 @@
     "Underwater_Route105",
     "Underwater_Route125"
   ],
-  "gMapGroup_IndoorLittleroot": [
+  "gMapGroup_Kanto": [
     "LittlerootTown_BrendansHouse_1F",
     "LittlerootTown_BrendansHouse_2F",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
-    "LittlerootTown_ProfessorBirchsLab"
+    "LittlerootTown_ProfessorBirchsLab",
+    "EventfulCity_Gym",
+    "EventfulCity_House1",
+    "EventfulCity_House2",
+    "Kanto_SternsShipyard_1F",
+    "Kanto_SternsShipyard_2F",
+    "Kanto_BattleTentLobby",
+    "Kanto_BattleTentCorridor",
+    "Kanto_BattleTentBattleRoom",
+    "Kanto_NameRatersHouse",
+    "Kanto_PokemonFanClub",
+    "Kanto_OceanicMuseum_1F",
+    "Kanto_OceanicMuseum_2F",
+    "Kanto_Harbor",
+    "Kanto_House",
+    "Kanto_PokemonCenter_1F",
+    "Kanto_PokemonCenter_2F",
+    "Kanto_Mart"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -156,29 +172,10 @@
     "PacifidlogTown_House5"
   ],
   "gMapGroup_IndoorEventful": [
-    "EventfulCity_WallysHouse",
-    "EventfulCity_Gym",
-    "EventfulCity_House1",
-    "EventfulCity_House2",
-    "EventfulCity_PokemonCenter_1F",
+    "EventfulCity_SpawnHouse",
+    "EventfulCity_PokemonCenter",
     "EventfulCity_PokemonCenter_2F",
     "EventfulCity_Mart"
-  ],
-  "gMapGroup_IndoorKanto": [
-    "Kanto_SternsShipyard_1F",
-    "Kanto_SternsShipyard_2F",
-    "Kanto_BattleTentLobby",
-    "Kanto_BattleTentCorridor",
-    "Kanto_BattleTentBattleRoom",
-    "Kanto_NameRatersHouse",
-    "Kanto_PokemonFanClub",
-    "Kanto_OceanicMuseum_1F",
-    "Kanto_OceanicMuseum_2F",
-    "Kanto_Harbor",
-    "Kanto_House",
-    "Kanto_PokemonCenter_1F",
-    "Kanto_PokemonCenter_2F",
-    "Kanto_Mart"
   ],
   "gMapGroup_IndoorMauville": [
     "MauvilleCity_Gym",
