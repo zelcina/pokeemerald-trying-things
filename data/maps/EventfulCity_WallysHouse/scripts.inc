@@ -45,6 +45,7 @@ EventfulCity_WallysHouse_EventScript_PlayedWithWally::
 EventfulCity_WallysHouse_EventScript_StarterEvent::
 	lock
 	faceplayer
+	goto_if_set FLAG_SYS_POKEMON_GET, EventfulCity_WallysHouse_EventScript_YouDidIt
 	msgbox EventfulCity_WallysHouse_Text_PickStarter, MSGBOX_DEFAULT
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RESCUED_BIRCH
@@ -69,6 +70,11 @@ EventfulCity_WallysHouse_EventScript_NicknameStarter::
 
 EventfulCity_WallysHouse_EventScript_GoSeeRival::
 	msgbox EventfulCity_WallysHouse_Text_MightBeGoodIdeaToGoSeeRival, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventfulCity_WallysHouse_EventScript_YouDidIt:
+	msgbox EventfulCity_WallysHouse_Text_YouDidIt, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -110,6 +116,9 @@ EventfulCity_WallysHouse_Text_MightBeGoodIdeaToGoSeeRival:
 	.string "POKéMON while helping me out.\p"
 	.string "{PLAYER}{KUN}, don't you think it might be\n"
 	.string "a good idea to go see {RIVAL}?$"
+
+EventfulCity_WallysHouse_Text_YouDidIt:
+	.string "You did it.$"
 
 EventfulCity_WallysHouse_Text_ThanksForPlayingWithWally:
 	.string "You're…\n"

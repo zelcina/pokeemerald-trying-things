@@ -1,4 +1,5 @@
 .set LOCALID_GAMEBOY, 5
+.set LOCALID_MAN, 3
 
 EventfulCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EventfulCity_OnTransition
@@ -46,7 +47,9 @@ EventfulCity_EventScript_UnlockPaldea::
 	return
 
 EventfulCity_EventScript_GivePokedex::
-	lockall
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_B_DASH, EventfulCity_EventScript_YouDidIt
 	msgbox EventfulCity_Text_GetPokedex, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message EventfulCity_Text_ReceivedPokedex
@@ -61,7 +64,9 @@ EventfulCity_EventScript_GivePokedex::
 	call_if_eq VAR_RESULT, MALE, EventfulCity_EventScript_MalePokedexMessage
 	call_if_eq VAR_RESULT, FEMALE, EventfulCity_EventScript_FemalePokedexMessage
 	setflag FLAG_ADVENTURE_STARTED
+	closemessage
 	delay 30
+	applymovement LOCALID_MAN, Common_Movement_ExclamationMark
 	msgbox EventfulCity_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message EventfulCity_Text_SwitchShoesWithRunningShoes
@@ -70,6 +75,7 @@ EventfulCity_EventScript_GivePokedex::
 	msgbox EventfulCity_Text_ExplainRunningShoes, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_EVENTFUL_CITY_STATE, 1
+	setflag FLAG_SYS_B_DASH
 	releaseall
 	end
 
@@ -92,6 +98,11 @@ EventfulCity_EventScript_FemalePokedexMessage::
 EventfulCity_EventScript_NoRoomForPokeBalls::
 	msgbox EventfulCity_Text_OhYourBagsFull, MSGBOX_DEFAULT
 	return
+
+EventfulCity_EventScript_YouDidIt:
+	msgbox EventfulCity_Text_YouDidIt, MSGBOX_DEFAULT
+	releaseall
+	end
 
 EventfulCity_EventScript_Boy::
 	lock
@@ -209,6 +220,9 @@ EventfulCity_Text_FemaleEnd:
 
 EventfulCity_Text_OhYourBagsFull:
 	.string "Oh? Your bag's full.$"
+
+EventfulCity_Text_YouDidIt:
+	.string "You did it. :)$"
 
 EventfulCity_Text_WhereIsWally:
 	.string "Where has our WALLY gone?\p"
