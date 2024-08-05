@@ -1,4 +1,4 @@
-#include "config.h"
+#include "config/general.h"
 #include "config/battle.h"
 #include "config/item.h"
 #include "constants/global.h"
@@ -56,8 +56,6 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
-#include "constants/mugshots.h"
-#include "constants/outfits.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -106,8 +104,8 @@ gStdScripts::
 	.4byte Std_MsgboxPokenav           @ MSGBOX_POKENAV
 gStdScripts_End::
 
-	.include "data/maps/EventfulCity/scripts.inc"
-	.include "data/maps/Kanto/scripts.inc"
+	.include "data/maps/PetalburgCity/scripts.inc"
+	.include "data/maps/SlateportCity/scripts.inc"
 	.include "data/maps/MauvilleCity/scripts.inc"
 	.include "data/maps/RustboroCity/scripts.inc"
 	.include "data/maps/FortreeCity/scripts.inc"
@@ -210,27 +208,27 @@ gStdScripts_End::
 	.include "data/maps/PacifidlogTown_House3/scripts.inc"
 	.include "data/maps/PacifidlogTown_House4/scripts.inc"
 	.include "data/maps/PacifidlogTown_House5/scripts.inc"
-	.include "data/maps/EventfulCity_SpawnHouse/scripts.inc"
-	.include "data/maps/EventfulCity_Gym/scripts.inc"
-	.include "data/maps/EventfulCity_House1/scripts.inc"
-	.include "data/maps/EventfulCity_House2/scripts.inc"
-	.include "data/maps/EventfulCity_PokemonCenter/scripts.inc"
-	.include "data/maps/EventfulCity_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/EventfulCity_Mart/scripts.inc"
-	.include "data/maps/Kanto_SternsShipyard_1F/scripts.inc"
-	.include "data/maps/Kanto_SternsShipyard_2F/scripts.inc"
-	.include "data/maps/Kanto_BattleTentLobby/scripts.inc"
-	.include "data/maps/Kanto_BattleTentCorridor/scripts.inc"
-	.include "data/maps/Kanto_BattleTentBattleRoom/scripts.inc"
-	.include "data/maps/Kanto_NameRatersHouse/scripts.inc"
-	.include "data/maps/Kanto_PokemonFanClub/scripts.inc"
-	.include "data/maps/Kanto_OceanicMuseum_1F/scripts.inc"
-	.include "data/maps/Kanto_OceanicMuseum_2F/scripts.inc"
-	.include "data/maps/Kanto_Harbor/scripts.inc"
-	.include "data/maps/Kanto_House/scripts.inc"
-	.include "data/maps/Kanto_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/Kanto_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/Kanto_Mart/scripts.inc"
+	.include "data/maps/PetalburgCity_WallysHouse/scripts.inc"
+	.include "data/maps/PetalburgCity_Gym/scripts.inc"
+	.include "data/maps/PetalburgCity_House1/scripts.inc"
+	.include "data/maps/PetalburgCity_House2/scripts.inc"
+	.include "data/maps/PetalburgCity_PokemonCenter_1F/scripts.inc"
+	.include "data/maps/PetalburgCity_PokemonCenter_2F/scripts.inc"
+	.include "data/maps/PetalburgCity_Mart/scripts.inc"
+	.include "data/maps/SlateportCity_SternsShipyard_1F/scripts.inc"
+	.include "data/maps/SlateportCity_SternsShipyard_2F/scripts.inc"
+	.include "data/maps/SlateportCity_BattleTentLobby/scripts.inc"
+	.include "data/maps/SlateportCity_BattleTentCorridor/scripts.inc"
+	.include "data/maps/SlateportCity_BattleTentBattleRoom/scripts.inc"
+	.include "data/maps/SlateportCity_NameRatersHouse/scripts.inc"
+	.include "data/maps/SlateportCity_PokemonFanClub/scripts.inc"
+	.include "data/maps/SlateportCity_OceanicMuseum_1F/scripts.inc"
+	.include "data/maps/SlateportCity_OceanicMuseum_2F/scripts.inc"
+	.include "data/maps/SlateportCity_Harbor/scripts.inc"
+	.include "data/maps/SlateportCity_House/scripts.inc"
+	.include "data/maps/SlateportCity_PokemonCenter_1F/scripts.inc"
+	.include "data/maps/SlateportCity_PokemonCenter_2F/scripts.inc"
+	.include "data/maps/SlateportCity_Mart/scripts.inc"
 	.include "data/maps/MauvilleCity_Gym/scripts.inc"
 	.include "data/maps/MauvilleCity_BikeShop/scripts.inc"
 	.include "data/maps/MauvilleCity_House1/scripts.inc"
@@ -355,7 +353,7 @@ gStdScripts_End::
 	.include "data/maps/GraniteCave_B1F/scripts.inc"
 	.include "data/maps/GraniteCave_B2F/scripts.inc"
 	.include "data/maps/GraniteCave_StevensRoom/scripts.inc"
-	.include "data/maps/EventfulWoods/scripts.inc"
+	.include "data/maps/PetalburgWoods/scripts.inc"
 	.include "data/maps/MtChimney/scripts.inc"
 	.include "data/maps/JaggedPass/scripts.inc"
 	.include "data/maps/FieryPath/scripts.inc"
@@ -637,7 +635,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 
 Common_EventScript_UpdateBrineyLocation::
 	goto_if_unset FLAG_RECEIVED_POKENAV, Common_EventScript_NopReturn
-	goto_if_set FLAG_DEFEATED_EVENTFUL_GYM, Common_EventScript_NopReturn
+	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Common_EventScript_NopReturn
 	goto_if_unset FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT, EventScript_SetBrineyLocation_House
 	goto_if_unset FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN, EventScript_SetBrineyLocation_Dewford
 	goto_if_unset FLAG_HIDE_ROUTE_109_MR_BRINEY, EventScript_SetBrineyLocation_Route109
@@ -675,9 +673,9 @@ Common_ShowEasyChatScreen::
 	fadescreen FADE_FROM_BLACK
 	return
 
-Common_EventScript_ReadyEventfulGymForBattle::
-	clearflag FLAG_HIDE_EVENTFUL_GYM_GREETER
-	setflag FLAG_EVENTFUL_MART_EXPANDED_ITEMS
+Common_EventScript_ReadyPetalburgGymForBattle::
+	clearflag FLAG_HIDE_PETALBURG_GYM_GREETER
+	setflag FLAG_PETALBURG_MART_EXPANDED_ITEMS
 	return
 
 Common_EventScript_BufferTrendyPhrase::
@@ -727,6 +725,7 @@ Common_EventScript_OutOfCenterPartyHeal::
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
+	callnative UpdateFollowingPokemon
 	fadescreen FADE_FROM_BLACK
 	return
 
@@ -1071,6 +1070,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/move_tutors.inc"
 	.include "data/scripts/trainer_hill.inc"
 	.include "data/scripts/test_signpost.inc"
+	.include "data/scripts/follower.inc"
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"

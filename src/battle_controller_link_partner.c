@@ -24,7 +24,6 @@
 #include "text.h"
 #include "util.h"
 #include "window.h"
-#include "outfit_menu.h"
 #include "constants/battle_anim.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"

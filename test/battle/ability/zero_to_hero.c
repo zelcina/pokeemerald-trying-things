@@ -11,16 +11,16 @@ SINGLE_BATTLE_TEST("Zero to Hero transforms Palafin when it switches out")
         TURN { SWITCH(player, 1); }
         TURN { SWITCH(player, 0); }
     } SCENE {
-        MESSAGE("Palafin, that's enough! Come back!");
-        MESSAGE("Go! Wobbuffet!");
-        MESSAGE("Wobbuffet, that's enough! Come back!");
-        MESSAGE("Go! Palafin!");
+        SWITCH_OUT_MESSAGE("Palafin");
+        SEND_IN_MESSAGE("Wobbuffet");
+        SWITCH_OUT_MESSAGE("Wobbuffet");
+        SEND_IN_MESSAGE("Palafin");
         ABILITY_POPUP(player, ABILITY_ZERO_TO_HERO);
         MESSAGE("Palafin underwent a heroic transformation!");
     } THEN { EXPECT_EQ(player->species, SPECIES_PALAFIN_HERO); }
 }
 
-SINGLE_BATTLE_TEST("Zero to Hero can't be surpressed by Neutralizing Gas")
+SINGLE_BATTLE_TEST("Zero to Hero can't be suppressed by Neutralizing Gas")
 {
     GIVEN {
         PLAYER(SPECIES_PALAFIN_ZERO) { Ability(ABILITY_ZERO_TO_HERO); }
@@ -138,7 +138,6 @@ SINGLE_BATTLE_TEST("Imposter doesn't apply the heroic transformation message whe
 
 SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers fainted - Player")
 {
-    KNOWN_FAILING; // Explosion causes the ability to wait
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
         PLAYER(SPECIES_PALAFIN_ZERO);
@@ -153,7 +152,7 @@ SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers
         HP_BAR(opponent, hp: 0);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EXPLOSION, opponent);
         // Everyone faints.
-        MESSAGE("Go! Palafin!");
+        SEND_IN_MESSAGE("Palafin");
         MESSAGE("2 sent out Wobbuffet!");
         ABILITY_POPUP(player, ABILITY_ZERO_TO_HERO);
         MESSAGE("Palafin underwent a heroic transformation!");
@@ -176,7 +175,7 @@ SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers
         HP_BAR(player, hp: 0);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EXPLOSION, player);
         // Everyone faints.
-        MESSAGE("Go! Wobbuffet!");
+        SEND_IN_MESSAGE("Wobbuffet");
         MESSAGE("2 sent out Palafin!");
         ABILITY_POPUP(opponent, ABILITY_ZERO_TO_HERO);
         MESSAGE("Foe Palafin underwent a heroic transformation!");

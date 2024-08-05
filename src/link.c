@@ -335,7 +335,6 @@ static void InitLocalLinkPlayer(void)
     {
         gLocalLinkPlayer.progressFlags |= 0x10;
     }
-    gLocalLinkPlayer.currOutfitId = gSaveBlock2Ptr->currOutfitId;
 }
 
 static void VBlankCB_LinkError(void)

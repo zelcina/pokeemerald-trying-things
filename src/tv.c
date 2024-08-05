@@ -258,7 +258,7 @@ static const u16 sNumberOneVarsAndThresholds[][2] = {
 
 static const u8 *const sPokeNewsTextGroup_Upcoming[NUM_POKENEWS_TYPES + 1] = {
     [POKENEWS_NONE]        = NULL,
-    [POKENEWS_KANTO]   = gPokeNewsTextKanto_Upcoming,
+    [POKENEWS_SLATEPORT]   = gPokeNewsTextSlateport_Upcoming,
     [POKENEWS_GAME_CORNER] = gPokeNewsTextGameCorner_Upcoming,
     [POKENEWS_LILYCOVE]    = gPokeNewsTextLilycove_Upcoming,
     [POKENEWS_BLENDMASTER] = gPokeNewsTextBlendMaster_Upcoming
@@ -266,7 +266,7 @@ static const u8 *const sPokeNewsTextGroup_Upcoming[NUM_POKENEWS_TYPES + 1] = {
 
 static const u8 *const sPokeNewsTextGroup_Ongoing[NUM_POKENEWS_TYPES + 1] = {
     [POKENEWS_NONE]        = NULL,
-    [POKENEWS_KANTO]   = gPokeNewsTextKanto_Ongoing,
+    [POKENEWS_SLATEPORT]   = gPokeNewsTextSlateport_Ongoing,
     [POKENEWS_GAME_CORNER] = gPokeNewsTextGameCorner_Ongoing,
     [POKENEWS_LILYCOVE]    = gPokeNewsTextLilycove_Ongoing,
     [POKENEWS_BLENDMASTER] = gPokeNewsTextBlendMaster_Ongoing
@@ -274,7 +274,7 @@ static const u8 *const sPokeNewsTextGroup_Ongoing[NUM_POKENEWS_TYPES + 1] = {
 
 static const u8 *const sPokeNewsTextGroup_Ending[NUM_POKENEWS_TYPES + 1] = {
     [POKENEWS_NONE]        = NULL,
-    [POKENEWS_KANTO]   = gPokeNewsTextKanto_Ending,
+    [POKENEWS_SLATEPORT]   = gPokeNewsTextSlateport_Ending,
     [POKENEWS_GAME_CORNER] = gPokeNewsTextGameCorner_Ending,
     [POKENEWS_LILYCOVE]    = gPokeNewsTextLilycove_Ending,
     [POKENEWS_BLENDMASTER] = gPokeNewsTextBlendMaster_Ending
@@ -1455,7 +1455,7 @@ void BravoTrainerPokemonProfile_BeforeInterview2(u8 contestStandingPlace)
         show->bravoTrainer.contestCategory = gSpecialVar_ContestCategory;
         show->bravoTrainer.contestRank = gSpecialVar_ContestRank;
         show->bravoTrainer.species = GetMonData(&gPlayerParty[gContestMonPartyIndex], MON_DATA_SPECIES, NULL);
-        GetMonData(&gPlayerParty[gContestMonPartyIndex], MON_DATA_NICKNAME, show->bravoTrainer.pokemonNickname);
+        GetMonData(&gPlayerParty[gContestMonPartyIndex], MON_DATA_NICKNAME10, show->bravoTrainer.pokemonNickname);
         StripExtCtrlCodes(show->bravoTrainer.pokemonNickname);
         show->bravoTrainer.pokemonNameLanguage = GetMonData(&gPlayerParty[gContestMonPartyIndex], MON_DATA_LANGUAGE);
     }
@@ -1509,7 +1509,7 @@ void TryPutSmartShopperOnAir(void)
                     show->smartshopperShow.itemIds[i] = gMartPurchaseHistory[i].itemId;
                     show->smartshopperShow.itemAmounts[i] = gMartPurchaseHistory[i].quantity;
                 }
-                show->smartshopperShow.priceReduced = IsPokeNewsActive(POKENEWS_KANTO);
+                show->smartshopperShow.priceReduced = IsPokeNewsActive(POKENEWS_SLATEPORT);
                 StringCopy(show->smartshopperShow.playerName, gSaveBlock2Ptr->playerName);
                 StorePlayerIdInRecordMixShow(show);
                 show->smartshopperShow.language = gGameLanguage;
@@ -1536,7 +1536,7 @@ void PutNameRaterShowOnTheAir(void)
             show->nameRaterShow.random2 = Random() % 2;
             show->nameRaterShow.randomSpecies = GetRandomDifferentSpeciesSeenByPlayer(show->nameRaterShow.species);
             StringCopy(show->nameRaterShow.trainerName, gSaveBlock2Ptr->playerName);
-            GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, show->nameRaterShow.pokemonName);
+            GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME10, show->nameRaterShow.pokemonName);
             StripExtCtrlCodes(show->nameRaterShow.pokemonName);
             StorePlayerIdInNormalShow(show);
             show->nameRaterShow.language = gGameLanguage;
@@ -1612,7 +1612,7 @@ static void InterviewAfter_PkmnFanClubOpinions(void)
     show->fanclubOpinions.friendshipHighNybble = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_FRIENDSHIP, NULL) >> 4;
     show->fanclubOpinions.questionAsked = gSpecialVar_0x8007;
     StringCopy(show->fanclubOpinions.playerName, gSaveBlock2Ptr->playerName);
-    GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_NICKNAME, show->fanclubOpinions.nickname);
+    GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_NICKNAME10, show->fanclubOpinions.nickname);
     StripExtCtrlCodes(show->fanclubOpinions.nickname);
     show->fanclubOpinions.species = GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_SPECIES, NULL);
     StorePlayerIdInNormalShow(show);
@@ -2229,7 +2229,7 @@ void TryPutSpotTheCutiesOnAir(struct Pokemon *pokemon, u8 ribbonMonDataIdx)
         show->cuties.kind = TVSHOW_CUTIES;
         show->cuties.active = FALSE; // NOTE: Show is not active until passed via Record Mix.
         StringCopy(show->cuties.playerName, gSaveBlock2Ptr->playerName);
-        GetMonData(pokemon, MON_DATA_NICKNAME, show->cuties.nickname);
+        GetMonData(pokemon, MON_DATA_NICKNAME10, show->cuties.nickname);
         StripExtCtrlCodes(show->cuties.nickname);
         show->cuties.nRibbons = GetRibbonCount(pokemon);
         show->cuties.selectedRibbon = MonDataIdxToRibbon(ribbonMonDataIdx);
@@ -2642,17 +2642,17 @@ bool8 IsPokeNewsActive(u8 newsKind)
 }
 
 // Returns TRUE if the effects of the given PokeNews should be applied.
-// For POKENEWS_KANTO / POKENEWS_LILYCOVE, only apply the effect if
+// For POKENEWS_SLATEPORT / POKENEWS_LILYCOVE, only apply the effect if
 // the player is talking to the Energy Guru / at the Dept Store Rooftop.
 // For any other type of PokeNews this is always TRUE.
 static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
 {
     switch (newsKind)
     {
-    case POKENEWS_KANTO:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(KANTO)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(KANTO)
-         && gSpecialVar_LastTalked == LOCALID_KANTO_ENERGY_GURU)
+    case POKENEWS_SLATEPORT:
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SLATEPORT_CITY)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SLATEPORT_CITY)
+         && gSpecialVar_LastTalked == LOCALID_SLATEPORT_ENERGY_GURU)
             return TRUE;
         return FALSE;
     case POKENEWS_LILYCOVE:
@@ -2760,16 +2760,14 @@ void ConvertIntToDecimalString(u8 varIdx, int value)
 
 size_t CountDigits(int value)
 {
-    if (value / 10 == 0)        return 1;
-    if (value / 100 == 0)       return 2;
-    if (value / 1000 == 0)      return 3;
-    if (value / 10000 == 0)     return 4;
-    if (value / 100000 == 0)    return 5;
-    if (value / 1000000 == 0)   return 6;
-    if (value / 10000000 == 0)  return 7;
-    if (value / 100000000 == 0) return 8;
+    u32 count = 0;
 
-    return 1;
+    while (value > 0)
+    {
+        value /= 10;
+        count++;
+    }
+    return count;
 }
 
 static void SmartShopper_BufferPurchaseTotal(u8 varIdx, TVShow *show)

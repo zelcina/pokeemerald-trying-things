@@ -1,7 +1,6 @@
 #include "global.h"
 #include "malloc.h"
 #include "decompress.h"
-#include "data.h"
 #include "decoration.h"
 #include "decoration_inventory.h"
 #include "event_data.h"
@@ -1371,6 +1370,7 @@ static void Task_PlaceDecoration(u8 taskId)
             }
             break;
         case 1:
+            RemoveFollowingPokemon();
             gPaletteFade.bufferTransferDisabled = TRUE;
             ConfigureCameraObjectForPlacingDecoration(&sPlaceDecorationGraphicsDataBuffer, gCurDecorationItems[gCurDecorationIndex]);
             SetUpDecorationShape(taskId);
@@ -1625,6 +1625,17 @@ static bool8 CanPlaceDecoration(u8 taskId, const struct Decoration *decoration)
                 return FALSE;
         }
         break;
+    }
+
+    // If sprite(like), check if there is an available object event slot for it
+    if (decoration->permission == DECORPERM_SPRITE)
+    {
+        for (i = 0; i < NUM_DECORATION_FLAGS; i++)
+        {
+            if (FlagGet(FLAG_DECORATION_1 + i) == TRUE)
+                return TRUE;
+        }
+        return FALSE;
     }
     return TRUE;
 }
@@ -2296,12 +2307,14 @@ static bool8 HasDecorationsInUse(u8 taskId)
 
 static void SetUpPuttingAwayDecorationPlayerAvatar(void)
 {
-    u16 gfxId = GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(gSaveBlock2Ptr->currOutfitId, PLAYER_AVATAR_GFX_DECORATING, gSaveBlock2Ptr->playerGender);
     GetPlayerFacingDirection();
     sDecor_CameraSpriteObjectIdx1 = gSprites[gFieldCamera.spriteId].data[0];
     LoadPlayerSpritePalette();
     gFieldCamera.spriteId = CreateSprite(&sPuttingAwayCursorSpriteTemplate, 120, 80, 0);
-    sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(gfxId, SpriteCallbackDummy, 136, 72, 0);
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BRENDAN_DECORATING, SpriteCallbackDummy, 136, 72, 0);
+    else
+        sDecor_CameraSpriteObjectIdx2 = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAY_DECORATING, SpriteCallbackDummy, 136, 72, 0);
 
     gSprites[sDecor_CameraSpriteObjectIdx2].oam.priority = 1;
     DestroySprite(&gSprites[sDecor_CameraSpriteObjectIdx1]);
@@ -2326,6 +2339,7 @@ static void Task_ContinuePuttingAwayDecorations(u8 taskId)
         }
         break;
     case 1:
+        RemoveFollowingPokemon();
         SetUpPuttingAwayDecorationPlayerAvatar();
         FadeInFromBlack();
         tState = 2;

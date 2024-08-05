@@ -32,7 +32,6 @@ SINGLE_BATTLE_TEST("Vessel of Ruin reduces Sp. Atk if opposing mon's ability doe
 
 SINGLE_BATTLE_TEST("Vessel of Ruin's message displays correctly after all battlers fainted - Player")
 {
-    KNOWN_FAILING; // Explosion causes the ability to wait
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
         PLAYER(SPECIES_WOBBUFFET) { HP(1);}
@@ -68,7 +67,7 @@ SINGLE_BATTLE_TEST("Vessel of Ruin's message displays correctly after all battle
         HP_BAR(player, hp: 0);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EXPLOSION, player);
         // Everyone faints.
-        MESSAGE("Go! Wobbuffet!");
+        SEND_IN_MESSAGE("Wobbuffet");
         MESSAGE("2 sent out Ting-Lu!");
         ABILITY_POPUP(opponent, ABILITY_VESSEL_OF_RUIN);
         MESSAGE("Foe Ting-Lu's Vessel of Ruin weakened the Sp. Atk of all surrounding Pokémon!");
