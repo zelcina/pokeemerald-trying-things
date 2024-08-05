@@ -2025,7 +2025,7 @@ MatchCall_Text_Mom1::
 MatchCall_Text_Mom2::
 	.string "MOM: Hi, {PLAYER}!\n"
 	.string "Your father keeps himself locked\l"
-	.string "away in the EVENTFUL GYM.\p"
+	.string "away in the PETALBURG GYM.\p"
 	.string "He comes home every so often.\n"
 	.string "But he goes back to the GYM when\l"
 	.string "he's eaten everything he can.\p"
@@ -2345,9 +2345,9 @@ MatchCall_Text_May1::
 MatchCall_Text_May2::
 	.string "MAY: Hi, {PLAYER}{KUN}!\p"
 	.string "You know how little towns like\n"
-	.string "EVENTFUL and DEWFORD have GYMS?\p"
+	.string "PETALBURG and DEWFORD have GYMS?\p"
 	.string "For some reason, the big port of\n"
-	.string "Kanto doesn't have a GYM.\p"
+	.string "SLATEPORT doesn't have a GYM.\p"
 	.string "When they finally build a GYM there,\n"
 	.string "I should apply to be the LEADER.$"
 
@@ -2438,7 +2438,7 @@ MatchCall_Text_May12::
 MatchCall_Text_May13::
 	.string "MAY: Hi, {PLAYER}{KUN}!\p"
 	.string "How's it going?\n"
-	.string "Are you filling your Pokédex?\p"
+	.string "Are you filling your POKéDEX?\p"
 	.string "I heard a rumor that there are\n"
 	.string "super-ancient POKéMON out there.\l"
 	.string "And there are three of them!\p"
@@ -2471,9 +2471,9 @@ MatchCall_Text_Brendan1::
 MatchCall_Text_Brendan2::
 	.string "BRENDAN: Hey, {PLAYER}!\p"
 	.string "I don't get how little towns like\n"
-	.string "EVENTFUL and DEWFORD have GYMS.\p"
+	.string "PETALBURG and DEWFORD have GYMS.\p"
 	.string "I mean, not when the big port of\n"
-	.string "Kanto doesn't have a GYM.\p"
+	.string "SLATEPORT doesn't have a GYM.\p"
 	.string "When they finally build a GYM there,\n"
 	.string "I should apply to be the LEADER.$"
 
@@ -2565,7 +2565,7 @@ MatchCall_Text_Brendan12::
 MatchCall_Text_Brendan13::
 	.string "BRENDAN: Hey there, {PLAYER}!\p"
 	.string "How's it going? Filling up your\n"
-	.string "Pokédex successfully?\p"
+	.string "POKéDEX successfully?\p"
 	.string "I heard a rumor that there are\n"
 	.string "super-ancient POKéMON out there.\l"
 	.string "And not just one--three!\p"
@@ -2766,7 +2766,7 @@ MatchCall_Text_Norman8::
 	.string "What good timing!\p"
 	.string "This time, I'm going to challenge\n"
 	.string "you to battle.\p"
-	.string "I'm waiting in the EVENTFUL GYM.\n"
+	.string "I'm waiting in the PETALBURG GYM.\n"
 	.string "Accept my challenge anytime!$"
 
 MatchCall_Text_Norman9::
@@ -2838,7 +2838,7 @@ MatchCall_Text_BirchRegisterCall:
 	.string "upgraded with MATCH CALL.\p"
 	.string "Well, I should register, too!\p"
 	.string "That way, I'd be able to examine\n"
-	.string "your Pokédex even while you're\l"
+	.string "your POKéDEX even while you're\l"
 	.string "out in the field.\p"
 	.string "… … … … … …$"
 
@@ -2848,7 +2848,7 @@ MatchCall_Text_RegisteredBirch:
 
 MatchCall_Text_UnusedProfBirch:
 	.string "PROF. BIRCH: When one has both\n"
-	.string "the Pokédex and POKéNAV, studying\l"
+	.string "the POKéDEX and POKéNAV, studying\l"
 	.string "POKéMON becomes more fun, eh?$"
 
 MatchCall_Text_MrStone1::
@@ -2873,7 +2873,7 @@ MatchCall_Text_MrStone2::
 	.string "I need you to deliver my letter\n"
 	.string "to STEVEN in DEWFORD.\p"
 	.string "After that, deliver our parcel to\n"
-	.string "CAPT. STERN in Kanto.\p"
+	.string "CAPT. STERN in SLATEPORT.\p"
 	.string "You remember, don't you?\p"
 	.string "Now, since I am a busy PRESIDENT,\n"
 	.string "I have to go! Bye-bye!$"
@@ -2899,7 +2899,7 @@ MatchCall_Text_MrStone4::
 
 MatchCall_Text_MrStone5::
 	.string "MR. STONE: Hello, hello, {PLAYER}{KUN}!\p"
-	.string "I heard from someone in EVENTFUL\n"
+	.string "I heard from someone in PETALBURG\n"
 	.string "that you're NORMAN's child!\p"
 	.string "No wonder you're such a capable\n"
 	.string "being!$"

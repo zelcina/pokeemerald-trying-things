@@ -1,8 +1,8 @@
 // multichoice lists
 static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
 {
-    {gText_Eventful},
-    {gText_Kanto},
+    {gText_Petalburg},
+    {gText_Slateport},
     {gText_Exit},
 };
 
@@ -288,7 +288,7 @@ static const struct MenuAction MultichoiceList_HowsFishing[] =
     {gText_NotSoGood},
 };
 
-static const struct MenuAction MultichoiceList_SSTidalKantoWithBF[] =
+static const struct MenuAction MultichoiceList_SSTidalSlateportWithBF[] =
 {
     {gText_LilycoveCity},
     {gText_BattleFrontier},
@@ -297,7 +297,7 @@ static const struct MenuAction MultichoiceList_SSTidalKantoWithBF[] =
 
 static const struct MenuAction MultichoiceList_SSTidalBattleFrontier[] =
 {
-    {gText_Kanto},
+    {gText_SlateportCity},
     {gText_LilycoveCity},
     {gText_Exit},
 };
@@ -308,7 +308,7 @@ static const struct MenuAction MultichoiceList_RightLeft[] =
     {gText_Left},
 };
 
-static const struct MenuAction MultichoiceList_SSTidalKantoNoBF[] =
+static const struct MenuAction MultichoiceList_SSTidalSlateportNoBF[] =
 {
     {gText_LilycoveCity},
     {gText_Exit},
@@ -742,7 +742,7 @@ static const struct MenuAction MultichoiceList_WheresRayquaza[] =
     {gText_DontRemember},
 };
 
-static const struct MenuAction MultichoiceList_KantoTentRules[] =
+static const struct MenuAction MultichoiceList_SlateportTentRules[] =
 {
     {gText_BasicRules},
     {gText_SwapPartners},
@@ -843,11 +843,11 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_GAME_CORNER_COINS]          = MULTICHOICE(MultichoiceList_GameCornerCoins),
     [MULTI_HOWS_FISHING]               = MULTICHOICE(MultichoiceList_HowsFishing),
     [MULTI_UNUSED_51]                  = MULTICHOICE(MultichoiceList_Exit),
-    [MULTI_SSTIDAL_KANTO_WITH_BF]  = MULTICHOICE(MultichoiceList_SSTidalKantoWithBF),
+    [MULTI_SSTIDAL_SLATEPORT_WITH_BF]  = MULTICHOICE(MultichoiceList_SSTidalSlateportWithBF),
     [MULTI_SSTIDAL_BATTLE_FRONTIER]    = MULTICHOICE(MultichoiceList_SSTidalBattleFrontier),
     [MULTI_RIGHTLEFT]                  = MULTICHOICE(MultichoiceList_RightLeft),
     [MULTI_GAME_CORNER_TMS]            = MULTICHOICE(MultichoiceList_GameCornerTMs),
-    [MULTI_SSTIDAL_KANTO_NO_BF]    = MULTICHOICE(MultichoiceList_SSTidalKantoNoBF),
+    [MULTI_SSTIDAL_SLATEPORT_NO_BF]    = MULTICHOICE(MultichoiceList_SSTidalSlateportNoBF),
     [MULTI_FLOORS]                     = MULTICHOICE(MultichoiceList_Floors),
     [MULTI_SHARDS_R]                   = MULTICHOICE(MultichoiceList_ShardsR),
     [MULTI_SHARDS_Y]                   = MULTICHOICE(MultichoiceList_ShardsY),
@@ -902,7 +902,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TV_LATI]                    = MULTICHOICE(MultichoiceList_TVLati),
     [MULTI_BATTLE_TOWER_FEELINGS]      = MULTICHOICE(MultichoiceList_BattleTowerFeelings),
     [MULTI_WHERES_RAYQUAZA]            = MULTICHOICE(MultichoiceList_WheresRayquaza),
-    [MULTI_KANTO_TENT_RULES]       = MULTICHOICE(MultichoiceList_KantoTentRules),
+    [MULTI_SLATEPORT_TENT_RULES]       = MULTICHOICE(MultichoiceList_SlateportTentRules),
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
@@ -962,7 +962,7 @@ static const u8 *const sPCNameStrings[] =
 
 static const u8 *const sLilycoveSSTidalDestinations[SSTIDAL_SELECTION_COUNT] =
 {
-    [SSTIDAL_SELECTION_KANTO]       = gText_Kanto,
+    [SSTIDAL_SELECTION_SLATEPORT]       = gText_SlateportCity,
     [SSTIDAL_SELECTION_BATTLE_FRONTIER] = gText_BattleFrontier,
     [SSTIDAL_SELECTION_SOUTHERN_ISLAND] = gText_SouthernIsland,
     [SSTIDAL_SELECTION_NAVEL_ROCK]      = gText_NavelRock,

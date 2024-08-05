@@ -302,8 +302,8 @@ Route104_EventScript_BrineysCottageSign::
 	msgbox Route104_Text_MrBrineysCottage, MSGBOX_SIGN
 	end
 
-Route104_EventScript_RouteSignEventful::
-	msgbox Route104_Text_RouteSignEventful, MSGBOX_SIGN
+Route104_EventScript_RouteSignPetalburg::
+	msgbox Route104_Text_RouteSignPetalburg, MSGBOX_SIGN
 	end
 
 Route104_EventScript_RouteSignRustboro::
@@ -1059,9 +1059,9 @@ Route104_Text_FlowerShopSellingSaplings:
 Route104_Text_MrBrineysCottage:
 	.string "MR. BRINEY'S COTTAGE$"
 
-Route104_Text_RouteSignEventful:
+Route104_Text_RouteSignPetalburg:
 	.string "ROUTE 1O4\n"
-	.string "{RIGHT_ARROW} EVENTFUL CITY$"
+	.string "{RIGHT_ARROW} PETALBURG CITY$"
 
 Route104_Text_RouteSignRustboro:
 	.string "ROUTE 1O4\n"
@@ -1094,7 +1094,7 @@ Route104_Text_RegisteredMay:
 
 Route104_Text_MayHowsYourPokedex:
 	.string "MAY: Oh, by the way, {PLAYER}{KUN},\n"
-	.string "how's your Pokédex coming along?$"
+	.string "how's your POKéDEX coming along?$"
 
 Route104_Text_MayMinesDecentLetsBattle:
 	.string "Mine's looking pretty decent.\n"
@@ -1139,7 +1139,7 @@ Route104_Text_RegisteredBrendan:
 	.string "in the POKéNAV.$"
 
 Route104_Text_BrendanHowsYourPokedex:
-	.string "BRENDAN: {PLAYER}, how's your Pokédex?\n"
+	.string "BRENDAN: {PLAYER}, how's your POKéDEX?\n"
 	.string "Have you filled in any pages yet?$"
 
 Route104_Text_BrendanDoingGreatLetsBattle:

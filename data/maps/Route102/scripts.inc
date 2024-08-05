@@ -9,8 +9,8 @@ Route102_EventScript_RouteSignOldale::
 	msgbox Route102_Text_RouteSignOldale, MSGBOX_SIGN
 	end
 
-Route102_EventScript_RouteSignEventful::
-	msgbox Route102_Text_RouteSignEventful, MSGBOX_SIGN
+Route102_EventScript_RouteSignPetalburg::
+	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
 	end
 
 Route102_EventScript_Boy::
@@ -104,6 +104,6 @@ Route102_Text_RouteSignOldale:
 	.string "ROUTE 102\n"
 	.string "{RIGHT_ARROW} OLDALE TOWN$"
 
-Route102_Text_RouteSignEventful:
+Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
-	.string "{LEFT_ARROW} EVENTFUL CITY$"
+	.string "{LEFT_ARROW} PETALBURG CITY$"

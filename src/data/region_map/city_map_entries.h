@@ -36,19 +36,19 @@ static const struct CityMapEntry sPokenavCityMaps[NUM_CITY_MAPS] =
         .tilemap = gPokenavCityMap_Pacifidlog_0,
     },
     {
-        .mapSecId = MAPSEC_EVENTFUL_CITY,
+        .mapSecId = MAPSEC_PETALBURG_CITY,
         .index = 0,
-        .tilemap = gPokenavCityMap_Eventful_0,
+        .tilemap = gPokenavCityMap_Petalburg_0,
     },
     {
-        .mapSecId = MAPSEC_KANTO,
+        .mapSecId = MAPSEC_SLATEPORT_CITY,
         .index = 0,
-        .tilemap = gPokenavCityMap_Kanto_0,
+        .tilemap = gPokenavCityMap_Slateport_0,
     },
     {
-        .mapSecId = MAPSEC_KANTO,
+        .mapSecId = MAPSEC_SLATEPORT_CITY,
         .index = 1,
-        .tilemap = gPokenavCityMap_Kanto_1,
+        .tilemap = gPokenavCityMap_Slateport_1,
     },
     {
         .mapSecId = MAPSEC_MAUVILLE_CITY,

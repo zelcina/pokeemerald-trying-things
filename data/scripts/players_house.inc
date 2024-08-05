@@ -149,7 +149,7 @@ PlayersHouse_1F_EventScript_SetWatchedBroadcast::
 	releaseall
 	end
 
-PlayersHouse_1F_EventScript_EventfulGymReportMale::
+PlayersHouse_1F_EventScript_PetalburgGymReportMale::
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
@@ -174,7 +174,7 @@ PlayersHouse_1F_EventScript_EventfulGymReportMale::
 	goto PlayersHouse_1F_EventScript_SetWatchedBroadcast
 	end
 
-PlayersHouse_1F_EventScript_EventfulGymReportFemale::
+PlayersHouse_1F_EventScript_PetalburgGymReportFemale::
 	applymovement VAR_0x8005, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	call PlayersHouse_1F_EventScript_MomNoticeGymBroadcast
@@ -212,7 +212,7 @@ PlayersHouse_1F_EventScript_MomNoticeGymBroadcast::
 PlayersHouse_1F_EventScript_WatchGymBroadcast::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
-	msgbox PlayersHouse_1F_Text_ReportFromEventfulGym, MSGBOX_DEFAULT
+	msgbox PlayersHouse_1F_Text_ReportFromPetalburgGym, MSGBOX_DEFAULT
 	fadedefaultbgm
 	special TurnOffTVScreen
 	setflag FLAG_SYS_TV_HOME
@@ -439,7 +439,7 @@ PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV::
 	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_DadApproachPlayerFemale
 	msgbox PlayersHouse_1F_Text_TicketFromBrineyCameForYou, MSGBOX_DEFAULT
 	giveitem ITEM_SS_TICKET
-	msgbox PlayersHouse_1F_Text_PortsInKantoLilycove, MSGBOX_DEFAULT
+	msgbox PlayersHouse_1F_Text_PortsInSlateportLilycove, MSGBOX_DEFAULT
 	closemessage
 	delay 20
 	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_MomApproachDadMale

@@ -7,22 +7,22 @@ SSTidalCorridor_MapScripts::
 
 SSTidalCorridor_OnFrame:
 	map_script_2 VAR_SS_TIDAL_SCOTT_STATE, 0, SSTidalCorridor_EventScript_ScottScene
-	map_script_2 VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_KANTO, SSTidalCorridor_EventScript_DepartKantoForLilycove
-	map_script_2 VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_LILYCOVE, SSTidalCorridor_EventScript_DepartLilycoveForKanto
+	map_script_2 VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_SLATEPORT, SSTidalCorridor_EventScript_DepartSlateportForLilycove
+	map_script_2 VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_LILYCOVE, SSTidalCorridor_EventScript_DepartLilycoveForSlateport
 	map_script_2 VAR_SS_TIDAL_STATE, SS_TIDAL_EXIT_CURRENTS_RIGHT, SSTidalCorridor_EventScript_HalfwayToLilycove
-	map_script_2 VAR_SS_TIDAL_STATE, SS_TIDAL_EXIT_CURRENTS_LEFT, SSTidalCorridor_EventScript_ArrivedInKanto
+	map_script_2 VAR_SS_TIDAL_STATE, SS_TIDAL_EXIT_CURRENTS_LEFT, SSTidalCorridor_EventScript_ArrivedInSlateport
 	.2byte 0
 
-SSTidalCorridor_EventScript_DepartKantoForLilycove::
+SSTidalCorridor_EventScript_DepartSlateportForLilycove::
 	special SetSSTidalFlag
-	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_DEPART_KANTO
+	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_DEPART_SLATEPORT
 	lockall
 	playse SE_DING_DONG
 	msgbox SSTidal_Text_FastCurrentsHopeYouEnjoyVoyage, MSGBOX_DEFAULT
 	releaseall
 	end
 
-SSTidalCorridor_EventScript_DepartLilycoveForKanto::
+SSTidalCorridor_EventScript_DepartLilycoveForSlateport::
 	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_DEPART_LILYCOVE
 	lockall
 	playse SE_DING_DONG
@@ -30,9 +30,9 @@ SSTidalCorridor_EventScript_DepartLilycoveForKanto::
 	releaseall
 	end
 
-SSTidalRooms_EventScript_HalfwayToKanto::
+SSTidalRooms_EventScript_HalfwayToSlateport::
 	special SetSSTidalFlag
-	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_HALFWAY_KANTO
+	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_HALFWAY_SLATEPORT
 	playse SE_DING_DONG
 	msgbox SSTidal_Text_FastCurrentsHopeYouEnjoyVoyage, MSGBOX_DEFAULT
 	return
@@ -45,8 +45,8 @@ SSTidalRooms_EventScript_ArrivedInLilycove::
 	return
 
 SSTidalCorridor_EventScript_ReachedStepCount::
-	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_DEPART_KANTO, SSTidalCorridor_EventScript_HalfwayToLilycove
-	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_HALFWAY_KANTO, SSTidalCorridor_EventScript_ArrivedInKanto
+	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_DEPART_SLATEPORT, SSTidalCorridor_EventScript_HalfwayToLilycove
+	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_HALFWAY_SLATEPORT, SSTidalCorridor_EventScript_ArrivedInSlateport
 	end
 
 SSTidalCorridor_EventScript_HalfwayToLilycove::
@@ -58,28 +58,28 @@ SSTidalCorridor_EventScript_HalfwayToLilycove::
 	releaseall
 	end
 
-SSTidalCorridor_EventScript_ArrivedInKanto::
+SSTidalCorridor_EventScript_ArrivedInSlateport::
 	special ResetSSTidalFlag
-	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_LAND_KANTO
+	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_LAND_SLATEPORT
 	lockall
 	playse SE_DING_DONG
-	msgbox SSTidal_Text_MadeLandInKanto, MSGBOX_DEFAULT
+	msgbox SSTidal_Text_MadeLandInSlateport, MSGBOX_DEFAULT
 	releaseall
 	end
 
-SSTidalRooms_EventScript_ArrivedInKanto::
+SSTidalRooms_EventScript_ArrivedInSlateport::
 	special ResetSSTidalFlag
-	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_LAND_KANTO
+	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_LAND_SLATEPORT
 	playse SE_DING_DONG
-	msgbox SSTidal_Text_MadeLandInKanto, MSGBOX_DEFAULT
+	msgbox SSTidal_Text_MadeLandInSlateport, MSGBOX_DEFAULT
 	return
 
 SSTidalRooms_EventScript_ProgessCruiseAfterBed::
 	switch VAR_SS_TIDAL_STATE
-	case SS_TIDAL_DEPART_KANTO, SSTidalRooms_EventScript_ArrivedInLilycove
+	case SS_TIDAL_DEPART_SLATEPORT, SSTidalRooms_EventScript_ArrivedInLilycove
 	case SS_TIDAL_HALFWAY_LILYCOVE, SSTidalRooms_EventScript_ArrivedInLilycove
-	case SS_TIDAL_DEPART_LILYCOVE, SSTidalRooms_EventScript_HalfwayToKanto
-	case SS_TIDAL_HALFWAY_KANTO, SSTidalRooms_EventScript_ArrivedInKanto
+	case SS_TIDAL_DEPART_LILYCOVE, SSTidalRooms_EventScript_HalfwayToSlateport
+	case SS_TIDAL_HALFWAY_SLATEPORT, SSTidalRooms_EventScript_ArrivedInSlateport
 	return
 
 SSTidalCorridor_EventScript_Briney::
@@ -116,7 +116,7 @@ SSTidalCorridor_EventScript_ExitSailor::
 	lock
 	faceplayer
 	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_LAND_LILYCOVE, SSTidalCorridor_EventScript_ExitLilycove
-	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_LAND_KANTO, SSTidalCorridor_EventScript_ExitKanto
+	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_LAND_SLATEPORT, SSTidalCorridor_EventScript_ExitSlateport
 	msgbox SSTidalCorridor_Text_CanRestInCabin2, MSGBOX_DEFAULT
 	release
 	end
@@ -130,11 +130,11 @@ SSTidalCorridor_EventScript_ExitLilycove::
 	release
 	end
 
-SSTidalCorridor_EventScript_ExitKanto::
-	setrespawn HEAL_LOCATION_KANTO
+SSTidalCorridor_EventScript_ExitSlateport::
+	setrespawn HEAL_LOCATION_SLATEPORT_CITY
 	msgbox SSTidalCorridor_Text_WeveArrived, MSGBOX_DEFAULT
 	call_if_set FLAG_RECEIVED_TM_SNATCH, SSTidalCorridor_EventScript_HideSnatchGiver
-	warp MAP_KANTO_HARBOR, 8, 11
+	warp MAP_SLATEPORT_CITY_HARBOR, 8, 11
 	waitstate
 	release
 	end
@@ -145,8 +145,8 @@ SSTidalCorridor_EventScript_HideSnatchGiver::
 
 SSTidalCorridor_EventScript_Porthole::
 	lockall
-	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_DEPART_KANTO, SSTidalCorridor_EventScript_LookThroughPorthole
-	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_HALFWAY_KANTO, SSTidalCorridor_EventScript_LookThroughPorthole
+	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_DEPART_SLATEPORT, SSTidalCorridor_EventScript_LookThroughPorthole
+	goto_if_eq VAR_SS_TIDAL_STATE, SS_TIDAL_HALFWAY_SLATEPORT, SSTidalCorridor_EventScript_LookThroughPorthole
 	msgbox SSTidalCorridor_Text_HorizonSpreadsBeyondPorthole, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -283,8 +283,8 @@ SSTidal_Text_HopeYouEnjoyVoyage:
 	.string "We hope you enjoy your voyage on\n"
 	.string "our ferry.$"
 
-SSTidal_Text_MadeLandInKanto:
-	.string "We have made land in Kanto.\n"
+SSTidal_Text_MadeLandInSlateport:
+	.string "We have made land in SLATEPORT CITY.\n"
 	.string "Thank you for sailing with us.$"
 
 SSTidal_Text_MadeLandInLilycove:

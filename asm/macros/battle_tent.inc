@@ -100,68 +100,68 @@
 	.endm
 
 
-@ Kanto Tent
+@ Slateport Tent
 
-	@ Initialize the Kanto Battle Tent challenge
+	@ Initialize the Slateport Battle Tent challenge
 	.macro slateporttent_init
-	setvar VAR_0x8004, KANTO_TENT_FUNC_INIT
-	special CallKantoTentFunction
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_INIT
+	special CallSlateportTentFunction
 	.endm
 
 	@ Get the current prize item id
 	.macro slateporttent_getprize
-	setvar VAR_0x8004, KANTO_TENT_FUNC_GET_PRIZE
-	special CallKantoTentFunction
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_GET_PRIZE
+	special CallSlateportTentFunction
 	.endm
 
 	@ Unused. Set the prize item to be given
 	.macro slateporttent_setprize unusedArg:req, itemId:req
-	setvar VAR_0x8004, KANTO_TENT_FUNC_SET_PRIZE
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_SET_PRIZE
 	setvar VAR_0x8005, \unusedArg
 	setvar VAR_0x8006, \itemId
-	special CallKantoTentFunction
+	special CallSlateportTentFunction
 	.endm
 
 	@ Save the game and set the challenge status
 	.macro slateporttent_save challengeStatus:req
-	setvar VAR_0x8004, KANTO_TENT_FUNC_SAVE
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_SAVE
 	setvar VAR_0x8005, \challengeStatus
-	special CallKantoTentFunction
+	special CallSlateportTentFunction
 	.endm
 
 	@ Set the prize item as randomly selected from a list. Randomness unnecessary, as the list is only 1 item
 	.macro slateporttent_setrandomprize
-	setvar VAR_0x8004, KANTO_TENT_FUNC_SET_RANDOM_PRIZE
-	special CallKantoTentFunction
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_SET_RANDOM_PRIZE
+	special CallSlateportTentFunction
 	.endm
 
 	@ Give the current prize item. FALSE if no room for prize
 	.macro slateporttent_giveprize
-	setvar VAR_0x8004, KANTO_TENT_FUNC_GIVE_PRIZE
-	special CallKantoTentFunction
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_GIVE_PRIZE
+	special CallSlateportTentFunction
 	.endm
 
-	@ Kanto Tent's version of factory_rentmons
+	@ Slateport Tent's version of factory_rentmons
 	.macro slateporttent_rentmons
-	setvar VAR_0x8004, KANTO_TENT_FUNC_SELECT_RENT_MONS
-	special CallKantoTentFunction
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_SELECT_RENT_MONS
+	special CallSlateportTentFunction
 	.endm
 
-	@ Kanto Tent's version of factory_swapmons
+	@ Slateport Tent's version of factory_swapmons
 	.macro slateporttent_swapmons
-	setvar VAR_0x8004, KANTO_TENT_FUNC_SWAP_RENT_MONS
-	special CallKantoTentFunction
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_SWAP_RENT_MONS
+	special CallSlateportTentFunction
 	.endm
 
-	@ Kanto Tent's version of factory_generateopponentmons
+	@ Slateport Tent's version of factory_generateopponentmons
 	.macro slateporttent_generateopponentmons
-	setvar VAR_0x8004, KANTO_TENT_FUNC_GENERATE_OPPONENT_MONS
-	special CallKantoTentFunction
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_GENERATE_OPPONENT_MONS
+	special CallSlateportTentFunction
 	.endm
 
-	@ Kanto Tent's version of factory_generaterentalmons
+	@ Slateport Tent's version of factory_generaterentalmons
 	.macro slateporttent_generaterentalmons
-	setvar VAR_0x8004, KANTO_TENT_FUNC_GENERATE_RENTAL_MONS
-	special CallKantoTentFunction
+	setvar VAR_0x8004, SLATEPORT_TENT_FUNC_GENERATE_RENTAL_MONS
+	special CallSlateportTentFunction
 	.endm
 

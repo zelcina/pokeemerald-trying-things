@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_KANTO",
+      "map": "MAP_SLATEPORT_CITY",
       "offset": 0,
       "direction": "up"
     },

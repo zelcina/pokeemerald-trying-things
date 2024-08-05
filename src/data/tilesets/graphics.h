@@ -1,6 +1,6 @@
-const u32 gTilesetTiles_Eventful[] = INCBIN_U32("data/tilesets/secondary/petalburg/tiles.4bpp.lz");
+const u32 gTilesetTiles_Petalburg[] = INCBIN_U32("data/tilesets/secondary/petalburg/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_Eventful[][16] =
+const u16 gTilesetPalettes_Petalburg[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/petalburg/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/petalburg/palettes/01.gbapal"),
@@ -64,9 +64,9 @@ const u16 gTilesetPalettes_Dewford[][16] =
 	INCBIN_U16("data/tilesets/secondary/dewford/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_Kanto[] = INCBIN_U32("data/tilesets/secondary/slateport/tiles.4bpp.lz");
+const u32 gTilesetTiles_Slateport[] = INCBIN_U32("data/tilesets/secondary/slateport/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_Kanto[][16] =
+const u16 gTilesetPalettes_Slateport[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/slateport/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/slateport/palettes/01.gbapal"),
@@ -1106,9 +1106,9 @@ const u16 gTilesetPalettes_LavaridgeGym[][16] =
 	INCBIN_U16("data/tilesets/secondary/lavaridge_gym/palettes/15.gbapal"),
 };
 
-const u32 gTilesetTiles_EventfulGym[] = INCBIN_U32("data/tilesets/secondary/petalburg_gym/tiles.4bpp.lz");
+const u32 gTilesetTiles_PetalburgGym[] = INCBIN_U32("data/tilesets/secondary/petalburg_gym/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_EventfulGym[][16] =
+const u16 gTilesetPalettes_PetalburgGym[][16] =
 {
 	INCBIN_U16("data/tilesets/secondary/petalburg_gym/palettes/00.gbapal"),
 	INCBIN_U16("data/tilesets/secondary/petalburg_gym/palettes/01.gbapal"),

@@ -19,7 +19,7 @@
       "direction": "up"
     },
     {
-      "map": "MAP_KANTO",
+      "map": "MAP_SLATEPORT_CITY",
       "offset": 0,
       "direction": "down"
     },
@@ -657,7 +657,7 @@
       "y": 94,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route110_EventScript_KantoSign"
+      "script": "Route110_EventScript_SlateportCitySign"
     },
     {
       "type": "sign",

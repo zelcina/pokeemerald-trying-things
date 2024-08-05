@@ -156,8 +156,8 @@ gSpecials::
 	def_special DrawWholeMapView
 	def_special StorePlayerCoordsInVars
 	def_special MauvilleGymDeactivatePuzzle
-	def_special EventfulGymSlideOpenRoomDoors
-	def_special EventfulGymUnlockRoomDoors
+	def_special PetalburgGymSlideOpenRoomDoors
+	def_special PetalburgGymUnlockRoomDoors
 	def_special GetPlayerTrainerIdOnesDigit
 	def_special GetPlayerBigGuyGirlString
 	def_special GetRivalSonDaughterString
@@ -255,7 +255,7 @@ gSpecials::
 	def_special StopMapMusic
 	def_special CallVerdanturfTentFunction
 	def_special CallFallarborTentFunction
-	def_special CallKantoTentFunction
+	def_special CallSlateportTentFunction
 	def_special ChoosePartyForBattleFrontier
 	def_special ValidateEReaderTrainer
 	def_special GetBattleTowerSinglesStreak

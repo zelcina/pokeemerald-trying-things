@@ -2,24 +2,24 @@
   "layouts_table_label": "gMapLayouts",
   "layouts": [
     {
-      "id": "LAYOUT_EVENTFUL_CITY",
-      "name": "EventfulCity_Layout",
+      "id": "LAYOUT_PETALBURG_CITY",
+      "name": "PetalburgCity_Layout",
       "width": 30,
       "height": 30,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Eventful",
-      "border_filepath": "data/layouts/EventfulCity/border.bin",
-      "blockdata_filepath": "data/layouts/EventfulCity/map.bin"
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/PetalburgCity/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO",
-      "name": "Kanto_Layout",
-      "width": 57,
-      "height": 56,
+      "id": "LAYOUT_SLATEPORT_CITY",
+      "name": "SlateportCity_Layout",
+      "width": 40,
+      "height": 60,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Lilycove",
-      "border_filepath": "data/layouts/Kanto/border.bin",
-      "blockdata_filepath": "data/layouts/Kanto/map.bin"
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/SlateportCity/border.bin",
+      "blockdata_filepath": "data/layouts/SlateportCity/map.bin"
     },
     {
       "id": "LAYOUT_MAUVILLE_CITY",
@@ -97,7 +97,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Eventful",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/LittlerootTown/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown/map.bin"
     },
@@ -107,7 +107,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Eventful",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/OldaleTown/border.bin",
       "blockdata_filepath": "data/layouts/OldaleTown/map.bin"
     },
@@ -167,17 +167,17 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Eventful",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route101/border.bin",
       "blockdata_filepath": "data/layouts/Route101/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE102",
       "name": "Route102_Layout",
-      "width": 51,
+      "width": 50,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Eventful",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route102/border.bin",
       "blockdata_filepath": "data/layouts/Route102/map.bin"
     },
@@ -187,7 +187,7 @@
       "width": 80,
       "height": 22,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Eventful",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route103/border.bin",
       "blockdata_filepath": "data/layouts/Route103/map.bin"
     },
@@ -237,7 +237,7 @@
       "width": 60,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route108/border.bin",
       "blockdata_filepath": "data/layouts/Route108/map.bin"
     },
@@ -247,7 +247,7 @@
       "width": 40,
       "height": 63,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route109/border.bin",
       "blockdata_filepath": "data/layouts/Route109/map.bin"
     },
@@ -624,10 +624,10 @@
     {
       "id": "LAYOUT_MART",
       "name": "Mart_Layout",
-      "width": 14,
-      "height": 10,
+      "width": 11,
+      "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokemonCenter",
+      "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/Mart/border.bin",
       "blockdata_filepath": "data/layouts/Mart/map.bin"
     },
@@ -782,14 +782,14 @@
       "blockdata_filepath": "data/layouts/PacifidlogTown_House2/map.bin"
     },
     {
-      "id": "LAYOUT_EVENTFUL_CITY_GYM",
-      "name": "EventfulCity_Gym_Layout",
+      "id": "LAYOUT_PETALBURG_CITY_GYM",
+      "name": "PetalburgCity_Gym_Layout",
       "width": 9,
       "height": 112,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EventfulGym",
-      "border_filepath": "data/layouts/EventfulCity_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/EventfulCity_Gym/map.bin"
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/PetalburgCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgCity_Gym/map.bin"
     },
     {
       "id": "LAYOUT_HOUSE_WITH_BED",
@@ -802,24 +802,24 @@
       "blockdata_filepath": "data/layouts/HouseWithBed/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_STERNS_SHIPYARD_1F",
-      "name": "Kanto_SternsShipyard_1F_Layout",
+      "id": "LAYOUT_SLATEPORT_CITY_STERNS_SHIPYARD_1F",
+      "name": "SlateportCity_SternsShipyard_1F_Layout",
       "width": 21,
       "height": 15,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
-      "border_filepath": "data/layouts/Kanto_SternsShipyard_1F/border.bin",
-      "blockdata_filepath": "data/layouts/Kanto_SternsShipyard_1F/map.bin"
+      "border_filepath": "data/layouts/SlateportCity_SternsShipyard_1F/border.bin",
+      "blockdata_filepath": "data/layouts/SlateportCity_SternsShipyard_1F/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_STERNS_SHIPYARD_2F",
-      "name": "Kanto_SternsShipyard_2F_Layout",
+      "id": "LAYOUT_SLATEPORT_CITY_STERNS_SHIPYARD_2F",
+      "name": "SlateportCity_SternsShipyard_2F_Layout",
       "width": 17,
       "height": 15,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
-      "border_filepath": "data/layouts/Kanto_SternsShipyard_2F/border.bin",
-      "blockdata_filepath": "data/layouts/Kanto_SternsShipyard_2F/map.bin"
+      "border_filepath": "data/layouts/SlateportCity_SternsShipyard_2F/border.bin",
+      "blockdata_filepath": "data/layouts/SlateportCity_SternsShipyard_2F/map.bin"
     },
     {
       "id": "LAYOUT_UNUSED_CONTEST_ROOM2",
@@ -842,34 +842,34 @@
       "blockdata_filepath": "data/layouts/UnusedContestRoom3/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_POKEMON_FAN_CLUB",
-      "name": "Kanto_PokemonFanClub_Layout",
+      "id": "LAYOUT_SLATEPORT_CITY_POKEMON_FAN_CLUB",
+      "name": "SlateportCity_PokemonFanClub_Layout",
       "width": 14,
       "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonFanClub",
-      "border_filepath": "data/layouts/Kanto_PokemonFanClub/border.bin",
-      "blockdata_filepath": "data/layouts/Kanto_PokemonFanClub/map.bin"
+      "border_filepath": "data/layouts/SlateportCity_PokemonFanClub/border.bin",
+      "blockdata_filepath": "data/layouts/SlateportCity_PokemonFanClub/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_OCEANIC_MUSEUM_1F",
-      "name": "Kanto_OceanicMuseum_1F_Layout",
+      "id": "LAYOUT_SLATEPORT_CITY_OCEANIC_MUSEUM_1F",
+      "name": "SlateportCity_OceanicMuseum_1F_Layout",
       "width": 20,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_OceanicMuseum",
-      "border_filepath": "data/layouts/Kanto_OceanicMuseum_1F/border.bin",
-      "blockdata_filepath": "data/layouts/Kanto_OceanicMuseum_1F/map.bin"
+      "border_filepath": "data/layouts/SlateportCity_OceanicMuseum_1F/border.bin",
+      "blockdata_filepath": "data/layouts/SlateportCity_OceanicMuseum_1F/map.bin"
     },
     {
-      "id": "LAYOUT_KANTO_OCEANIC_MUSEUM_2F",
-      "name": "Kanto_OceanicMuseum_2F_Layout",
+      "id": "LAYOUT_SLATEPORT_CITY_OCEANIC_MUSEUM_2F",
+      "name": "SlateportCity_OceanicMuseum_2F_Layout",
       "width": 20,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_OceanicMuseum",
-      "border_filepath": "data/layouts/Kanto_OceanicMuseum_2F/border.bin",
-      "blockdata_filepath": "data/layouts/Kanto_OceanicMuseum_2F/map.bin"
+      "border_filepath": "data/layouts/SlateportCity_OceanicMuseum_2F/border.bin",
+      "blockdata_filepath": "data/layouts/SlateportCity_OceanicMuseum_2F/map.bin"
     },
     {
       "id": "LAYOUT_HARBOR",
@@ -1342,14 +1342,14 @@
       "blockdata_filepath": "data/layouts/GraniteCave_B2F/map.bin"
     },
     {
-      "id": "LAYOUT_EVENTFUL_WOODS",
-      "name": "EventfulWoods_Layout",
+      "id": "LAYOUT_PETALBURG_WOODS",
+      "name": "PetalburgWoods_Layout",
       "width": 48,
       "height": 44,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/EventfulWoods/border.bin",
-      "blockdata_filepath": "data/layouts/EventfulWoods/map.bin"
+      "border_filepath": "data/layouts/PetalburgWoods/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgWoods/map.bin"
     },
     {
       "id": "LAYOUT_MT_CHIMNEY",

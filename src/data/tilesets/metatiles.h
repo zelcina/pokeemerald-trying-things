@@ -1,8 +1,8 @@
 const u16 gMetatiles_General[] = INCBIN_U16("data/tilesets/primary/general/metatiles.bin");
 const u16 gMetatileAttributes_General[] = INCBIN_U16("data/tilesets/primary/general/metatile_attributes.bin");
 
-const u16 gMetatiles_Eventful[] = INCBIN_U16("data/tilesets/secondary/petalburg/metatiles.bin");
-const u16 gMetatileAttributes_Eventful[] = INCBIN_U16("data/tilesets/secondary/petalburg/metatile_attributes.bin");
+const u16 gMetatiles_Petalburg[] = INCBIN_U16("data/tilesets/secondary/petalburg/metatiles.bin");
+const u16 gMetatileAttributes_Petalburg[] = INCBIN_U16("data/tilesets/secondary/petalburg/metatile_attributes.bin");
 
 const u16 gMetatiles_Rustboro[] = INCBIN_U16("data/tilesets/secondary/rustboro/metatiles.bin");
 const u16 gMetatileAttributes_Rustboro[] = INCBIN_U16("data/tilesets/secondary/rustboro/metatile_attributes.bin");
@@ -10,8 +10,8 @@ const u16 gMetatileAttributes_Rustboro[] = INCBIN_U16("data/tilesets/secondary/r
 const u16 gMetatiles_Dewford[] = INCBIN_U16("data/tilesets/secondary/dewford/metatiles.bin");
 const u16 gMetatileAttributes_Dewford[] = INCBIN_U16("data/tilesets/secondary/dewford/metatile_attributes.bin");
 
-const u16 gMetatiles_Kanto[] = INCBIN_U16("data/tilesets/secondary/slateport/metatiles.bin");
-const u16 gMetatileAttributes_Kanto[] = INCBIN_U16("data/tilesets/secondary/slateport/metatile_attributes.bin");
+const u16 gMetatiles_Slateport[] = INCBIN_U16("data/tilesets/secondary/slateport/metatiles.bin");
+const u16 gMetatileAttributes_Slateport[] = INCBIN_U16("data/tilesets/secondary/slateport/metatile_attributes.bin");
 
 const u16 gMetatiles_Mauville[] = INCBIN_U16("data/tilesets/secondary/mauville/metatiles.bin");
 const u16 gMetatileAttributes_Mauville[] = INCBIN_U16("data/tilesets/secondary/mauville/metatile_attributes.bin");
@@ -136,8 +136,8 @@ const u16 gMetatileAttributes_MauvilleGym[] = INCBIN_U16("data/tilesets/secondar
 const u16 gMetatiles_LavaridgeGym[] = INCBIN_U16("data/tilesets/secondary/lavaridge_gym/metatiles.bin");
 const u16 gMetatileAttributes_LavaridgeGym[] = INCBIN_U16("data/tilesets/secondary/lavaridge_gym/metatile_attributes.bin");
 
-const u16 gMetatiles_EventfulGym[] = INCBIN_U16("data/tilesets/secondary/petalburg_gym/metatiles.bin");
-const u16 gMetatileAttributes_EventfulGym[] = INCBIN_U16("data/tilesets/secondary/petalburg_gym/metatile_attributes.bin");
+const u16 gMetatiles_PetalburgGym[] = INCBIN_U16("data/tilesets/secondary/petalburg_gym/metatiles.bin");
+const u16 gMetatileAttributes_PetalburgGym[] = INCBIN_U16("data/tilesets/secondary/petalburg_gym/metatile_attributes.bin");
 
 const u16 gMetatiles_FortreeGym[] = INCBIN_U16("data/tilesets/secondary/fortree_gym/metatiles.bin");
 const u16 gMetatileAttributes_FortreeGym[] = INCBIN_U16("data/tilesets/secondary/fortree_gym/metatile_attributes.bin");

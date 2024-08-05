@@ -9,15 +9,15 @@ const struct Tileset gTileset_General =
     .callback = InitTilesetAnim_General,
 };
 
-const struct Tileset gTileset_Eventful =
+const struct Tileset gTileset_Petalburg =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Eventful,
-    .palettes = gTilesetPalettes_Eventful,
-    .metatiles = gMetatiles_Eventful,
-    .metatileAttributes = gMetatileAttributes_Eventful,
-    .callback = InitTilesetAnim_Eventful,
+    .tiles = gTilesetTiles_Petalburg,
+    .palettes = gTilesetPalettes_Petalburg,
+    .metatiles = gMetatiles_Petalburg,
+    .metatileAttributes = gMetatileAttributes_Petalburg,
+    .callback = InitTilesetAnim_Petalburg,
 };
 
 const struct Tileset gTileset_Rustboro =
@@ -42,15 +42,15 @@ const struct Tileset gTileset_Dewford =
     .callback = InitTilesetAnim_Dewford,
 };
 
-const struct Tileset gTileset_Kanto =
+const struct Tileset gTileset_Slateport =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Kanto,
-    .palettes = gTilesetPalettes_Kanto,
-    .metatiles = gMetatiles_Kanto,
-    .metatileAttributes = gMetatileAttributes_Kanto,
-    .callback = InitTilesetAnim_Kanto,
+    .tiles = gTilesetTiles_Slateport,
+    .palettes = gTilesetPalettes_Slateport,
+    .metatiles = gMetatiles_Slateport,
+    .metatileAttributes = gMetatileAttributes_Slateport,
+    .callback = InitTilesetAnim_Slateport,
 };
 
 const struct Tileset gTileset_Mauville =
@@ -493,14 +493,14 @@ const struct Tileset gTileset_Underwater =
     .callback = InitTilesetAnim_Underwater,
 };
 
-const struct Tileset gTileset_EventfulGym =
+const struct Tileset gTileset_PetalburgGym =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_EventfulGym,
-    .palettes = gTilesetPalettes_EventfulGym,
-    .metatiles = gMetatiles_EventfulGym,
-    .metatileAttributes = gMetatileAttributes_EventfulGym,
+    .tiles = gTilesetTiles_PetalburgGym,
+    .palettes = gTilesetPalettes_PetalburgGym,
+    .metatiles = gMetatiles_PetalburgGym,
+    .metatileAttributes = gMetatileAttributes_PetalburgGym,
     .callback = NULL,
 };
 
