@@ -1114,6 +1114,22 @@ void LoadAndCreateEnemyShadowSprites(void)
     u32 i;
 
     LoadCompressedSpriteSheet(&gSpriteSheet_EnemyShadow);
+
+    // initialize shadow sprite ids
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        gBattleSpritesDataPtr->healthBoxesData[i].shadowSpriteId = MAX_SPRITES;
+    }
+
+    battler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    CreateEnemyShadowSprite(battler);
+
+void LoadAndCreateEnemyShadowSprites(void)
+{
+    u8 battler;
+    u32 i;
+
+    LoadCompressedSpriteSheet(&gSpriteSheet_EnemyShadow);
     
     // initialize shadow sprite ids
     for (i = 0; i < gBattlersCount; i++)

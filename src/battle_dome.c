@@ -2136,7 +2136,6 @@ static void CalcDomeMonStats(const struct TrainerMon *fmon, int level, u8 ivs, i
 {
     int evs[NUM_STATS];
     int i;
-    
     for (i = 0; i < NUM_STATS; i++)
     {
         if (fmon->ev != NULL)
@@ -2144,7 +2143,6 @@ static void CalcDomeMonStats(const struct TrainerMon *fmon, int level, u8 ivs, i
         else
             evs[i] = 0;
     }
-    
     if (fmon->species == SPECIES_SHEDINJA)
     {
         stats[STAT_HP] = 1;
@@ -2199,7 +2197,6 @@ static void CreateDomeOpponentMon(u8 monPartyId, u16 tournamentTrainerId, u8 tou
     u8 fixedIv = GetDomeTrainerMonIvs(tournamentTrainerId); // BUG: Using the wrong ID. As a result, all Pokémon have ivs of 3.
     #endif
     u8 level = SetFacilityPtrsGetLevel();
-    
     CreateFacilityMon(&gFacilityTrainerMons[DOME_MONS[tournamentTrainerId][tournamentMonId]],
                       level, fixedIv, otId, 0, &gEnemyParty[monPartyId]);
 }
