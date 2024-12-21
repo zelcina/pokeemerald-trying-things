@@ -460,14 +460,14 @@ const struct Tileset gTileset_LilycoveMuseum =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_BrendansMaysHouse =
+const struct Tileset gTileset_DawnsMaysHouse =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_BrendansMaysHouse,
-    .palettes = gTilesetPalettes_BrendansMaysHouse,
-    .metatiles = gMetatiles_BrendansMaysHouse,
-    .metatileAttributes = gMetatileAttributes_BrendansMaysHouse,
+    .tiles = gTilesetTiles_DawnsMaysHouse,
+    .palettes = gTilesetPalettes_DawnsMaysHouse,
+    .metatiles = gMetatiles_DawnsMaysHouse,
+    .metatileAttributes = gMetatileAttributes_DawnsMaysHouse,
     .callback = NULL,
 };
 

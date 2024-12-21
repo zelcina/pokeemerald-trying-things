@@ -77,21 +77,21 @@ Route104_EventScript_RivalTrigger::
 Route104_EventScript_PlayRivalMusic::
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route104_EventScript_PlayMayMusic
-	goto_if_eq VAR_RESULT, FEMALE, Route104_EventScript_PlayBrendanMusic
+	goto_if_eq VAR_RESULT, FEMALE, Route104_EventScript_PlayDawnMusic
 	return
 
 Route104_EventScript_PlayMayMusic::
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	return
 
-Route104_EventScript_PlayBrendanMusic::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+Route104_EventScript_PlayDawnMusic::
+	playbgm MUS_ENCOUNTER_DAWN, TRUE
 	return
 
 Route104_EventScript_RivalEncounter::
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route104_EventScript_MayEncounter
-	goto_if_eq VAR_RESULT, FEMALE, Route104_EventScript_BrendanEncounter
+	goto_if_eq VAR_RESULT, FEMALE, Route104_EventScript_DawnEncounter
 	end
 
 Route104_EventScript_MayEncounter::
@@ -180,71 +180,71 @@ Route104_EventScript_BattleMayMudkip::
 	goto Route104_EventScript_MayDefeated
 	end
 
-Route104_EventScript_BrendanEncounter::
-	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE_104, Route104_EventScript_BrendanDefeated
-	goto_if_set FLAG_REGISTER_RIVAL_POKENAV, Route104_EventScript_BrendanAskToBattle
+Route104_EventScript_DawnEncounter::
+	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE_104, Route104_EventScript_DawnDefeated
+	goto_if_set FLAG_REGISTER_RIVAL_POKENAV, Route104_EventScript_DawnAskToBattle
 	setflag FLAG_REGISTER_RIVAL_POKENAV
-	msgbox Route104_Text_BrendanWeShouldRegister, MSGBOX_DEFAULT
+	msgbox Route104_Text_DawnWeShouldRegister, MSGBOX_DEFAULT
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox Route104_Text_RegisteredBrendan, MSGBOX_DEFAULT
+	msgbox Route104_Text_RegisteredDawn, MSGBOX_DEFAULT
 	waitfanfare
 	closemessage
 	delay 30
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
 	applymovement OBJ_EVENT_ID_PLAYER, Route104_Movement_PlayerFaceRival
 	applymovement LOCALID_RIVAL, Route104_Movement_RivalWalkSlowLeft
-	msgbox Route104_Text_BrendanHowsYourPokedex, MSGBOX_DEFAULT
+	msgbox Route104_Text_DawnHowsYourPokedex, MSGBOX_DEFAULT
 	closemessage
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Route104_Movement_RivalApproachPlayer
 	waitmovement 0
 	copyobjectxytoperm LOCALID_RIVAL
-	msgbox Route104_Text_BrendanDoingGreatLetsBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleBrendan
-	msgbox Route104_Text_BrendanNoConfidence, MSGBOX_DEFAULT
+	msgbox Route104_Text_DawnDoingGreatLetsBattle, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleDawn
+	msgbox Route104_Text_DawnNoConfidence, MSGBOX_DEFAULT
 	call Route104_EventScript_RestoreMusic
 	releaseall
 	end
 
-Route104_EventScript_BrendanAskToBattle::
-	msgbox Route104_Text_BrendanLetsBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleBrendan
-	msgbox Route104_Text_BrendanNoConfidence, MSGBOX_DEFAULT
+Route104_EventScript_DawnAskToBattle::
+	msgbox Route104_Text_DawnLetsBattle, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route104_EventScript_BattleDawn
+	msgbox Route104_Text_DawnNoConfidence, MSGBOX_DEFAULT
 	releaseall
 	end
 
-Route104_EventScript_BattleBrendan::
-	msgbox Route104_Text_BrendanIntro, MSGBOX_DEFAULT
+Route104_EventScript_BattleDawn::
+	msgbox Route104_Text_DawnIntro, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
-	case 0, Route104_EventScript_BattleBrendanTreecko
-	case 1, Route104_EventScript_BattleBrendanTorchic
-	case 2, Route104_EventScript_BattleBrendanMudkip
+	case 0, Route104_EventScript_BattleDawnTreecko
+	case 1, Route104_EventScript_BattleDawnTorchic
+	case 2, Route104_EventScript_BattleDawnMudkip
 	end
 
-Route104_EventScript_BrendanDefeated::
-	msgbox Route104_Text_BrendanPostBattle, MSGBOX_DEFAULT
+Route104_EventScript_DawnDefeated::
+	msgbox Route104_Text_DawnPostBattle, MSGBOX_DEFAULT
 	call_if_eq VAR_0x8008, 0, Route104_EventScript_RestoreMusic
 	releaseall
 	end
 
-Route104_EventScript_BattleBrendanTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, Route104_Text_BrendanDefeat
+Route104_EventScript_BattleDawnTreecko::
+	trainerbattle_no_intro TRAINER_DAWN_RUSTBORO_TREECKO, Route104_Text_DawnDefeat
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
-	goto Route104_EventScript_BrendanDefeated
+	goto Route104_EventScript_DawnDefeated
 	end
 
-Route104_EventScript_BattleBrendanTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, Route104_Text_BrendanDefeat
+Route104_EventScript_BattleDawnTorchic::
+	trainerbattle_no_intro TRAINER_DAWN_RUSTBORO_TORCHIC, Route104_Text_DawnDefeat
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
-	goto Route104_EventScript_BrendanDefeated
+	goto Route104_EventScript_DawnDefeated
 	end
 
-Route104_EventScript_BattleBrendanMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, Route104_Text_BrendanDefeat
+Route104_EventScript_BattleDawnMudkip::
+	trainerbattle_no_intro TRAINER_DAWN_RUSTBORO_MUDKIP, Route104_Text_DawnDefeat
 	setflag FLAG_DEFEATED_RIVAL_ROUTE_104
-	goto Route104_EventScript_BrendanDefeated
+	goto Route104_EventScript_DawnDefeated
 	end
 
 Route104_Movement_PlayerBackUp:
@@ -1127,44 +1127,44 @@ Route104_Text_MayPostBattle:
 	.string "It's important to become friends with\n"
 	.string "POKéMON, too.$"
 
-Route104_Text_BrendanWeShouldRegister:
-	.string "BRENDAN: Oh, hey, {PLAYER}!\p"
+Route104_Text_DawnWeShouldRegister:
+	.string "DAWN: Oh, hey, {PLAYER}!\p"
 	.string "Cool, you had DEVON install the MATCH\n"
 	.string "CALL system on your POKéNAV!\p"
 	.string "Let's register each other in our\n"
 	.string "POKéNAVS so we can keep in touch.$"
 
-Route104_Text_RegisteredBrendan:
-	.string "{PLAYER} registered BRENDAN\n"
+Route104_Text_RegisteredDawn:
+	.string "{PLAYER} registered DAWN\n"
 	.string "in the POKéNAV.$"
 
-Route104_Text_BrendanHowsYourPokedex:
-	.string "BRENDAN: {PLAYER}, how's your POKéDEX?\n"
+Route104_Text_DawnHowsYourPokedex:
+	.string "DAWN: {PLAYER}, how's your POKéDEX?\n"
 	.string "Have you filled in any pages yet?$"
 
-Route104_Text_BrendanDoingGreatLetsBattle:
+Route104_Text_DawnDoingGreatLetsBattle:
 	.string "Me, I'm doing great!\p"
 	.string "Want to check out how good I am with\n"
 	.string "a battle?$"
 
-Route104_Text_BrendanNoConfidence:
-	.string "BRENDAN: What's the matter? Don't have\n"
+Route104_Text_DawnNoConfidence:
+	.string "DAWN: What's the matter? Don't have\n"
 	.string "any confidence in your POKéMON?$"
 
-Route104_Text_BrendanLetsBattle:
-	.string "BRENDAN: What's up?\n"
+Route104_Text_DawnLetsBattle:
+	.string "DAWN: What's up?\n"
 	.string "Want to have a battle with me?$"
 
-Route104_Text_BrendanIntro:
-	.string "BRENDAN: I know you just became\n"
+Route104_Text_DawnIntro:
+	.string "DAWN: I know you just became\n"
 	.string "a TRAINER, but I won't go easy!$"
 
-Route104_Text_BrendanDefeat:
+Route104_Text_DawnDefeat:
 	.string "Hmm…\n"
 	.string "You're pretty good.$"
 
-Route104_Text_BrendanPostBattle:
-	.string "BRENDAN: You've gotten pretty decent\n"
+Route104_Text_DawnPostBattle:
+	.string "DAWN: You've gotten pretty decent\n"
 	.string "at handling POKéMON.\p"
 	.string "But, you know, you shouldn't just be\n"
 	.string "making POKéMON battle.\p"

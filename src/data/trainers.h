@@ -23726,14 +23726,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9439
-    [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
+    [TRAINER_DAWN_ROUTE_103_MUDKIP] =
     {
 #line 9440
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9441
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9442
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9444
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -23758,14 +23758,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9452
-    [TRAINER_BRENDAN_ROUTE_110_MUDKIP] =
+    [TRAINER_DAWN_ROUTE_110_MUDKIP] =
     {
 #line 9453
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9454
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9455
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9457
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -23812,14 +23812,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9473
-    [TRAINER_BRENDAN_ROUTE_119_MUDKIP] =
+    [TRAINER_DAWN_ROUTE_119_MUDKIP] =
     {
 #line 9474
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9475
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9476
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9478
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -23866,14 +23866,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9494
-    [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
+    [TRAINER_DAWN_ROUTE_103_TREECKO] =
     {
 #line 9495
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9496
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9497
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9499
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -23898,14 +23898,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9507
-    [TRAINER_BRENDAN_ROUTE_110_TREECKO] =
+    [TRAINER_DAWN_ROUTE_110_TREECKO] =
     {
 #line 9508
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9509
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9510
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9512
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -23952,14 +23952,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9528
-    [TRAINER_BRENDAN_ROUTE_119_TREECKO] =
+    [TRAINER_DAWN_ROUTE_119_TREECKO] =
     {
 #line 9529
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9530
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9531
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9533
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -24006,14 +24006,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9549
-    [TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
+    [TRAINER_DAWN_ROUTE_103_TORCHIC] =
     {
 #line 9550
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9551
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9552
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9554
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -24038,14 +24038,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9562
-    [TRAINER_BRENDAN_ROUTE_110_TORCHIC] =
+    [TRAINER_DAWN_ROUTE_110_TORCHIC] =
     {
 #line 9563
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9564
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9565
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9567
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -24092,14 +24092,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 9583
-    [TRAINER_BRENDAN_ROUTE_119_TORCHIC] =
+    [TRAINER_DAWN_ROUTE_119_TORCHIC] =
     {
 #line 9584
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 9585
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 9586
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 9588
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -27183,14 +27183,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 10780
-    [TRAINER_BRENDAN_RUSTBORO_TREECKO] =
+    [TRAINER_DAWN_RUSTBORO_TREECKO] =
     {
 #line 10781
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 10782
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 10783
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 10785
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -27226,14 +27226,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 10797
-    [TRAINER_BRENDAN_RUSTBORO_MUDKIP] =
+    [TRAINER_DAWN_RUSTBORO_MUDKIP] =
     {
 #line 10798
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 10799
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 10800
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 10802
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -27501,14 +27501,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 10904
-    [TRAINER_BRENDAN_RUSTBORO_TORCHIC] =
+    [TRAINER_DAWN_RUSTBORO_TORCHIC] =
     {
 #line 10905
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 10906
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 10907
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 10909
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -30693,14 +30693,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 12183
-    [TRAINER_BRENDAN_LILYCOVE_MUDKIP] =
+    [TRAINER_DAWN_LILYCOVE_MUDKIP] =
     {
 #line 12184
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 12185
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 12186
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 12188
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -30758,14 +30758,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 12208
-    [TRAINER_BRENDAN_LILYCOVE_TREECKO] =
+    [TRAINER_DAWN_LILYCOVE_TREECKO] =
     {
 #line 12209
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 12210
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 12211
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 12213
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -30823,14 +30823,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 12233
-    [TRAINER_BRENDAN_LILYCOVE_TORCHIC] =
+    [TRAINER_DAWN_LILYCOVE_TORCHIC] =
     {
 #line 12234
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 12235
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 12236
-        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerPic = TRAINER_PIC_DAWN,
         .encounterMusic_gender = 
 #line 12238
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -42122,14 +42122,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16788
-    [TRAINER_BRENDAN_PLACEHOLDER] =
+    [TRAINER_DAWN_PLACEHOLDER] =
     {
 #line 16789
-        .trainerName = _("BRENDAN"),
+        .trainerName = _("DAWN"),
 #line 16790
         .trainerClass = TRAINER_CLASS_RS_PROTAG,
 #line 16791
-        .trainerPic = TRAINER_PIC_RS_BRENDAN,
+        .trainerPic = TRAINER_PIC_RS_DAWN,
         .encounterMusic_gender = 
 #line 16793
             TRAINER_ENCOUNTER_MUSIC_MALE,

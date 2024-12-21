@@ -240,7 +240,7 @@ RivalsHouse_2F_EventScript_Rival::
 	goto_if_set FLAG_MET_RIVAL_LILYCOVE, RivalsHouse_2F_EventScript_RivalPostLilycove
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, RivalsHouse_2F_EventScript_May
-	goto_if_eq VAR_RESULT, FEMALE, RivalsHouse_2F_EventScript_Brendan
+	goto_if_eq VAR_RESULT, FEMALE, RivalsHouse_2F_EventScript_Dawn
 	end
 
 RivalsHouse_2F_EventScript_May::
@@ -248,8 +248,8 @@ RivalsHouse_2F_EventScript_May::
 	releaseall
 	end
 
-RivalsHouse_2F_EventScript_Brendan::
-	msgbox RivalsHouse_2F_Text_BrendanGettingReady, MSGBOX_DEFAULT
+RivalsHouse_2F_EventScript_Dawn::
+	msgbox RivalsHouse_2F_Text_DawnGettingReady, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -258,7 +258,7 @@ RivalsHouse_2F_EventScript_RivalPostLilycove::
 	waitmovement 0
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, RivalsHouse_2F_EventScript_MayPostLilycove
-	call_if_eq VAR_RESULT, FEMALE, RivalsHouse_2F_EventScript_BrendanPostLilycove
+	call_if_eq VAR_RESULT, FEMALE, RivalsHouse_2F_EventScript_DawnPostLilycove
 	setflag FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE
 	releaseall
 	end
@@ -268,17 +268,17 @@ RivalsHouse_2F_EventScript_MayPostLilycove::
 	msgbox RivalsHouse_2F_Text_MayJustCheckingMyPokedex, MSGBOX_DEFAULT
 	return
 
-RivalsHouse_2F_EventScript_BrendanPostLilycove::
-	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE, RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext
-	msgbox RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex, MSGBOX_DEFAULT
+RivalsHouse_2F_EventScript_DawnPostLilycove::
+	goto_if_set FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE, RivalsHouse_2F_EventScript_DawnWhereShouldIGoNext
+	msgbox RivalsHouse_2F_Text_DawnJustCheckingMyPokedex, MSGBOX_DEFAULT
 	return
 
 RivalsHouse_2F_EventScript_MayWhereShouldIGoNext::
 	msgbox RivalsHouse_2F_Text_MayWhereShouldIGoNext, MSGBOX_DEFAULT
 	return
 
-RivalsHouse_2F_EventScript_BrendanWhereShouldIGoNext::
-	msgbox RivalsHouse_2F_Text_BrendanWhereShouldIGoNext, MSGBOX_DEFAULT
+RivalsHouse_2F_EventScript_DawnWhereShouldIGoNext::
+	msgbox RivalsHouse_2F_Text_DawnWhereShouldIGoNext, MSGBOX_DEFAULT
 	return
 
 LittlerootTown_MaysHouse_2F_EventScript_PC::
@@ -338,7 +338,7 @@ RivalsHouse_2F_Text_MayGettingReady:
 	.string "POKéMON fully restored!\n"
 	.string "Items ready, and…$"
 
-RivalsHouse_2F_Text_BrendanWhoAreYou:
+RivalsHouse_2F_Text_DawnWhoAreYou:
 	.string "Hey!\n"
 	.string "You…\p"
 	.string "Who are you?\p"
@@ -348,7 +348,7 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "Dad, PROF. BIRCH, said that our new\n"
 	.string "next-door neighbor is a GYM LEADER's\l"
 	.string "kid, so I assumed you'd be a guy.\p"
-	.string "My name's BRENDAN.\n"
+	.string "My name's DAWN.\n"
 	.string "So, hi, neighbor!\p"
 	.string "Huh? Hey, {PLAYER}, don't you have\n"
 	.string "a POKéMON?\p"
@@ -358,7 +358,7 @@ RivalsHouse_2F_Text_BrendanWhoAreYou:
 	.string "some wild POKéMON.\p"
 	.string "Some other time, okay?$"
 
-RivalsHouse_2F_Text_BrendanGettingReady:
+RivalsHouse_2F_Text_DawnGettingReady:
 	.string "POKéMON fully restored…\n"
 	.string "Items all packed, and…$"
 
@@ -382,8 +382,8 @@ RivalsHouse_2F_Text_MayWhereShouldIGoNext:
 	.string "Wouldn't it be funny if we ran into each\n"
 	.string "other, {PLAYER}{KUN}?$"
 
-RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
-	.string "BRENDAN: Hey, it's {PLAYER}.\p"
+RivalsHouse_2F_Text_DawnJustCheckingMyPokedex:
+	.string "DAWN: Hey, it's {PLAYER}.\p"
 	.string "I was just checking out my POKéDEX.\p"
 	.string "There are still many POKéMON that\n"
 	.string "I need to catch, I know, but this\l"
@@ -391,8 +391,8 @@ RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
 	.string "Checking this POKéDEX out gives me\n"
 	.string "the urge to hit the road again.$"
 
-RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
-	.string "BRENDAN: I'm having a hard time deciding\n"
+RivalsHouse_2F_Text_DawnWhereShouldIGoNext:
+	.string "DAWN: I'm having a hard time deciding\n"
 	.string "where I should catch POKéMON next.\p"
 	.string "Hey, {PLAYER}, if I see you while I'm out\n"
 	.string "catching POKéMON, I can pitch you a\l"

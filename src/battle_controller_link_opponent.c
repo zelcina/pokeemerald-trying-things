@@ -425,7 +425,7 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
                 if (gLinkPlayers[GetBattlerMultiplayerId(battler)].gender != MALE)
                     trainerPicId = gFacilityClassToPicIndex[FACILITY_CLASS_RS_MAY];
                 else
-                    trainerPicId = gFacilityClassToPicIndex[FACILITY_CLASS_RS_BRENDAN];
+                    trainerPicId = gFacilityClassToPicIndex[FACILITY_CLASS_RS_DAWN];
             }
             else
             {
@@ -454,7 +454,7 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
             if (gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].gender != MALE)
                 trainerPicId = gFacilityClassToPicIndex[FACILITY_CLASS_RS_MAY];
             else
-                trainerPicId = gFacilityClassToPicIndex[FACILITY_CLASS_RS_BRENDAN];
+                trainerPicId = gFacilityClassToPicIndex[FACILITY_CLASS_RS_DAWN];
         }
         else
         {

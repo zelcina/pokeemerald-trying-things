@@ -23,7 +23,7 @@ Route103_EventScript_Rival::
 	lockall
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route103_EventScript_RivalMay
-	goto_if_eq VAR_RESULT, FEMALE, Route103_EventScript_RivalBrendan
+	goto_if_eq VAR_RESULT, FEMALE, Route103_EventScript_RivalDawn
 	end
 
 Route103_EventScript_RivalMay::
@@ -43,21 +43,21 @@ Route103_EventScript_RivalMay::
 	case 2, Route103_EventScript_StartMayBattleMudkip
 	end
 
-Route103_EventScript_RivalBrendan::
-	msgbox Route103_Text_BrendanRoute103Pokemon, MSGBOX_DEFAULT
+Route103_EventScript_RivalDawn::
+	msgbox Route103_Text_DawnRoute103Pokemon, MSGBOX_DEFAULT
 	closemessage
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_ENCOUNTER_DAWN, TRUE
 	applymovement LOCALID_RIVAL, Common_Movement_FacePlayer
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_ExclamationMark
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_Delay48
 	waitmovement 0
-	msgbox Route103_Text_BrendanLetsBattle, MSGBOX_DEFAULT
+	msgbox Route103_Text_DawnLetsBattle, MSGBOX_DEFAULT
 	switch VAR_STARTER_MON
-	case 0, Route103_EventScript_StartBrendanBattleTreecko
-	case 1, Route103_EventScript_StartBrendanBattleTorchic
-	case 2, Route103_EventScript_StartBrendanBattleMudkip
+	case 0, Route103_EventScript_StartDawnBattleTreecko
+	case 1, Route103_EventScript_StartDawnBattleTorchic
+	case 2, Route103_EventScript_StartDawnBattleMudkip
 	end
 
 Route103_EventScript_StartMayBattleTreecko::
@@ -75,19 +75,19 @@ Route103_EventScript_StartMayBattleMudkip::
 	goto Route103_EventScript_AfterMayBattle
 	end
 
-Route103_EventScript_StartBrendanBattleTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated
-	goto Route103_EventScript_AfterBrendanBattle
+Route103_EventScript_StartDawnBattleTreecko::
+	trainerbattle_no_intro TRAINER_DAWN_ROUTE_103_TREECKO, Route103_Text_DawnDefeated
+	goto Route103_EventScript_AfterDawnBattle
 	end
 
-Route103_EventScript_StartBrendanBattleTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route103_Text_BrendanDefeated
-	goto Route103_EventScript_AfterBrendanBattle
+Route103_EventScript_StartDawnBattleTorchic::
+	trainerbattle_no_intro TRAINER_DAWN_ROUTE_103_TORCHIC, Route103_Text_DawnDefeated
+	goto Route103_EventScript_AfterDawnBattle
 	end
 
-Route103_EventScript_StartBrendanBattleMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated
-	goto Route103_EventScript_AfterBrendanBattle
+Route103_EventScript_StartDawnBattleMudkip::
+	trainerbattle_no_intro TRAINER_DAWN_ROUTE_103_MUDKIP, Route103_Text_DawnDefeated
+	goto Route103_EventScript_AfterDawnBattle
 	end
 
 Route103_EventScript_AfterMayBattle::
@@ -95,8 +95,8 @@ Route103_EventScript_AfterMayBattle::
 	goto Route103_EventScript_RivalExit
 	end
 
-Route103_EventScript_AfterBrendanBattle::
-	msgbox Route103_Text_BrendanTimeToHeadBack, MSGBOX_DEFAULT
+Route103_EventScript_AfterDawnBattle::
+	msgbox Route103_Text_DawnTimeToHeadBack, MSGBOX_DEFAULT
 	goto Route103_EventScript_RivalExit
 	end
 
@@ -315,11 +315,11 @@ Route103_Text_MayTimeToHeadBack:
 	.string "Well, it's time to head back to\n"
 	.string "the LAB.$"
 
-Route103_Text_BrendanRoute103Pokemon:
-	.string "BRENDAN: Okay, so it's this one and\n"
+Route103_Text_DawnRoute103Pokemon:
+	.string "DAWN: Okay, so it's this one and\n"
 	.string "that one that live on ROUTE 103…$"
 
-Route103_Text_BrendanLetsBattle:
+Route103_Text_DawnLetsBattle:
 	.string "Hey, it's {PLAYER}!\p"
 	.string "…Oh, yeah, Dad gave you a POKéMON.\p"
 	.string "Since we're here, how about a little\n"
@@ -327,11 +327,11 @@ Route103_Text_BrendanLetsBattle:
 	.string "I'll teach you what being a TRAINER's\n"
 	.string "about!$"
 
-Route103_Text_BrendanDefeated:
+Route103_Text_DawnDefeated:
 	.string "Huh, {PLAYER}, you're not too shabby.$"
 
-Route103_Text_BrendanTimeToHeadBack:
-	.string "BRENDAN: I think I get it.\n"
+Route103_Text_DawnTimeToHeadBack:
+	.string "DAWN: I think I get it.\n"
 	.string "I think I know why my dad has his eye\l"
 	.string "out for you now.\p"
 	.string "Look, your POKéMON already likes you,\n"
