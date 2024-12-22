@@ -295,7 +295,7 @@ static const u32 sBigPokeball_Tileset[] = INCBIN_U32("graphics/battle_transition
 static const u32 sPokeballTrail_Tileset[] = INCBIN_U32("graphics/battle_transitions/pokeball_trail.4bpp");
 static const u8 sPokeball_Gfx[] = INCBIN_U8("graphics/battle_transitions/pokeball.4bpp");
 static const u32 sEliteFour_Tileset[] = INCBIN_U32("graphics/battle_transitions/elite_four_bg.4bpp");
-static const u8 sUnusedDawn_Gfx[] = INCBIN_U8("graphics/battle_transitions/unused_dawn.4bpp");
+static const u8 sUnusedBrendan_Gfx[] = INCBIN_U8("graphics/battle_transitions/unused_brendan.4bpp");
 static const u8 sUnusedLass_Gfx[] = INCBIN_U8("graphics/battle_transitions/unused_lass.4bpp");
 static const u32 sShrinkingBoxTileset[] = INCBIN_U32("graphics/battle_transitions/shrinking_box.4bpp");
 static const u16 sEvilTeam_Palette[] = INCBIN_U16("graphics/battle_transitions/evil_team.gbapal");
@@ -788,7 +788,7 @@ static const struct SpriteTemplate sSpriteTemplate_Pokeball =
     .callback = SpriteCB_FldEffPokeballTrail
 };
 
-static const struct OamData sOam_UnusedDawnLass =
+static const struct OamData sOam_UnusedBrendanLass =
 {
     .y = 0,
     .affineMode = ST_OAM_AFFINE_OFF,
@@ -805,9 +805,9 @@ static const struct OamData sOam_UnusedDawnLass =
     .affineParam = 0,
 };
 
-static const struct SpriteFrameImage sImageTable_UnusedDawn[] =
+static const struct SpriteFrameImage sImageTable_UnusedBrendan[] =
 {
-    {sUnusedDawn_Gfx, sizeof(sUnusedDawn_Gfx)}
+    {sUnusedBrendan_Gfx, sizeof(sUnusedBrendan_Gfx)}
 };
 
 static const struct SpriteFrameImage sImageTable_UnusedLass[] =
@@ -815,24 +815,24 @@ static const struct SpriteFrameImage sImageTable_UnusedLass[] =
     {sUnusedLass_Gfx, sizeof(sUnusedLass_Gfx)}
 };
 
-static const union AnimCmd sSpriteAnim_UnusedDawnLass[] =
+static const union AnimCmd sSpriteAnim_UnusedBrendanLass[] =
 {
     ANIMCMD_FRAME(0, 1),
     ANIMCMD_END
 };
 
-static const union AnimCmd *const sSpriteAnimTable_UnusedDawnLass[] =
+static const union AnimCmd *const sSpriteAnimTable_UnusedBrendanLass[] =
 {
-    sSpriteAnim_UnusedDawnLass
+    sSpriteAnim_UnusedBrendanLass
 };
 
-static const struct SpriteTemplate sSpriteTemplate_UnusedDawn =
+static const struct SpriteTemplate sSpriteTemplate_UnusedBrendan =
 {
     .tileTag = TAG_NONE,
     .paletteTag = PALTAG_UNUSED_MUGSHOT,
-    .oam = &sOam_UnusedDawnLass,
-    .anims = sSpriteAnimTable_UnusedDawnLass,
-    .images = sImageTable_UnusedDawn,
+    .oam = &sOam_UnusedBrendanLass,
+    .anims = sSpriteAnimTable_UnusedBrendanLass,
+    .images = sImageTable_UnusedBrendan,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_MugshotTrainerPic
 };
@@ -841,8 +841,8 @@ static const struct SpriteTemplate sSpriteTemplate_UnusedLass =
 {
     .tileTag = TAG_NONE,
     .paletteTag = PALTAG_UNUSED_MUGSHOT,
-    .oam = &sOam_UnusedDawnLass,
-    .anims = sSpriteAnimTable_UnusedDawnLass,
+    .oam = &sOam_UnusedBrendanLass,
+    .anims = sSpriteAnimTable_UnusedBrendanLass,
     .images = sImageTable_UnusedLass,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_MugshotTrainerPic
@@ -857,7 +857,7 @@ static const u16 sMugshotPal_Green[]  = INCBIN_U16("graphics/battle_transitions/
 static const u16 sMugshotPal_Pink[]   = INCBIN_U16("graphics/battle_transitions/pink_bg.gbapal");
 static const u16 sMugshotPal_Blue[]   = INCBIN_U16("graphics/battle_transitions/blue_bg.gbapal");
 static const u16 sMugshotPal_Yellow[] = INCBIN_U16("graphics/battle_transitions/yellow_bg.gbapal");
-static const u16 sMugshotPal_Dawn[] = INCBIN_U16("graphics/battle_transitions/dawn_bg.gbapal");
+static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");
 static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
 
 static const u16 *const sOpponentMugshotsPals[MUGSHOT_COLOR_COUNT] =
@@ -871,7 +871,7 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOT_COLOR_COUNT] =
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
 {
-    [MALE] = sMugshotPal_Dawn,
+    [MALE] = sMugshotPal_Brendan,
     [FEMALE] = sMugshotPal_May
 };
 

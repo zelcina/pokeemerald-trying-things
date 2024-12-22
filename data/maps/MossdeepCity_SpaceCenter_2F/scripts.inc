@@ -336,7 +336,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
 	lockall
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, MossdeepCity_SpaceCenter_2F_EventScript_MayRayquazaCall
-	call_if_eq VAR_RESULT, FEMALE, MossdeepCity_SpaceCenter_2F_EventScript_DawnRayquazaCall
+	call_if_eq VAR_RESULT, FEMALE, MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall
 	closemessage
 	clearflag FLAG_DEFEATED_MAGMA_SPACE_CENTER
 	releaseall
@@ -347,8 +347,8 @@ MossdeepCity_SpaceCenter_2F_EventScript_MayRayquazaCall::
 	waitmessage
 	return
 
-MossdeepCity_SpaceCenter_2F_EventScript_DawnRayquazaCall::
-	pokenavcall MatchCall_Text_DawnRayquazaCall
+MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall::
+	pokenavcall MatchCall_Text_BrendanRayquazaCall
 	waitmessage
 	return
 

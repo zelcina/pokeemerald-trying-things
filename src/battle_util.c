@@ -11862,10 +11862,6 @@ u8 GetBattlerType(u32 battler, u8 typeIndex, bool32 ignoreTera)
     if (GetActiveGimmick(battler) == GIMMICK_TERA && teraType != TYPE_STELLAR && !ignoreTera)
         return GetBattlerTeraType(battler);
 
-    // Handle Terastallization
-    if (GetActiveGimmick(battler) == GIMMICK_TERA && teraType != TYPE_STELLAR && !ignoreTera)
-        return GetBattlerTeraType(battler);
-
     // Handle Roost's Flying-type suppression
     if (typeIndex == 0 || typeIndex == 1)
     {

@@ -1331,7 +1331,7 @@ static const union AnimCmd *const sAnimTable_Rayquaza[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_RayquazaNormal,
 };
 
-static const union AnimCmd *const sAnimTable_DawnMayNormal[] = {
+static const union AnimCmd *const sAnimTable_BrendanMayNormal[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
     [ANIM_STD_FACE_WEST] = sAnim_FaceWest,
@@ -1515,7 +1515,7 @@ static const struct StepAnimTable sStepAnimTables[] = {
         .animPos = {1, 3, 0, 2},
     },
     {
-        .anims = sAnimTable_DawnMayNormal,
+        .anims = sAnimTable_BrendanMayNormal,
         .animPos = {1, 3, 0, 2},
     },
     {

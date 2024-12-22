@@ -83,7 +83,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_DAWNS_HOUSE_TRUCK"
+      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
@@ -137,7 +137,7 @@
       "x": 5,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_DAWNS_HOUSE_1F",
+      "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
@@ -254,7 +254,7 @@
       "y": 8,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_DawnsHouseSign"
+      "script": "LittlerootTown_EventScript_BrendansHouseSign"
     },
     {
       "type": "sign",

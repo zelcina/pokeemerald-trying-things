@@ -532,24 +532,24 @@
       "blockdata_filepath": "data/layouts/Underwater_Route128/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_DAWNS_HOUSE_1F",
-      "name": "LittlerootTown_DawnsHouse_1F_Layout",
+      "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "name": "LittlerootTown_BrendansHouse_1F_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_DawnsMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_DawnsHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_DawnsHouse_1F/map.bin"
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin"
     },
     {
-      "id": "LAYOUT_LITTLEROOT_TOWN_DAWNS_HOUSE_2F",
-      "name": "LittlerootTown_DawnsHouse_2F_Layout",
+      "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+      "name": "LittlerootTown_BrendansHouse_2F_Layout",
       "width": 9,
       "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_DawnsMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_DawnsHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_DawnsHouse_2F/map.bin"
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/map.bin"
     },
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
@@ -557,7 +557,7 @@
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_DawnsMaysHouse",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/map.bin"
     },
@@ -567,7 +567,7 @@
       "width": 9,
       "height": 8,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_DawnsMaysHouse",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/map.bin"
     },
