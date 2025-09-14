@@ -1,17 +1,5 @@
 InsideOfTruck_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, InsideOfTruck_OnLoad
-	map_script MAP_SCRIPT_ON_RESUME, InsideOfTruck_OnResume
 	.byte 0
-
-InsideOfTruck_OnLoad:
-	setmetatile 4, 1, METATILE_InsideOfTruck_ExitLight_Top, FALSE
-	setmetatile 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, FALSE
-	setmetatile 4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, FALSE
-	end
-
-InsideOfTruck_OnResume:
-	setstepcallback STEP_CB_TRUCK
-	end
 
 InsideOfTruck_EventScript_SetIntroFlags::
 	lockall
