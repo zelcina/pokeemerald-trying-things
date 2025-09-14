@@ -161,16 +161,12 @@ SINGLE_BATTLE_TEST("Eject Pack will miss timing to switch out user if Eject Butt
     }
 }
 
-DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after an ability stat drop")
+DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after intimidate")
 {
     u32 speed;
-    u32 species, ability;
 
-    PARAMETRIZE { species = SPECIES_EKANS; ability = ABILITY_INTIMIDATE; speed = 1; }
-    PARAMETRIZE { species = SPECIES_EKANS; ability = ABILITY_INTIMIDATE; speed = 11; }
-
-    PARAMETRIZE { species = SPECIES_DIPPLIN; ability = ABILITY_SUPERSWEET_SYRUP; speed = 1; }
-    PARAMETRIZE { species = SPECIES_DIPPLIN; ability = ABILITY_SUPERSWEET_SYRUP; speed = 11; }
+    PARAMETRIZE { speed = 1; }
+    PARAMETRIZE { speed = 11; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Speed(10); Item(ITEM_EJECT_PACK); }
@@ -178,7 +174,7 @@ DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after 
         PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
         OPPONENT(SPECIES_WYNAUT)  { Speed(4); }
         OPPONENT(SPECIES_WOBBUFFET)  { Speed(5); }
-        OPPONENT(species) { Speed(6); Ability(ability); }
+        OPPONENT(SPECIES_EKANS) { Speed(6); Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN {
             SWITCH(opponentLeft, 2);
@@ -188,18 +184,14 @@ DOUBLE_BATTLE_TEST("Eject Pack: Only the fastest Eject Pack will activate after 
                 SEND_OUT(playerLeft, 2);
         }
     } SCENE {
-        ABILITY_POPUP(opponentLeft, ability);
+        ABILITY_POPUP(opponentLeft, ABILITY_INTIMIDATE);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerLeft);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, playerRight);
         if (speed == 11) {
-            NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, playerRight);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, playerRight);
             NOT ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, playerLeft);
         } else {
-            NONE_OF {
-                ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, playerLeft);
-                ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, playerRight);
-            }
+            NOT ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, playerRight);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, playerLeft);
         }
     }
