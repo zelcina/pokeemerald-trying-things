@@ -99,7 +99,8 @@
     "LittlerootTown_BrendansHouse_2F",
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
-    "LittlerootTown_ProfessorBirchsLab"
+    "LittlerootTown_ProfessorBirchsLab",
+    "InsideOfTruck"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
@@ -472,7 +473,6 @@
     "ContestHallCool",
     "ContestHallSmart",
     "ContestHallCute",
-    "InsideOfTruck",
     "SSTidalCorridor",
     "SSTidalLowerDeck",
     "SSTidalRooms",
