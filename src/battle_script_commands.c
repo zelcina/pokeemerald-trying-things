@@ -2327,7 +2327,7 @@ void StealTargetItem(u8 battlerStealer, u8 itemBattler)
         MarkBattlerForControllerExec(battlerStealer);
     }
 
-    RecordItemEffectBattle(itemBattler, ITEM_NONE);
+    RecordItemEffectBattle(itemBattler, HOLD_EFFECT_NONE);
     CheckSetUnburden(itemBattler);
 
     BtlController_EmitSetMonData(itemBattler, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[itemBattler].item), &gBattleMons[itemBattler].item);  // remove target item
@@ -2341,7 +2341,7 @@ void StealTargetItem(u8 battlerStealer, u8 itemBattler)
 
 static inline bool32 TrySetReflect(u32 battler)
 {
-    u32 side = GetBattlerSide(battler);
+    enum BattleSide side = GetBattlerSide(battler);
     if (!(gSideStatuses[side] & SIDE_STATUS_REFLECT))
     {
         gSideStatuses[side] |= SIDE_STATUS_REFLECT;
@@ -2362,7 +2362,7 @@ static inline bool32 TrySetReflect(u32 battler)
 
 static inline bool32 TrySetLightScreen(u32 battler)
 {
-    u32 side = GetBattlerSide(battler);
+    enum BattleSide side = GetBattlerSide(battler);
     if (!(gSideStatuses[side] & SIDE_STATUS_LIGHTSCREEN))
     {
         gSideStatuses[side] |= SIDE_STATUS_LIGHTSCREEN;
@@ -3552,6 +3552,7 @@ void SetMoveEffect(u32 battlerAtk, u32 effectBattler, enum MoveEffect moveEffect
             }
         }
         break;
+    }
     case MOVE_EFFECT_BREAK_SCREEN:
         if (B_BRICK_BREAK >= GEN_4)
         	i = GetBattlerSide(gBattlerTarget); // From Gen 4 onwards, Brick Break can remove screens on the user's side if used on an ally
@@ -3636,11 +3637,8 @@ void SetMoveEffect(u32 battlerAtk, u32 effectBattler, enum MoveEffect moveEffect
             }
         }
         break;
-
-
-    }
-        default:
-            break;
+    default:
+        break;
     }
 
     gBattleScripting.moveEffect = MOVE_EFFECT_NONE;
@@ -3981,7 +3979,7 @@ static void Cmd_jumpifsideaffecting(void)
 {
     CMD_ARGS(u8 battler, u32 flags, const u8 *jumpInstr);
 
-    u32 side = GetBattlerSide(GetBattlerForBattleScript(cmd->battler));
+    enum BattleSide side = GetBattlerSide(GetBattlerForBattleScript(cmd->battler));
 
     if (gSideStatuses[side] & cmd->flags)
         gBattlescriptCurrInstr = cmd->jumpInstr;
@@ -4073,7 +4071,7 @@ static bool32 BattleTypeAllowsExp(void)
 static u32 GetMonHoldEffect(struct Pokemon *mon)
 {
     enum HoldEffect holdEffect;
-    u32 item = GetMonData(mon, MON_DATA_HELD_ITEM);
+    enum Item item = GetMonData(mon, MON_DATA_HELD_ITEM);
 
     if (item == ITEM_ENIGMA_BERRY_E_READER)
     #if FREE_ENIGMA_BERRY == FALSE
@@ -5231,14 +5229,14 @@ static void Cmd_switchindataupdate(void)
     #if TESTING
     if (gTestRunnerEnabled)
     {
-        u32 array = (!IsPartnerMonFromSameTrainer(battler)) ? battler : GetBattlerSide(battler);
+        enum BattleTrainer trainer = GetBattlerTrainer(battler);
         u32 partyIndex = gBattlerPartyIndexes[battler];
-        if (TestRunner_Battle_GetForcedAbility(array, partyIndex))
-            gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(array, partyIndex);
+        if (TestRunner_Battle_GetForcedAbility(trainer, partyIndex))
+            gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(trainer, partyIndex);
     }
     #endif
 
-    if (GetBattlerPartyState(battler)->knockedOffItem)
+    if (GetBattlerPartyState(battler)->isKnockedOff)
     {
         gBattleMons[battler].item = ITEM_NONE;
     }
@@ -6472,7 +6470,7 @@ static void Cmd_setgravity(void)
     }
 }
 
-static bool32 TryCheekPouch(u32 battler, u32 itemId, const u8 *nextInstr)
+static bool32 TryCheekPouch(u32 battler, enum Item itemId, const u8 *nextInstr)
 {
     if (GetItemPocket(itemId) == POCKET_BERRIES
         && GetBattlerAbility(battler) == ABILITY_CHEEK_POUCH
@@ -6494,7 +6492,7 @@ static void Cmd_removeitem(void)
     CMD_ARGS(u8 battler);
 
     u32 battler;
-    u16 itemId = 0;
+    enum Item itemId = 0;
 
     if (gBattleScripting.overrideBerryRequirements)
     {
@@ -7020,7 +7018,7 @@ static void RemoveAllTerrains(void)
     }                                                       \
 }
 
-static bool32 DefogClearHazards(u32 saveBattler, u32 side, bool32 clear)
+static bool32 DefogClearHazards(u32 saveBattler, enum BattleSide side, bool32 clear)
 {
     if (!AreAnyHazardsOnSide(side))
         return FALSE;
@@ -9311,9 +9309,9 @@ static void Cmd_healpartystatus(void)
                 #if TESTING
                 if (gTestRunnerEnabled)
                 {
-                    u32 array = (!IsPartnerMonFromSameTrainer(gBattlerAttacker)) ? gBattlerAttacker : GetBattlerSide(gBattlerAttacker);
-                    if (TestRunner_Battle_GetForcedAbility(array, i))
-                        ability = TestRunner_Battle_GetForcedAbility(array, i);
+                    enum BattleTrainer trainer = GetBattlerTrainer(gBattlerAttacker);
+                    if (TestRunner_Battle_GetForcedAbility(trainer, i))
+                        ability = TestRunner_Battle_GetForcedAbility(trainer, i);
                 }
                 #endif
             }
@@ -9555,15 +9553,6 @@ static void Cmd_magnitudedamagecalculation(void)
     }
 
     PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 2, magnitude)
-
-    for (gBattlerTarget = 0; gBattlerTarget < gBattlersCount; gBattlerTarget++)
-    {
-        if (gBattlerTarget == gBattlerAttacker)
-            continue;
-        if (!(gAbsentBattlerFlags & (1u << gBattlerTarget))) // A valid target was found.
-            break;
-    }
-
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -10044,7 +10033,7 @@ static void Cmd_tryswapitems(void)
                              | BATTLE_TYPE_FRONTIER
                              | BATTLE_TYPE_SECRET_BASE
                              | BATTLE_TYPE_RECORDED_LINK))
-            && (GetBattlerPartyState(gBattlerAttacker)->knockedOffItem || GetBattlerPartyState(gBattlerTarget)->knockedOffItem))
+            && (GetBattlerPartyState(gBattlerAttacker)->isKnockedOff || GetBattlerPartyState(gBattlerTarget)->isKnockedOff))
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }
@@ -12010,7 +11999,7 @@ void BS_CheckParentalBondCounter(void)
 void BS_JumpIfCantLoseItem(void)
 {
     NATIVE_ARGS(const u8 *jumpInstr);
-    u32 item = gBattleMons[gBattlerTarget].item;
+    enum Item item = gBattleMons[gBattlerTarget].item;
 
     if (item == ITEM_NONE || !CanBattlerGetOrLoseItem(gBattlerTarget, gBattlerAttacker, item))
         gBattlescriptCurrInstr = cmd->jumpInstr;
@@ -12620,7 +12609,7 @@ void BS_SetPledgeStatus(void)
     NATIVE_ARGS(u8 battler, u32 sideStatus);
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
-    u32 side = GetBattlerSide(battler);
+    enum BattleSide side = GetBattlerSide(battler);
 
     gBattleStruct->pledgeMove = FALSE;
     if (!(gSideStatuses[side] & cmd->sideStatus))
@@ -13630,7 +13619,12 @@ void BS_TryFlingHoldEffect(void)
 {
     NATIVE_ARGS();
     enum HoldEffect holdEffect = GetItemHoldEffect(gBattleStruct->flingItem);
-    gBattleStruct->flingItem = ITEM_NONE;
+
+    if (GetItemPocket(gBattleStruct->flingItem) == POCKET_BERRIES)
+    {
+        gBattlescriptCurrInstr = BattleScript_EffectFlingConsumeBerry;
+        return;
+    }
 
     if (IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget)))
     {
@@ -13650,7 +13644,7 @@ void BS_TryFlingHoldEffect(void)
         SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_PARALYSIS, cmd->nextInstr, NO_FLAGS);
         break;
     case HOLD_EFFECT_TYPE_POWER:
-        if (GetItemSecondaryId(gLastUsedItem) != TYPE_POISON)
+        if (GetItemSecondaryId(gBattleStruct->flingItem) != TYPE_POISON)
             gBattlescriptCurrInstr = cmd->nextInstr;
         else
             SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_POISON, cmd->nextInstr, NO_FLAGS);
@@ -14083,7 +14077,7 @@ void BS_ArenaJudgmentWindow(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-static void SetArenMonLostValues(u32 battler, u32 side)
+static void SetArenMonLostValues(u32 battler, enum BattleSide side)
 {
     gBattleMons[battler].hp = 0;
     gHitMarker |= HITMARKER_FAINTED(battler);
@@ -14392,7 +14386,7 @@ void BS_PlayMoveAnimation(void)
 void BS_SetLuckyChant(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
-    u32 side = GetBattlerSide(gBattlerAttacker);
+    enum BattleSide side = GetBattlerSide(gBattlerAttacker);
     if (!(gSideStatuses[side] & SIDE_STATUS_LUCKY_CHANT))
     {
         gSideStatuses[side] |= SIDE_STATUS_LUCKY_CHANT;
@@ -14683,7 +14677,7 @@ void BS_TryBestow(void)
         || gBattleMons[gBattlerTarget].item != ITEM_NONE
         || !CanBattlerGetOrLoseItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerAttacker].item)
         || !CanBattlerGetOrLoseItem(gBattlerTarget, gBattlerAttacker, gBattleMons[gBattlerAttacker].item)
-        || GetBattlerPartyState(gBattlerTarget)->knockedOffItem)
+        || GetBattlerPartyState(gBattlerTarget)->isKnockedOff)
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
@@ -14784,7 +14778,7 @@ void BS_TryTrainerSlideMsgLastOn(void)
 void BS_SetAuroraVeil(void)
 {
     NATIVE_ARGS();
-    u32 side = GetBattlerSide(gBattlerAttacker);
+    enum BattleSide side = GetBattlerSide(gBattlerAttacker);
     if (gSideStatuses[side] & SIDE_STATUS_AURORA_VEIL)
     {
         gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_MISSED;
@@ -15245,15 +15239,6 @@ void BS_TryResetNegativeStatStages(void)
         if (gBattleMons[gBattlerTarget].statStages[stat] < DEFAULT_STAT_STAGE)
             gBattleMons[gBattlerTarget].statStages[stat] = DEFAULT_STAT_STAGE;
     gBattlescriptCurrInstr = cmd->nextInstr;
-}
-
-void BS_JumpIfLastUsedItemBerry(void)
-{
-    NATIVE_ARGS(const u8 *jumpInstr);
-    if (GetItemPocket(gLastUsedItem) == POCKET_BERRIES)
-        gBattlescriptCurrInstr = cmd->jumpInstr;
-    else
-        gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 void BS_SaveBattlerItem(void)
