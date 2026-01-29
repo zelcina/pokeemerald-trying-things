@@ -227,6 +227,8 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_MEGA_EVOLUTION]         = gBattleAnimGeneral_MegaEvolution,
     [B_ANIM_ILLUSION_OFF]           = gBattleAnimGeneral_IllusionOff,
     [B_ANIM_FORM_CHANGE]            = gBattleAnimGeneral_FormChange,
+    [B_ANIM_FORM_CHANGE_INSTANT]    = gBattleAnimGeneral_FormChangeInstant,
+    [B_ANIM_FORM_CHANGE_DISGUISE]   = gBattleAnimGeneral_FormChangeDisguise,
     [B_ANIM_SLIDE_OFFSCREEN]        = gBattleAnimGeneral_SlideOffScreen,
     [B_ANIM_RESTORE_BG]             = gBattleAnimGeneral_RestoreBg,
     [B_ANIM_TOTEM_FLARE]            = gBattleAnimGeneral_TotemFlare,
@@ -258,6 +260,11 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_POWER_CONSTRUCT]        = gBattleAnimGeneral_PowerConstruct,
     [B_ANIM_SWAP_TO_SUBSTITUTE]     = gBattleAnimGeneral_SwapToSubstitute,
     [B_ANIM_SWAP_FROM_SUBSTITUTE]   = gBattleAnimGeneral_SwapFromSubstitute,
+    [B_ANIM_MON_SCARED]             = gBattleAnimGeneral_MonScared,
+	[B_ANIM_GHOST_GET_OUT]          = gBattleAnimGeneral_GhostGetOut,
+	[B_ANIM_SILPH_SCOPED]           = gBattleAnimGeneral_SilphScoped,
+	[B_ANIM_ROCK_THROW]             = gBattleAnimGeneral_SafariRockThrow,
+	[B_ANIM_SAFARI_REACTION]        = gBattleAnimGeneral_SafariReaction,
 };
 
 static const u8* const sBattleAnims_Special[NUM_B_ANIMS_SPECIAL] =

@@ -626,6 +626,26 @@ struct FormChange
     u16 param1;
     u16 param2;
     u16 param3;
+    u16 param4;
+};
+
+struct FormChangeContext
+{
+    enum FormChanges method:16;
+    u16 currentSpecies;
+    u16 partyItemUsed;
+    u16 multichoiceSelection;
+    u16 heldItem;
+    u16 ability;
+    u16 learnedMove;
+    u32 status;
+    u16 moves[MAX_MON_MOVES];
+    u16 hp;
+    u16 maxHP;
+    u32 gmaxFactor:1;
+    enum Type teraType;
+    u32 level:7;
+    u32 padding:8;
 };
 
 enum FusionExtraMoveHandling
@@ -821,9 +841,15 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
 u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 evolutionItem, struct Pokemon *tradePartner, bool32 *canStopEvo, enum EvoState evoState);
 bool8 IsMonPastEvolutionLevel(struct Pokemon *mon);
 u16 NationalPokedexNumToSpecies(enum NationalDexOrder nationalNum);
+u32 NationalToRegionalOrder(enum NationalDexOrder nationalNum);
+enum KantoDexOrder NationalToKantoOrder(enum NationalDexOrder nationalNum);
 enum HoennDexOrder NationalToHoennOrder(enum NationalDexOrder nationalNum);
 enum NationalDexOrder SpeciesToNationalPokedexNum(u16 species);
+u32 SpeciesToRegionalPokedexNum(u16 species);
+enum KantoDexOrder SpeciesToKantoPokedexNum(u16 species);
 enum HoennDexOrder SpeciesToHoennPokedexNum(u16 species);
+enum NationalDexOrder RegionalToNationalOrder(u32 regionNum);
+enum NationalDexOrder KantoToNationalOrder(enum KantoDexOrder kantoNum);
 enum NationalDexOrder HoennToNationalOrder(enum HoennDexOrder hoennNum);
 void DrawSpindaSpots(u32 personality, u8 *dest, bool32 isSecondFrame);
 void EvolutionRenameMon(struct Pokemon *mon, u16 oldSpecies, u16 newSpecies);
@@ -840,6 +866,8 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon);
 u8 CanLearnTeachableMove(u16 species, enum Move move);
 u8 GetLevelUpMovesBySpecies(u16 species, u16 *moves);
 u16 SpeciesToPokedexNum(u16 species);
+bool32 IsSpeciesInRegionalDex(u16 species);
+bool32 IsSpeciesInKantoDex(u16 species);
 bool32 IsSpeciesInHoennDex(u16 species);
 u16 GetBattleBGM(void);
 void PlayBattleBGM(void);
@@ -879,14 +907,14 @@ void DestroyMonSpritesGfxManager(u8 managerId);
 u8 *MonSpritesGfxManager_GetSpritePtr(u8 managerId, u8 spriteNum);
 u16 GetFormSpeciesId(u16 speciesId, u8 formId);
 u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId);
-u32 GetFormChangeTargetSpecies(struct Pokemon *mon, enum FormChanges method, u32 arg);
-u32 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum FormChanges method, u32 arg);
+u32 GetFormChangeTargetSpecies_Internal(struct FormChangeContext ctx);
 bool32 DoesSpeciesHaveFormChangeMethod(u16 species, enum FormChanges method);
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
 void RemoveIVIndexFromList(u8 *ivs, u8 selectedIv);
 void TrySpecialOverworldEvo(void);
 bool32 SpeciesHasGenderDifferences(u16 species);
-bool32 TryFormChange(u32 monId, enum BattleSide side, enum FormChanges method);
+bool32 TryFormChange(struct Pokemon *mon, enum FormChanges method);
+bool32 TryBoxMonFormChange(struct BoxPokemon *boxMon, enum FormChanges method);
 void TryToSetBattleFormChangeMoves(struct Pokemon *mon, enum FormChanges method);
 u32 GetMonFriendshipScore(struct Pokemon *pokemon);
 u32 GetMonAffectionHearts(struct Pokemon *pokemon);
