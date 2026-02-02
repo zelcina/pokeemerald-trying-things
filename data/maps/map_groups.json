@@ -1,6 +1,7 @@
 {
   "group_order": [
-    "gMapGroup_TownsAndRoutes",
+    "gMapGroup_Towns",
+    "gMapGroup_Routes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
     "gMapGroup_IndoorDewford",
@@ -76,7 +77,14 @@
     "gMapGroup_IndoorSixIslandRoute_Frlg",
     "gMapGroup_IndoorSevenIslandRoute_Frlg"
   ],
-  "gMapGroup_TownsAndRoutes": [
+  "gMapGroup_Towns": [
+    "LittlerootTown",
+    "OldaleTown",
+    "DewfordTown",
+    "LavaridgeTown",
+    "FallarborTown",
+    "VerdanturfTown",
+    "PacifidlogTown",
     "PetalburgCity",
     "SlateportCity",
     "MauvilleCity",
@@ -85,14 +93,9 @@
     "LilycoveCity",
     "MossdeepCity",
     "SootopolisCity",
-    "EverGrandeCity",
-    "LittlerootTown",
-    "OldaleTown",
-    "DewfordTown",
-    "LavaridgeTown",
-    "FallarborTown",
-    "VerdanturfTown",
-    "PacifidlogTown",
+    "EverGrandeCity"
+  ],
+  "gMapGroup_Routes": [
     "Route101",
     "Route102",
     "Route103",
@@ -141,7 +144,9 @@
     "LittlerootTown_MaysHouse_1F",
     "LittlerootTown_MaysHouse_2F",
     "LittlerootTown_ProfessorBirchsLab",
-    "InsideOfTruck"
+    "InsideOfTruck",
+    "NewBarkTownHouse2",
+    "NewBarkTownHouse1"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",
