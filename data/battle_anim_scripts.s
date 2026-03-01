@@ -4409,7 +4409,7 @@ FlameBurstSpread:
 
 gBattleAnimMove_SludgeWave::
 	panse SE_M_WHIRLPOOL, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 0x2, 0x0
-	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SLUDGE_WAVE
+	create_surf_wave palette=ANIM_SURF_PAL_SLUDGE_WAVE
 	waitforvisualfinish
 	end
 
@@ -12875,7 +12875,7 @@ gBattleAnimMove_ZippyZap::
 
 gBattleAnimMove_SplishySplash::
 	loadspritegfx ANIM_TAG_SPARK_2
-	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
+	create_surf_wave palette=ANIM_SURF_PAL_SURF
 	delay 24
 	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	waitforvisualfinish
@@ -27017,7 +27017,7 @@ gBattleAnimMove_Crabhammer::
 	end
 
 gBattleAnimMove_Surf::
-	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
+	create_surf_wave palette=ANIM_SURF_PAL_SURF
 	delay 24
 	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	waitforvisualfinish
@@ -29320,7 +29320,7 @@ ArmThrustLeft:
 
 gBattleAnimMove_MuddyWater::
 	panse SE_M_WHIRLPOOL, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
-	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_MUDDY_WATER
+	create_surf_wave palette=ANIM_SURF_PAL_MUDDY_WATER
 	waitforvisualfinish
 	end
 
@@ -31482,6 +31482,8 @@ gBattleAnimGeneral_SimpleHeal::
 
 gBattleAnimGeneral_IllusionOff::
 	monbg ANIM_TARGET
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	waitplaysewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER, 48
 	createvisualtask AnimTask_TransformMon, 2, SPECIES_GFX_CHANGE_ILLUSION_OFF
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
@@ -31489,6 +31491,8 @@ gBattleAnimGeneral_IllusionOff::
 
 gBattleAnimGeneral_FormChange::
 	monbg ANIM_ATTACKER
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	waitplaysewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER, 48
 	createvisualtask AnimTask_TransformMon, 2, SPECIES_GFX_CHANGE_FORM_CHANGE
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
@@ -31820,7 +31824,7 @@ gBattleAnimGeneral_PowerConstruct::
 	loadspritegfx ANIM_TAG_ZYGARDE_HEXES @hexagon
 	loadspritegfx ANIM_TAG_VERTICAL_HEX @arrow
 	loadspritegfx ANIM_TAG_FLYING_DIRT
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SNORE_Z, 0, 10, 10, RGB(8, 20, 26)   @Green
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SNORE_Z, 0, 10, 10, RGB(8, 14, 1)   @Green
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
 	loopsewithpan SE_M_MEGA_KICK, SOUND_PAN_ATTACKER, 13, 3
@@ -32489,7 +32493,7 @@ FinishAcidDownpour:
 	createsprite gAcidDownpourReversalSpriteTemplate, ANIM_ATTACKER, 2, 0x1a, 0xd2
 	delay 32
 	panse SE_M_WHIRLPOOL, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 0x2, 0x0
-	createvisualtask AnimTask_CreateSurfWave, 0x2, ANIM_SURF_PAL_SLUDGE_WAVE
+	create_surf_wave priority=0x2, palette=ANIM_SURF_PAL_SLUDGE_WAVE
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 7, (RGB(28, 3, 22) | RGB_ALPHA)
 	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 0, 2, 50, 1
 	call AcidDownpourFlare
@@ -33384,7 +33388,7 @@ gBattleAnimMove_HydroVortex::
 	loadspritegfx ANIM_TAG_WATER_ORB @whirlpool
 	createvisualtask AnimTask_AllBattlersInvisibleExceptAttackerAndTarget, 0xA
 	waitforvisualfinish
-	createvisualtask AnimTask_CreateSurfWave, 0x2, 0x0
+	create_surf_wave priority=0x2, palette=0x0
 	delay 24
 	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 0x2, 0x0
 	waitforvisualfinish

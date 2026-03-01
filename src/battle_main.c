@@ -617,6 +617,13 @@ static void CB2_InitBattleInternal(void)
         TryFormChange(&gEnemyParty[i], FORM_CHANGE_BEGIN_BATTLE);
     }
 
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+    {
+        TryFormChange(&gEnemyParty[0], FORM_CHANGE_BEGIN_WILD_ENCOUNTER);
+        if (IsDoubleBattle())
+            TryFormChange(&gEnemyParty[1], FORM_CHANGE_BEGIN_WILD_ENCOUNTER);
+    }
+
     #if TESTING
     gPlayerPartyCount = CalculatePartyCount(gPlayerParty);
     gEnemyPartyCount = CalculatePartyCount(gEnemyParty);
@@ -3185,6 +3192,14 @@ void SwitchInClearSetData(enum BattlerId battler, struct Volatiles *volatilesCop
             }
         }
     }
+    if (effect != EFFECT_BATON_PASS || GetConfig(B_BATON_PASS_TRAPPING) >= GEN_5)
+    {
+        for (enum BattlerId i = 0; i < gBattlersCount; i++)
+        {
+            if (gBattleMons[i].volatiles.escapePrevention && gBattleMons[i].volatiles.battlerPreventingEscape == battler)
+                gBattleMons[i].volatiles.escapePrevention = FALSE;
+        }
+    }
 
     // Clear volatiles - reapply some if Baton Pass was used
     memset(&gBattleMons[battler].volatiles, 0, sizeof(struct Volatiles));
@@ -3800,6 +3815,7 @@ static void TryDoEventsBeforeFirstTurn(void)
     switch (gBattleStruct->eventState.beforeFirstTurn)
     {
     case FIRST_TURN_EVENTS_START:
+        LoadIndicatorSpritesGfx();
         // Set invalid mons as absent(for example when starting a double battle with only one pokemon).
         if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI))
         {
