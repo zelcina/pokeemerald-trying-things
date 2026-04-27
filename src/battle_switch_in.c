@@ -250,7 +250,7 @@ static bool32 FirstEventBlockEvents(struct BattleCalcValues *calcValues)
             gBattleScripting.battler = gBattlerAbility = battler;
             gBattleStruct->battlerState[battler].forcedSwitch = FALSE;
             gBattleStruct->eventState.switchIn = 0;
-            BattleScriptCall(BattleScript_EmergencyExitRet);
+            BattleScriptCall(BattleScript_EmergencyExitSendReplacement);
             effect = TRUE;
         }
         else
@@ -344,7 +344,7 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
             effect = TRUE;
         }
         else if (IsBattlerAffectedByHazards(battler, holdEffect, TRUE)
-              && CanBePoisoned(battler, battler, ability, ability))
+              && CanBePoisoned(battler, battler, ABILITY_NONE, ability))
         {
             gBattleScripting.battler = battler;
             BattleScriptPushCursor();
